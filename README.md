@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <style>
+
 /* Reset and Global Styles */
 * {
   margin: 0;
@@ -129,6 +130,8 @@ nav ul li a:hover {
     font-size: 12px;
     margin: 8px 0;
   }
+}
+
 /* Hero Section */
 .hero {
   display: flex;
