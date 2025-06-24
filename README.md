@@ -591,15 +591,15 @@ footer {
       </div>
     </div>
   </footer>
-<script>
-  const menuToggle = document.querySelector(&#39;.menu-toggle&#39;);
-  const navMenu = document.querySelector(&#39;nav ul&#39;);
+ <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
 
-  menuToggle.addEventListener(&#39;click&#39;, () =&gt; {
-    navMenu.classList.toggle(&#39;open&#39;); // Alterna la visibilidad del menú
-    menuToggle.classList.toggle(&#39;open&#39;); // Opcional: Cambia el estilo del ícono de hamburguesa si es necesario
-  });
-</script
+  menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open'); // Alterna la visibilidad del menú
+      menuToggle.classList.toggle('open'); // Opcional: Cambia el estilo del ícono de hamburguesa
+    });
+  </script>
 
 </body>
 </html>
