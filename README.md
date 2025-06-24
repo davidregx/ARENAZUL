@@ -481,6 +481,11 @@ footer {
     <div class="logo">
       <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo"> <!-- Reemplaza con la URL de tu logo -->
     </div>
+       <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
           <nav>
       <ul>
         <li><a href="#home">Inicio</a></li>
@@ -586,7 +591,7 @@ footer {
       </div>
     </div>
   </footer>
-   <script>
+<script>
   const menuToggle = document.querySelector(&#39;.menu-toggle&#39;);
   const navMenu = document.querySelector(&#39;nav ul&#39;);
 
@@ -594,7 +599,7 @@ footer {
     navMenu.classList.toggle(&#39;open&#39;); // Alterna la visibilidad del menú
     menuToggle.classList.toggle(&#39;open&#39;); // Opcional: Cambia el estilo del ícono de hamburguesa si es necesario
   });
-</script>
+</script
 
 </body>
 </html>
