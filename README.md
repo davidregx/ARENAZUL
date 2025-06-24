@@ -4,7 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <style>
-
+ :root {
+            --primary: #ff5722;
+            --primary-dark: #e64a19;
+            --secondary: #d81b60;
+            --secondary-dark: #ad1457;
+        }
 /* Reset and Global Styles */
 * {
   margin: 0;
@@ -16,7 +21,6 @@ body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   background-color: #d6f0f1;
-  color: #333;
 }
 
 /* Header Section */
