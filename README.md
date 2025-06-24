@@ -4,39 +4,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      background-color: #d6f0f1;
-    }
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #d6f0f1;
+}
 
 /* Header Section */
 header {
-  background-color: #363a3b; /* Fondo oscuro */
-  padding: 10px 30px; /* Ajusta el padding para que sea más espacioso */
+  background-color: #363a3b;
+  padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between; /* Esto asegura que el logo y el menú estén distribuidos */
-  align-items: center; /* Alinea el logo y los elementos del menú verticalmente */
-  border-radius: 15px; /* Bordes redondeados */
-  margin: 20px; /* Espacio alrededor del header */
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
 }
 
 header .logo img {
-  width: 50px;
+  width: 50px; /* Ajusta el tamaño del logo */
   height: auto;
-  margin-left: 0; /* El logo ya no necesita margen a la izquierda */
 }
 
 nav ul {
   display: flex;
-  justify-content: flex-end; /* Alinea los elementos del menú a la derecha */
+  justify-content: flex-end;
   list-style-type: none;
   padding: 0;
 }
@@ -54,50 +59,119 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #d6f0f1; /* Color cuando el usuario pasa el mouse por encima */
+  color: #d6f0f1;
 }
 
-    /* Hero Section */
-  .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to right, #e8fbff, #d6f0f1);
-      padding: 10px 20px;
-      color: #0f172a;
-      text-align: left;
-      background-size: cover;
-      background-position: center;
-    }
+/* Hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto; /* Empuja la hamburguesa al extremo derecho */
+}
 
-  .hero-content h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
+.menu-toggle span {
+  background-color: white;
+  height: 4px;
+  width: 20px; /* Ajusta el tamaño del ícono */
+  margin: 4px 0;
+  border-radius: 5px;
+}
 
-   .hero-content p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  .hero button {
-      background-color: #0f172a;
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+  .logo img {
+    width: 40px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+  }
 
-   .hero button:hover {
-      background-color: #00A9E0;
-    }
+  nav ul {
+    display: none; /* Oculta el menú en pantallas pequeñas */
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #363a3b;
+    border-radius: 10px;
+  }
 
-   .hero img {
-      width: 50%;
-       border-radius: 20px 0px 30px 0px; 
-    }
+  nav ul li {
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex; /* Muestra el ícono de hamburguesa */
+  }
+
+  nav ul.open {
+    display: flex; /* Muestra el menú cuando la clase 'open' se añade */
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px 10px;
+  }
+
+  .logo img {
+    width: 35px; /* Ajusta el logo para pantallas muy pequeñas */
+  }
+
+  nav ul li {
+    font-size: 12px;
+    margin: 8px 0;
+  }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #e8fbff, #d6f0f1);
+  padding: 10px 20px;
+  color: #0f172a;
+  text-align: left;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background-color: #0f172a;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hero button:hover {
+  background-color: #00A9E0;
+}
+
+.hero img {
+  width: 50%;
+  border-radius: 20px 0px 30px 0px;
+}
 
 /* Projects Section */
 .projects {
@@ -112,220 +186,293 @@ nav ul li a:hover {
 }
 
 .project-gallery {
-  display: grid; /* Usamos grid para organizar las imágenes */
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
-  gap: 20px; /* Espacio entre las imágenes */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .project-gallery img {
-  width: 100%; /* Las imágenes ocupan el 100% del ancho de su celda */
-  height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
-  max-height: 250px; /* Se establece una altura máxima para que las imágenes no sean demasiado grandes */
-  object-fit: cover; /* Asegura que las imágenes mantengan su proporción sin distorsionarse */
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividad para pantallas pequeñas */
+/* Services Section */
+.services {
+  padding: 50px 30px;
+  background-color: #d6f0f1;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.services p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.service-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.stat {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 48px;
+  color: #00A9E0;
+}
+
+.stat p {
+  font-size: 18px;
+  color: #555;
+}
+
+.services button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #ffde00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.services button:hover {
+  background-color: #00A9E0;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 50px 30px;
+  background-color: #d6f0f1;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.testimonial {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.testimonial strong {
+  font-size: 18px;
+  color: #00A9E0;
+}
+
+/* Products Section */
+.products {
+  padding: 50px 30px;
+  background-color: white;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.product button {
+  padding: 10px 20px;
+  background-color: #ffde00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product button:hover {
+  background-color: #00A9E0;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 30px;
+  background-color: #d6f0f1;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.contact p {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00A9E0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contact button:hover {
+  background-color: #ffde00;
+}
+
+/* Footer Section */
+footer {
+  background-color: #00A9E0;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-media a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.social-media a:hover {
+  color: #ffde00;
+}
+
+/* Responsividad para pantallas más pequeñas */
 @media (max-width: 768px) {
-  .project-gallery {
-    grid-template-columns: repeat(3, 1fr); /* En pantallas más pequeñas, mostramos tres columnas */
+  .hero {
+    flex-direction: column; /* Coloca la imagen y el texto en columna */
+    text-align: center;
+  }
+
+  .hero img {
+    width: 80%; /* Ajusta el tamaño de la imagen */
+    margin-top: 20px;
+  }
+
+  .projects .project-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  }
+
+  .services .service-stats {
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center;
+  }
+
+  .product-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  }
+
+  .testimonial {
+    max-width: 90%; /* Ajusta el tamaño del testimonio */
+  }
+
+  .contact button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+  }
+
+  .product button {
+    width: 100%; /* Hace que el botón ocupe todo el ancho */
+  }
+
+  .stat {
+    width: 100%; /* Hace que los stats ocupen el 100% */
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .project-gallery {
-    grid-template-columns: repeat(3, 1fr); /* En pantallas más pequeñas, mostramos tres columnas */
+  .hero {
+    padding: 10px 15px;
   }
-}
 
-   /* Services Section */
-    .services {
-      padding: 50px 30px;
-      background-color:#d6f0f1;
-      text-align: center;
-    }
+  .hero img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+  }
 
-   .services h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-    }
+  .projects h2 {
+    font-size: 28px; /* Ajusta el tamaño del título */
+  }
 
-   .services p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 30px;
-    }
+  .services h2, .testimonials h2, .products h2, .contact h2 {
+    font-size: 28px; /* Ajusta el tamaño de los títulos */
+  }
 
-   .service-stats {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 50px;
-    }
+  .services p, .testimonials p, .products p, .contact p {
+    font-size: 16px; /* Ajusta el tamaño del texto */
+  }
 
-  .stat {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+  .services button, .testimonial button, .contact button {
+    font-size: 16px; /* Ajusta el tamaño del botón */
+    padding: 12px 24px;
+  }
 
   .stat h3 {
-      font-size: 48px;
-      color: #00A9E0;
-    }
-
-  .stat p {
-      font-size: 18px;
-      color: #555;
-    }
-
-  .services button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #ffde00;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-  .services button:hover {
-      background-color: #00A9E0;
-    }
-
-    /* Testimonials Section */
-   .testimonials {
-      padding: 50px 30px;
-      background-color:#d6f0f1;
-      text-align: center;
-    }
-
-   .testimonials h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-    }
+    font-size: 36px; /* Ajusta el tamaño de los números */
+  }
 
   .testimonial {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    padding: 20px;
+  }
 
-   .testimonial p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-   .testimonial strong {
-      font-size: 18px;
-      color: #00A9E0;
-    }
-
-    /* Products Section */
-   .products {
-      padding: 50px 30px;
-      background-color: white;
-      text-align: center;
-    }
-
-   .products h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-   .product-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+  .product-gallery {
+    grid-template-columns: 1fr; /* Una columna */
+  }
 
   .product {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-  .product img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-   .product p {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-   .product button {
-      padding: 10px 20px;
-      background-color: #ffde00;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-  .product button:hover {
-      background-color: #00A9E0;
-    }
-
-    /* Contact Section */
-   .contact {
-      padding: 50px 30px;
-      background-color:#d6f0f1;
-      text-align: center;
-    }
-
-  .contact h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-    }
-
-   .contact p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-  .contact button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #00A9E0;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-  .contact button:hover {
-      background-color: #ffde00;
-    }
-
-    /* Footer Section */
-   footer {
-      background-color: #00A9E0;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-
-  .social-media a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
- .social-media a:hover {
-      color: #ffde00;
-    }
+    padding: 15px; /* Reduce el padding */
+  }
+}
   </style></head>
 <body>
   <!-- Header Section -->
@@ -438,5 +585,15 @@ nav ul li a:hover {
       </div>
     </div>
   </footer>
+   <script>
+  const menuToggle = document.querySelector(&#39;.menu-toggle&#39;);
+  const navMenu = document.querySelector(&#39;nav ul&#39;);
+
+  menuToggle.addEventListener(&#39;click&#39;, () =&gt; {
+    navMenu.classList.toggle(&#39;open&#39;); // Alterna la visibilidad del menú
+    menuToggle.classList.toggle(&#39;open&#39;); // Opcional: Cambia el estilo del ícono de hamburguesa si es necesario
+  });
+</script>
+
 </body>
 </html>
