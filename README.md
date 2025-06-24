@@ -129,8 +129,6 @@ nav ul li a:hover {
     font-size: 12px;
     margin: 8px 0;
   }
-}
-
 /* Hero Section */
 .hero {
   display: flex;
