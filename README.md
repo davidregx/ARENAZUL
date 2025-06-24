@@ -16,6 +16,7 @@ body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   background-color: #d6f0f1;
+  color: #333;
 }
 
 /* Header Section */
