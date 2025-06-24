@@ -4,12 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <style>
- :root {
-            --primary: #ff5722;
-            --primary-dark: #e64a19;
-            --secondary: #d81b60;
-            --secondary-dark: #ad1457;
-        }
+ 
 /* Reset and Global Styles */
 * {
   margin: 0;
@@ -41,6 +36,7 @@ header .logo {
 }
 
 header .logo img {
+  background-color: transparent;
   width: 50px; /* Ajusta el tamaño del logo */
   height: auto;
 }
