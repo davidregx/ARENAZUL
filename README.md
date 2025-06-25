@@ -495,8 +495,8 @@ footer {
         <p>Clientes Felices</p>
       </div>
       <div class="stat">
-        <h3>7</h3>
-        <p>Años de Experiencia</p>
+        <h3>7 AÑOS</h3>
+        <p>De Experiencia</p>
       </div>
       <div class="stat">
         <h3>3+</h3>
