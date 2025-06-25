@@ -228,43 +228,47 @@ nav ul li a:hover {
     font-size: 18px;
   }
 }
+/* Sección de servicios */
+section {
+    padding: 20px;
+    margin: 20px;
+}
 
-        /* Sección de servicios */
+/* Título centrado */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de servicios */
+.service {
+    display: inline-block;
+    width: 48%; /* Ajustamos el ancho para que haya espacio entre las imágenes */
+    text-align: center;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+/* Imágenes dentro de los servicios */
+.service img {
+    width: 100%;
+    height: 250px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-radius: 10px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .service {
+        width: 38%; /* Dos imágenes por fila */
+    }
+    
+    /* Centramos la sección */
    section {
-            padding: 20px;
-            margin: 20px;
-        }
+        text-align: center;
+    }
+}
 
-   h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-   .service {
-            display: inline-block;
-            width: 30%;
-            text-align: center;
-            margin: 10px;
-        }
-
-   .service img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-   button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-   button:hover {
-            background-color: #0056b3;
-        }
 
 /* Testimonials Section */
 .testimonials {
@@ -416,7 +420,7 @@ footer {
         }
 
         /* Estilos adicionales */
-   #ubicacion {
+  #ubicacion {
             margin-top: 20px;
         }
 
@@ -570,28 +574,28 @@ footer {
   </section>
   
       <!-- Sección de Servicios -->
-   <section id="servicios">
+  <section id="servicios">
         <h2>Nuestros servicios de limpieza de piscinas</h2>
         <div class="service">
-            <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/cee7c8c4-c0b1-41ef-9a65-7719a84e81f8.jpeg?oldPrompt=A technician meticulously cleaning a pool with state-of-the-art equipment, conveying expertise and dedication to quality pool maintenance." alt="Limpieza básica de piscina">
+            <img src="https://satecma.es/wp-content/uploads/2021/07/accesorios-limpieza-piscina.jpg" alt="Limpieza básica de piscina">
             <h3>Limpieza básica de piscina</h3>
             <p>S/ 50.0</p>
             <button>Contratar</button>
         </div>
         <div class="service">
-            <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/96eaab9b-ecbe-4655-a75e-26f508dbcd53.jpeg?oldPrompt=Well-organized pool maintenance tools beside a flawlessly clean pool, emphasizing professional pool care and equipment management." alt="Mantenimiento semanal de piscina">
+            <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
             <h3>Mantenimiento semanal de piscina</h3>
             <p>S/ 80.0</p>
             <button>Contratar</button>
         </div>
         <div class="service">
-            <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/fb08d771-425c-49b5-b8e6-ad2c0c6de9e7.jpeg?oldPrompt=A before-and-after split image of a pool, dramatically illustrating the effectiveness of pool cleaning services and the transformation from dirty to immaculate." alt="Limpieza intensiva de piscina">
+            <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no">
             <h3>Limpieza intensiva de piscina</h3>
             <p>S/ 120.0</p>
             <button>Contratar</button>
         </div>
         <div class="service">
-            <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/3399c544-c63c-4094-b384-88b5804bccec.jpeg?oldPrompt=A sparkling clean swimming pool reflecting the clear sky, showcasing meticulous water clarity and a pristine pool deck, embodying high-quality pool cleaning services." alt="Tratamiento de agua de piscina">
+            <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
             <h3>Tratamiento de agua de piscina</h3>
             <p>S/40.0</p>
             <button>Consultar</button>
@@ -667,7 +671,7 @@ footer {
 
 
     <!-- Sección de ubicación -->
-   <footer>
+ <footer>
         <div id="ubicacion">
             <h3>Ubicación</h3>
             <p>A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
