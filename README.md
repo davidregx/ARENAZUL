@@ -148,7 +148,7 @@ nav ul li a:hover {
 
 .hero-content h1 {
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .hero-content p {
@@ -195,9 +195,8 @@ nav ul li a:hover {
 
 .project-gallery img {
   width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: cover;
+  height: 250px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Mantiene la proporción sin distorsionar */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -205,58 +204,31 @@ nav ul li a:hover {
 /* Services Section */
 .services {
   padding: 50px 30px;
-  background-color: #d6f0f1;
   text-align: center;
 }
 
-.services h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
+
+  .service-stats {
+    display: flex;
+    flex-direction: column; /* En pantallas grandes los elementos estarán en una columna */
+    justify-content: space-around;
+    margin-bottom: 50px;
+  }
+
+  .stat {
+    padding: 30px;
+    width: auto; /* Ajuste automático en pantallas grandes */
+  }
+
+  .stat h3 {
+    font-size: 48px;
+  }
+
+  .stat p {
+    font-size: 18px;
+  }
 }
 
-.services p {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.service-stats {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 50px;
-}
-
-.stat {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.stat h3 {
-  font-size: 48px;
-  color: #00A9E0;
-}
-
-.stat p {
-  font-size: 18px;
-  color: #555;
-}
-
-.services button {
-  padding: 15px 30px;
-  font-size: 18px;
-  background-color: #ffde00;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.services button:hover {
-  background-color: #00A9E0;
-}
 
 /* Testimonials Section */
 .testimonials {
@@ -268,6 +240,11 @@ nav ul li a:hover {
 .testimonials h2 {
   font-size: 36px;
   margin-bottom: 30px;
+}
+
+.testimonial img {
+      width: 100%;
+  border-radius: 20px 0px 30px 0px;
 }
 
 .testimonial {
@@ -403,11 +380,13 @@ footer {
   }
 
   .projects .project-gallery {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Dos columnas */
+    gap: 10px;
   }
 
   .services .service-stats {
-    flex-direction: column; /* Coloca los elementos en columna */
+    flex-direction: row; /* Coloca los elementos en columna */
     align-items: center;
   }
 
@@ -501,11 +480,30 @@ footer {
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>ARENAZUL: Su Oasis Siempre Listo</h1>
+      <h1>ARENAZUL</h1>
+      <h1>Su Piscina Siempre Limpia</h1>
       <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Ofrecemos servicios de limpieza y cuidado para propietarios de casas.</p>
       <button>Contáctenos Hoy</button>
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL"> <!-- Reemplaza con la URL de tu imagen -->
+    
+     <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="service-stats">
+      <div class="stat">
+        <h3>50+</h3>
+        <p>Clientes Felices</p>
+      </div>
+      <div class="stat">
+        <h3>7</h3>
+        <p>Años de Experiencia</p>
+      </div>
+      <div class="stat">
+        <h3>3+</h3>
+        <p>Personal Dedicado</p>
+      </div>
+    </div>
+  </section>
   </section>
 
   <!-- Our Projects Section -->
@@ -521,32 +519,14 @@ footer {
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Mantenimiento Integral para su Piscina</h2>
-    <p>Desde la limpieza profunda hasta el equilibrio químico, nos encargamos de todo. Relájese y disfrute de su piscina mientras nosotros la mantenemos impecable.</p>
-    <div class="service-stats">
-      <div class="stat">
-        <h3>150+</h3>
-        <p>Clientes Felices</p>
-      </div>
-      <div class="stat">
-        <h3>5</h3>
-        <p>Años de Experiencia</p>
-      </div>
-      <div class="stat">
-        <h3>10+</h3>
-        <p>Profesionales Dedicados</p>
-      </div>
-    </div>
-    <button>Descubra Nuestros Servicios</button>
-  </section>
+ 
 
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
     <h2>Testimonios</h2>
     <div class="testimonial">
       <p>"¡Desde que contraté a ARENAZUL, mi piscina siempre está lista para disfrutar! El servicio es excelente y el personal muy profesional."</p>
+      <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/84d609b0-2f3d-4459-b9b7-6b3f0df73055.jpeg?oldPrompt=A serene and crystal-clear swimming pool reflecting the bright sky, surrounded by a well-maintained patio with comfortable lounge chairs, showcasing the joy and satisfaction of happy homeowners (trustworthy:1.2), suggesting relaxation and a carefree lifestyle (professional:1.1), pristine water (clean:1.3), natural sunlight, enhancing the inviting ambiance, no visible cleaning equipment">
       <p><strong>Ana Rodríguez</strong> - Propietaria de Casa</p>
     </div>
   </section>
@@ -557,17 +537,22 @@ footer {
     <div class="product-gallery">
       <div class="product">
         <img src="https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg" alt="Tabletas de Cloro">
-        <p>Tabletas de Cloro - $38.5</p>
+        <p>Tabletas de Cloro  S/38.50</p>
         <button>Comprar ahora</button>
       </div>
       <div class="product">
         <img src="https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg" alt="Cloro Granulado">
-        <p>1K Cloro Granulado - $20.0</p>
+        <p>1K Cloro Granulado  S/20.00</p>
         <button>Comprar ahora</button>
       </div>
       <div class="product">
-        <img src="https://pdcinternacional.co/wp-content/uploads/2023/04/SULFATO-DE-ALUMINIO-TIPO-A-BULTO-25-KG_10_11zon.jpg" alt="Sulfato de Aluminio">
-        <p>1K Sulfato de Aluminio - $7.5</p>
+        <img src="https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg" alt="Sulfato de Aluminio">
+        <p>1K Sulfato de Aluminio S/7.50</p>
+        <button>Comprar ahora</button>
+      </div>
+            <div class="product">
+        <img src="https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp" alt="Sulfato de Aluminio">
+        <p>1K Sulfato de Cobre  S/26.00</p>
         <button>Comprar ahora</button>
       </div>
     </div>
@@ -584,12 +569,6 @@ footer {
   <footer>
     <div class="footer-content">
       <p>&copy; Piscinas Impecables 2024, Todos los derechos reservados</p>
-      <div class="social-media">
-        <a href="#">Twitter</a>
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-      </div>
     </div>
   </footer>
  <script>
