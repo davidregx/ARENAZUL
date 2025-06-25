@@ -232,7 +232,6 @@ nav ul li a:hover {
 
 /* Testimonials Section */
 .testimonials {
-  padding: 50px 30px;
   background-color: #d6f0f1;
   text-align: center;
 }
@@ -249,9 +248,9 @@ nav ul li a:hover {
 
 .testimonial {
   background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -269,7 +268,7 @@ nav ul li a:hover {
 
 /* Products Section */
 .products {
-  padding: 50px 30px;
+  padding: 20px 20px;
   background-color: white;
   text-align: center;
 }
