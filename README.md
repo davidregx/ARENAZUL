@@ -37,7 +37,7 @@ header .logo {
 
 header .logo img {
   background-color: transparent;
-  width: 50px; /* Ajusta el tamaño del logo */
+  width: 80px; /* Ajusta el tamaño del logo */
   height: auto;
 }
 
