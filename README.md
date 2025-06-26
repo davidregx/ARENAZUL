@@ -20,7 +20,7 @@ body {
 
 /* Header Section */
 header {
-  background-color: #363a3b;
+  background-color: #c7c7c2;
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
