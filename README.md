@@ -593,7 +593,7 @@ footer {
             <h3>Tratamiento de agua de piscina</h3>
         </div>
         <div class="service">
-            <img src="https://linerpiscinas.com/wp-content/uploads/2017/12/tratamiento-agua-piscina.jpg" alt="Puesta a punto de piscina">
+            <img src="https://www.hidrotec.com/wp-content/uploads/2024/01/preparar-piscina-verano.webp" alt="Puesta a punto de piscina">
             <h3>Puesta a punto de piscina</h3>
         </div>
     </section>
