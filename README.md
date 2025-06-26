@@ -203,7 +203,7 @@ nav ul li a:hover {
 
 /* Services Section */
 .services {
-  padding: 50px 30px;
+  padding: 0px 30px;
   text-align: center;
 }
 
@@ -577,34 +577,24 @@ footer {
   <section id="servicios">
         <h2>Nuestros servicios de limpieza de piscinas</h2>
         <div class="service">
-            <img src="https://satecma.es/wp-content/uploads/2021/07/accesorios-limpieza-piscina.jpg" alt="Limpieza básica de piscina">
+            <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2022/06/15/62a9ad6dd74fb.jpeg" alt="Limpieza básica de piscina">
             <h3>Limpieza básica de piscina</h3>
-            <p>S/ 50.0</p>
-            <button>Contratar</button>
         </div>
         <div class="service">
             <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
             <h3>Mantenimiento semanal de piscina</h3>
-            <p>S/ 80.0</p>
-            <button>Contratar</button>
         </div>
         <div class="service">
             <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no">
             <h3>Limpieza intensiva de piscina</h3>
-            <p>S/ 120.0</p>
-            <button>Contratar</button>
         </div>
         <div class="service">
             <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
             <h3>Tratamiento de agua de piscina</h3>
-            <p>S/40.0</p>
-            <button>Consultar</button>
         </div>
         <div class="service">
-            <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/bb052d0a-9a0d-4b05-af0a-a994664d1ed2.jpeg?oldPrompt=A family enjoying a pristine, inviting swimming pool, suggesting the joy and relaxation enabled by reliable pool cleaning services." alt="Puesta a punto de piscina">
+            <img src="https://linerpiscinas.com/wp-content/uploads/2017/12/tratamiento-agua-piscina.jpg" alt="Puesta a punto de piscina">
             <h3>Puesta a punto de piscina</h3>
-            <p>S/ 90.0</p>
-            <button>Contratar</button>
         </div>
     </section>
 
