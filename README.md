@@ -356,6 +356,62 @@ h2 {
   background-color: #00A9E0;
 }
 
+    /* Floating Cart */
+   #floating-cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      max-height: 400px;
+      overflow-y: auto;
+      display: none; /* Inicialmente oculto */
+    }
+
+   #floating-cart h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: #333;
+    }
+
+   #floating-cart ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+   #floating-cart ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+  #floating-cart ul li img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+  #floating-cart button {
+      padding: 12px 20px;
+      background-color: #00A9E0;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+  #floating-cart button:hover {
+      background-color: #ffde00;
+    }
+
 /* Contact Section */
 .contact {
   padding: 50px 30px;
@@ -528,8 +584,9 @@ footer {
     <div class="logo">
       <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo"> <!-- Reemplaza con la URL de tu logo -->
     </div>
+    <!-- Agregar el ícono del carrito en el menú -->
+        <li><button class="cart-icon" onclick="toggleCart()">🛒</button></li>
        <div class="menu-toggle">
-    <span></span>
     <span></span>
     <span></span>
   </div>
@@ -541,6 +598,7 @@ footer {
         <li><a href="#testimonials">Testimonios</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
+      </ul>
     </nav>
   </header>
 
@@ -550,7 +608,7 @@ footer {
       <h1>ARENAZUL</h1>
       <h1>Su Piscina Siempre Limpia</h1>
       <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Ofrecemos servicios de limpieza y cuidado para propietarios de casas.</p>
-      <button>Contáctenos Hoy</button>
+      <button onclick="window.location.href='https://tulink.com';">Contáctenos Hoy</button>
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL"> <!-- Reemplaza con la URL de tu imagen -->
     
@@ -624,6 +682,7 @@ footer {
     </div>
   </section>
 
+
   <!-- Products Section -->
   <section id="products" class="products">
     <h2>Productos Esenciales para el Cuidado de su Piscina</h2>
@@ -631,31 +690,38 @@ footer {
       <div class="product">
         <img src="https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg" alt="Tabletas de Cloro">
         <p>Tabletas de Cloro  S/38.50</p>
-        <button>Comprar ahora</button>
+        <button onclick="addToCart('Tabletas de Cloro', 38.50, 'https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg')">Agregar al carrito</button>
       </div>
       <div class="product">
         <img src="https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg" alt="Cloro Granulado">
         <p>1K Cloro Granulado  S/20.00</p>
-        <button>Comprar ahora</button>
+        <button onclick="addToCart('Cloro Granulado', 20.00, 'https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg')">Agregar al carrito</button>
       </div>
       <div class="product">
         <img src="https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg" alt="Sulfato de Aluminio">
         <p>1K Sulfato de Aluminio S/7.50</p>
-        <button>Comprar ahora</button>
+        <button onclick="addToCart('Sulfato de Aluminio', 7.50, 'https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg')">Agregar al carrito</button>
       </div>
-            <div class="product">
-        <img src="https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp" alt="Sulfato de Aluminio">
+      <div class="product">
+        <img src="https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp" alt="Sulfato de Cobre">
         <p>1K Sulfato de Cobre  S/26.00</p>
-        <button>Comprar ahora</button>
+        <button onclick="addToCart('Sulfato de Cobre', 26.00, 'https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp')">Agregar al carrito</button>
       </div>
     </div>
   </section>
+
+  <!-- Floating Cart Section -->
+  <div id="floating-cart">
+    <h3>Carrito de Compras</h3>
+    <ul id="cart-list"></ul>
+    <button onclick="checkout()">Realizar pedido</button>
+  </div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>¿Listo para una Piscina Impecable?</h2>
     <p>Obtenga un presupuesto gratuito y descubra cómo podemos ayudarle a mantener su piscina en perfectas condiciones durante todo el año.</p>
-    <button>Solicitar Presupuesto</button>
+     <button onclick="window.location.href='https://tulink.com';">Solicitar Presupuesto</button>
   </section>
   
 
@@ -684,6 +750,70 @@ footer {
       navMenu.classList.toggle('open'); // Alterna la visibilidad del menú
       menuToggle.classList.toggle('open'); // Opcional: Cambia el estilo del ícono de hamburguesa
     });
+    
+    
+ let cart = [];
+
+ function addToCart(productName, productPrice, productImage) {
+      cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
+      displayCart();
+    }
+
+ function displayCart() {
+      const cartList = document.getElementById('cart-list');
+      const floatingCart = document.getElementById('floating-cart');
+      cartList.innerHTML = '';
+
+ cart.forEach((item, index) => {
+  const li = document.createElement('li');
+   li.innerHTML = `
+  <img src="${item.image}" alt="${item.name}"> 
+  ${item.name} - S/${item.price} x ${item.quantity} 
+ <button onclick="increaseQuantity(${index})">+</button>
+  <button onclick="decreaseQuantity(${index})">-</button>
+  <button onclick="removeFromCart(${index})">Eliminar</button>
+        `;
+        cartList.appendChild(li);
+      });
+
+   floatingCart.style.display = cart.length > 0 ? 'block' : 'none';
+    }
+
+  function increaseQuantity(index) {
+      cart[index].quantity++;
+      displayCart();
+    }
+
+   function decreaseQuantity(index) {
+      if (cart[index].quantity > 1) {
+        cart[index].quantity--;
+      }
+      displayCart();
+    }
+
+  function removeFromCart(index) {
+      cart.splice(index, 1);
+      displayCart();
+    }
+
+  function checkout() {
+      let message = 'Pedido a través de ARENAZUL:\n';
+      cart.forEach(item => {
+        message += `${item.name} - S/${item.price} x ${item.quantity}\n`;
+      });
+      const whatsappUrl = `https://wa.me/573005555555?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+   function toggleCart() {
+      const floatingCart = document.getElementById('floating-cart');
+      floatingCart.style.display = floatingCart.style.display === 'none' ? 'block' : 'none';
+    }
+
+  function toggleMenu() {
+      const navMenu = document.querySelector('nav ul');
+      navMenu.classList.toggle('open');
+    }
   </script>
 
 </body>
