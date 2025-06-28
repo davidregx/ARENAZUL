@@ -196,7 +196,7 @@
 
    .service-stats {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: space-around;
       margin-bottom: 50px;
     }
