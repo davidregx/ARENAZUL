@@ -120,67 +120,6 @@
       border-radius: 5px;
     }
 
-    /* Adaptación para móviles */
-  @media (max-width: 768px) {
-      header {
-        padding: 10px 15px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-   .logo img {
-        width: 40px;
-      }
-
-   nav ul {
-        display: none;
-        flex-direction: column;
-        margin-top: 10px;
-        width: 100%;
-        padding: 10px 0;
-        background-color: #363a3b;
-        border-radius: 10px;
-      }
-
-  nav ul li {
-        margin: 10px 0;
-        font-size: 14px;
-        text-align: center;
-      }
-
-   .menu-toggle {
-        display: flex;
-      }
-
-   nav ul.open {
-        display: flex;
-      }
-      
-  #floating-cart-icon {
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-      }
-    }
-
-   @media (max-width: 480px) {
-      header {
-        padding: 10px 10px;
-      }
-
-  .logo img {
-        width: 35px;
-      }
-
-   nav ul li {
-        font-size: 12px;
-        margin: 8px 0;
-      }
-    }
-
     /* Hero Section */
    .hero {
       display: flex;
@@ -302,17 +241,6 @@
       height: 250px;
       object-fit: cover;
       border-radius: 10px;
-    }
-
-    /* Estilos para dispositivos móviles */
-   @media (max-width: 768px) {
-      .service {
-        width: 38%;
-      }
-      
-  section {
-        text-align: center;
-      }
     }
 
     /* Testimonials Section */
@@ -606,7 +534,7 @@
     }
 
     /* Notification */
-   .notification {
+  .notification {
       position: fixed;
       bottom: 20px;
       left: 50%;
@@ -620,105 +548,313 @@
       font-weight: bold;
       display: none;
     }
-
-    /* Responsividad para pantallas más pequeñas */
+    
+    /* ========================================== */
+    /* MEJORAS ESPECÍFICAS PARA DISPOSITIVOS MÓVILES */
+    /* ========================================== */
+    
+    /* Prevenir desbordamiento horizontal */
+   html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Header para móvil */
    @media (max-width: 768px) {
-      .hero {
+      header {
+        padding: 10px 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+      }
+
+   .logo img {
+        width: 50px;
+      }
+
+   nav ul {
+        display: none;
         flex-direction: column;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #363a3b;
+        border-radius: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+      }
+
+   nav ul li {
+        margin: 10px 0;
+        font-size: 14px;
         text-align: center;
       }
 
-   .hero img {
-        width: 80%;
-        margin-top: 20px;
+   nav ul li a {
+        font-size: 1rem;
+        padding: 8px 0;
+        display: block;
       }
 
-   .projects .project-gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+   .menu-toggle {
+        display: flex;
       }
 
-  .services .service-stats {
-        flex-direction: row;
-        align-items: center;
+   nav ul.open {
+        display: flex;
       }
-
-   .product-gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-   .testimonial {
-        max-width: 90%;
-      }
-
-  .contact button {
-        width: 100%;
-      }
-
-   .product button {
-        width: 100%;
-      }
-
-   .stat {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-
-   #floating-cart {
-        width: 90%;
-        left: 5%;
-        right: 5%;
-        top: 80px;
+      
+   #floating-cart-icon {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
       }
     }
 
-   @media (max-width: 480px) {
+    /* Hero section para móvil */
+  @media (max-width: 768px) {
       .hero {
-        padding: 10px 15px;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+        margin: 10px;
       }
 
-   .hero img {
+  .hero-content h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+
+  .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+  .hero button {
+        padding: 12px 25px;
+        font-size: 1rem;
         width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
       }
 
-  .projects h2 {
-        font-size: 28px;
+  .hero img {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 20px;
       }
+    }
 
-   .services h2, .testimonials h2, .products h2, .contact h2 {
-        font-size: 28px;
+    /* Servicios para móvil */
+   @media (max-width: 768px) {
+      section {
+        margin: 10px;
+        padding: 15px;
       }
-
-   .services p, .testimonials p, .products p, .contact p {
-        font-size: 16px;
+      
+   .service {
+        display: block;
+        width: 100%;
+        margin: 15px 0;
       }
-
-   .services button, .testimonial button, .contact button {
-        font-size: 16px;
-        padding: 12px 24px;
+      
+  .service img {
+        height: 200px;
       }
+    }
 
-   .stat h3 {
-        font-size: 36px;
+    /* Proyectos para móvil - 2 en 2 */
+  @media (max-width: 768px) {
+      .projects {
+        margin: 10px;
+        padding: 15px 0;
       }
+      
+   .projects h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      
+   .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      
+  .project-gallery img {
+        height: 180px;
+      }
+    }
 
+    /* Testimonios para móvil */
+   @media (max-width: 768px) {
+      .testimonials {
+        margin: 10px;
+        padding: 15px;
+      }
+      
+   .testimonials h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      
    .testimonial {
-        padding: 20px;
+        padding: 15px;
       }
+      
+   .testimonial p {
+        font-size: 1.1rem;
+      }
+    }
 
+    /* Productos para móvil - 2 en 2 */
+   @media (max-width: 768px) {
+      .products {
+        margin: 10px;
+        padding: 15px;
+      }
+      
+   .products h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      
    .product-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
       }
-
+      
    .product {
         padding: 15px;
+      }
+      
+   .product p {
+        font-size: 1.1rem;
+      }
+      
+   .product button {
+        width: 100%;
+      }
+    }
+
+    /* Contacto para móvil */
+   @media (max-width: 768px) {
+      .contact {
+        margin: 10px;
+        padding: 30px 15px;
+      }
+      
+   .contact h2 {
+        font-size: 1.8rem;
+      }
+      
+  .contact p {
+        font-size: 1.1rem;
+      }
+      
+   .contact button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    /* Carrito para móvil - centrado verticalmente */
+   @media (max-width: 768px) {
+      #floating-cart {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        max-height: 80vh;
+      }
+    }
+
+    /* Footer para móvil */
+   @media (max-width: 768px) {
+      footer {
+        padding: 15px;
+      }
+      
+   #ubicacion h3 {
+        font-size: 1.1rem;
+      }
+      
+   #ubicacion p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Estadísticas para móvil */
+   @media (max-width: 768px) {
+      .services {
+        margin: 10px;
+        padding: 0 15px;
+      }
+      
+  .service-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      
+   .stat {
+        flex: 1 0 30%;
+        padding: 15px;
+        min-width: 120px;
+      }
+      
+   .stat h3 {
+        font-size: 2rem;
+      }
+      
+   .stat p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Notificación para móvil */
+   @media (max-width: 768px) {
+      .notification {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        max-width: 90%;
+      }
+    }
+
+    /* Ajustes para pantallas muy pequeñas */
+  @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+   .projects h2, .services h2, .testimonials h2, 
+      .products h2, .contact h2 {
+        font-size: 1.6rem;
+      }
+      
+   .stat h3 {
+        font-size: 1.8rem;
+      }
+      
+      /* Ajustar a 1 columna en pantallas muy pequeñas */
+   @media (max-width: 480px) {
+        .project-gallery, .product-gallery {
+          grid-template-columns: 1fr;
+        }
       }
     }
   </style>
 </head>
 <body>
-  <!-- Icono flotante del carrito -->
+  <!-- Icono flotante del carrito - Siempre en la parte superior derecha -->
   <div id="floating-cart-icon">
     🛒
     <div id="cart-badge">0</div>
@@ -753,8 +889,9 @@
       <button onclick="window.location.href='https://tulink.com';">Contáctenos Hoy</button>
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
-    
-     <!-- Services Section -->
+  </section>
+  
+  <!-- Services Stats Section -->
   <section id="services" class="services">
     <div class="service-stats">
       <div class="stat">
@@ -771,33 +908,31 @@
       </div>
     </div>
   </section>
-  </section>
   
-      <!-- Sección de Servicios -->
+  <!-- Sección de Servicios -->
   <section id="servicios">
-        <h2>Nuestros servicios de limpieza de piscinas</h2>
-        <div class="service">
-            <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2022/06/15/62a9ad6dd74fb.jpeg" alt="Limpieza básica de piscina">
-            <h3>Limpieza básica de piscina</h3>
-        </div>
-        <div class="service">
-            <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
-            <h3>Mantenimiento semanal de piscina</h3>
-        </div>
-        <div class="service">
-            <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
-            <h3>Limpieza intensiva de piscina</h3>
-        </div>
-        <div class="service">
-            <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
-            <h3>Tratamiento de agua de piscina</h3>
-        </div>
-        <div class="service">
-            <img src="https://www.hidrotec.com/wp-content/uploads/2024/01/preparar-piscina-verano.webp" alt="Puesta a punto de piscina">
-            <h3>Puesta a punto de piscina</h3>
-        </div>
-    </section>
-
+    <h2>Nuestros servicios de limpieza de piscinas</h2>
+    <div class="service">
+        <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2022/06/15/62a9ad6dd74fb.jpeg" alt="Limpieza básica de piscina">
+        <h3>Limpieza básica de piscina</h3>
+    </div>
+    <div class="service">
+        <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
+        <h3>Mantenimiento semanal de piscina</h3>
+    </div>
+    <div class="service">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
+        <h3>Limpieza intensiva de piscina</h3>
+    </div>
+    <div class="service">
+        <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
+        <h3>Tratamiento de agua de piscina</h3>
+    </div>
+    <div class="service">
+        <img src="https://www.hidrotec.com/wp-content/uploads/2024/01/preparar-piscina-verano.webp" alt="Puesta a punto de piscina">
+        <h3>Puesta a punto de piscina</h3>
+    </div>
+  </section>
 
   <!-- Our Projects Section -->
   <section id="projects" class="projects">
@@ -812,18 +947,15 @@
     </div>
   </section>
 
- 
-
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials">
     <h2>Testimonios</h2>
     <div class="testimonial">
       <p>"¡Desde que contraté a ARENAZUL, mi piscina siempre está lista para disfrutar! El servicio es excelente y el personal muy profesional."</p>
-      <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/84d609b0-2f3d-4459-b9b7-6b3f0df73055.jpeg?oldPrompt=A serene and crystal-clear swimming pool reflecting the bright sky, surrounded by a well-maintained patio with comfortable lounge chairs, showcasing the joy and satisfaction of happy homeowners (trustworthy:1.2), suggesting relaxation and a carefree lifestyle (professional:1.1), pristine water (clean:1.3), natural sunlight, enhancing the inviting ambiance, no visible cleaning equipment">
+      <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/84d609b0-2f3d-4459-b9b7-6b3f0df73055.jpeg?oldPrompt=A serene and crystal-clear swimming pool reflecting the bright sky, surrounded by a well-maintained patio with comfortable lounge chairs, showcasing the joy and satisfaction of happy homeowners (trustworthy:1.2), suggesting relaxation and a carefree lifestyle (professional:1.1), pristine water (clean:1.3), natural sunlight, enhancing the inviting ambiance, no visible cleaning equipment" alt="Cliente satisfecho">
       <p><strong>Ana Rodríguez</strong> - Propietaria de Casa</p>
     </div>
   </section>
-
 
   <!-- Products Section -->
   <section id="products" class="products">
@@ -831,23 +963,23 @@
     <div class="product-gallery">
       <div class="product">
         <img src="https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg" alt="Tabletas de Cloro">
-        <p>1K Tabletas de Cloro  S/38.50</p>
-        <button onclick="addToCart('Tabletas de Cloro', 38.50, 'https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg')">Agregar al carrito</button>
+        <p>Tabletas de Cloro (1kg) S/38.50</p>
+        <button onclick="addToCart('Tabletas de Cloro', 38.50, 'https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg')">Agregar 1kg</button>
       </div>
       <div class="product">
         <img src="https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg" alt="Cloro Granulado">
-        <p>1K Cloro Granulado  S/20.00</p>
-        <button onclick="addToCart('Cloro Granulado', 20.00, 'https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg')">Agregar al carrito</button>
+        <p>Cloro Granulado (1kg) S/20.00</p>
+        <button onclick="addToCart('Cloro Granulado', 20.00, 'https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg')">Agregar 1kg</button>
       </div>
       <div class="product">
         <img src="https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg" alt="Sulfato de Aluminio">
-        <p>1K Sulfato de Aluminio S/7.50</p>
-        <button onclick="addToCart('Sulfato de Aluminio', 7.50, 'https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg')">Agregar al carrito</button>
+        <p>Sulfato de Aluminio (1kg) S/7.50</p>
+        <button onclick="addToCart('Sulfato de Aluminio', 7.50, 'https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg')">Agregar 1kg</button>
       </div>
       <div class="product">
         <img src="https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp" alt="Sulfato de Cobre">
-        <p>1K Sulfato de Cobre  S/26.00</p>
-        <button onclick="addToCart('Sulfato de Cobre', 26.00, 'https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp')">Agregar al carrito</button>
+        <p>Sulfato de Cobre (1kg) S/26.00</p>
+        <button onclick="addToCart('Sulfato de Cobre', 26.00, 'https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp')">Agregar 1kg</button>
       </div>
     </div>
   </section>
@@ -897,8 +1029,10 @@
       const existingItem = cart.find(item => item.name === productName);
       
       if (existingItem) {
+        // Incrementar en 1kg (1 unidad)
         existingItem.quantity++;
       } else {
+        // Agregar nuevo producto (1kg)
         cart.push({ 
           name: productName, 
           price: productPrice, 
@@ -908,7 +1042,8 @@
       }
       
       updateCart();
-      showNotification(`${productName} añadido al carrito`);
+      showNotification(`1kg de ${productName} añadido al carrito`);
+      
       // Mantener el carrito abierto después de añadir
       document.getElementById('floating-cart').style.display = 'block';
       cartVisible = true;
@@ -933,10 +1068,10 @@
           <img src="${item.image}" alt="${item.name}">
           <div class="cart-item-details">
             <p class="cart-item-name">${item.name}</p>
-            <p class="cart-item-price">S/${item.price.toFixed(2)}</p>
+            <p class="cart-item-price">S/${item.price.toFixed(2)}/kg</p>
             <div class="cart-quantity-controls">
               <button onclick="changeQuantity(${index}, -1, event)">-</button>
-              <span>${item.quantity}</span>
+              <span>${item.quantity} kg</span>
               <button onclick="changeQuantity(${index}, 1, event)">+</button>
             </div>
           </div>
@@ -960,8 +1095,10 @@
       // Detener la propagación del evento para evitar que se cierre el carrito
       event.stopPropagation();
       
+      // Cambiar la cantidad en kg
       cart[index].quantity += change;
       
+      // Si la cantidad es 0 o menos, eliminar el producto
       if (cart[index].quantity <= 0) {
         cart.splice(index, 1);
       }
@@ -1005,13 +1142,13 @@
         return;
       }
       
-      let message = "¡Hola ARENAZUL! Quiero hacer un pedido:\n\n";
+      let message = "¡Hola ARENAZUL! Quiero hacer un pedido de productos para piscina:\n\n";
       let total = 0;
       
       cart.forEach(item => {
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
-        message += `- ${item.name} (Cantidad: ${item.quantity}) - S/${itemTotal.toFixed(2)}\n`;
+        message += `- ${item.name}: ${item.quantity} kg - S/${itemTotal.toFixed(2)}\n`;
       });
       
       message += `\nTotal: S/${total.toFixed(2)}`;
@@ -1059,6 +1196,24 @@
 
     // Inicializar
     document.getElementById('floating-cart-icon').addEventListener('click', toggleCart);
+    
+    // Prevenir el desplazamiento horizontal en móvil
+    window.addEventListener('resize', function() {
+      if (window.innerWidth < 768) {
+        document.body.style.overflowX = 'hidden';
+      } else {
+        document.body.style.overflowX = 'auto';
+      }
+    });
+    
+    // Ajustar posición del carrito al desplazar
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth < 768 && cartVisible) {
+        const cartElement = document.getElementById('floating-cart');
+        cartElement.style.top = '50%';
+        cartElement.style.transform = 'translateY(-50%)';
+      }
+    });
   </script>
 </body>
 </html>
