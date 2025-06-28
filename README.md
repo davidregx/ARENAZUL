@@ -4,378 +4,427 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <style>
- 
-/* Reset and Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    /* Reset and Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #d6f0f1;
-}
+   body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #d6f0f1;
+    }
 
-/* Header Section */
-header {
-  background-color: #c7c7c2;
-  padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 15px;
-  margin: 20px;
-}
+    /* Header Section */
+   header {
+      background-color: #c7c7c2;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 15px;
+      margin: 20px;
+      position: relative;
+    }
 
-header .logo {
-  display: flex;
-  align-items: center;
-}
+  header .logo {
+      display: flex;
+      align-items: center;
+    }
 
-header .logo img {
-  background-color: transparent;
-  width: 80px; /* Ajusta el tamaño del logo */
-  height: auto;
-}
+   header .logo img {
+      background-color: transparent;
+      width: 80px;
+      height: auto;
+    }
 
-nav ul {
-  display: flex;
-  justify-content: flex-end;
-  list-style-type: none;
-  padding: 0;
-}
+   nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      padding: 0;
+    }
 
-nav ul li {
-  margin-left: 20px;
-  font-size: 15px;
-}
+   nav ul li {
+      margin-left: 20px;
+      font-size: 15px;
+    }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+   nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 
-nav ul li a:hover {
-  color: #d6f0f1;
-}
+   nav ul li a:hover {
+      color: #d6f0f1;
+    }
 
-/* Hamburguesa */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  margin-left: auto; /* Empuja la hamburguesa al extremo derecho */
-}
+    /* Icono flotante del carrito */
+   #floating-cart-icon {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      z-index: 1000;
+      background-color: #00A9E0;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
 
-.menu-toggle span {
-  background-color: white;
-  height: 4px;
-  width: 20px; /* Ajusta el tamaño del ícono */
-  margin: 4px 0;
-  border-radius: 5px;
-}
+   #floating-cart-icon:hover {
+      background-color: #ffde00;
+      transform: scale(1.1);
+    }
 
-/* Adaptación para móviles */
-@media (max-width: 768px) {
-  header {
-    padding: 10px 15px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+   #cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #ff6b6b;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .logo img {
-    width: 40px; /* Ajusta el tamaño del logo para pantallas pequeñas */
-  }
+    /* Hamburguesa */
+   .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: auto;
+    }
 
-  nav ul {
-    display: none; /* Oculta el menú en pantallas pequeñas */
-    flex-direction: column;
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px 0;
-    background-color: #363a3b;
-    border-radius: 10px;
-  }
+   .menu-toggle span {
+      background-color: white;
+      height: 4px;
+      width: 20px;
+      margin: 4px 0;
+      border-radius: 5px;
+    }
+
+    /* Adaptación para móviles */
+  @media (max-width: 768px) {
+      header {
+        padding: 10px 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+   .logo img {
+        width: 40px;
+      }
+
+   nav ul {
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #363a3b;
+        border-radius: 10px;
+      }
 
   nav ul li {
-    margin: 10px 0;
-    font-size: 14px;
-    text-align: center;
-  }
+        margin: 10px 0;
+        font-size: 14px;
+        text-align: center;
+      }
 
-  .menu-toggle {
-    display: flex; /* Muestra el ícono de hamburguesa */
-  }
+   .menu-toggle {
+        display: flex;
+      }
 
-  nav ul.open {
-    display: flex; /* Muestra el menú cuando la clase 'open' se añade */
-  }
-}
+   nav ul.open {
+        display: flex;
+      }
+      
+  #floating-cart-icon {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+    }
 
-@media (max-width: 480px) {
-  header {
-    padding: 10px 10px;
-  }
+   @media (max-width: 480px) {
+      header {
+        padding: 10px 10px;
+      }
 
   .logo img {
-    width: 35px; /* Ajusta el logo para pantallas muy pequeñas */
-  }
+        width: 35px;
+      }
 
-  nav ul li {
-    font-size: 12px;
-    margin: 8px 0;
-  }
-}
+   nav ul li {
+        font-size: 12px;
+        margin: 8px 0;
+      }
+    }
 
-/* Hero Section */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to right, #e8fbff, #d6f0f1);
-  padding: 10px 20px;
-  color: #0f172a;
-  text-align: left;
-  background-size: cover;
-  background-position: center;
-}
+    /* Hero Section */
+   .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #e8fbff, #d6f0f1);
+      padding: 10px 20px;
+      color: #0f172a;
+      text-align: left;
+      background-size: cover;
+      background-position: center;
+    }
 
-.hero-content h1 {
-  font-size: 50px;
-  margin-bottom: 0px;
-}
+   .hero-content h1 {
+      font-size: 50px;
+      margin-bottom: 0px;
+    }
 
-.hero-content p {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
+   .hero-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
 
-.hero button {
-  background-color: #0f172a;
-  padding: 15px 30px;
-  font-size: 18px;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
+   .hero button {
+      background-color: #0f172a;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-.hero button:hover {
-  background-color: #00A9E0;
-}
+   .hero button:hover {
+      background-color: #00A9E0;
+    }
 
-.hero img {
-  width: 50%;
-  border-radius: 20px 0px 30px 0px;
-}
+   .hero img {
+      width: 50%;
+      border-radius: 20px 0px 30px 0px;
+    }
 
-/* Projects Section */
-.projects {
-  padding: 20px 0;
-  background-color: white;
-  text-align: center;
-}
+    /* Projects Section */
+   .projects {
+      padding: 20px 0;
+      background-color: white;
+      text-align: center;
+    }
 
-.projects h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
+   .projects h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
 
-.project-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+  .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
-.project-gallery img {
-  width: 100%;
-  height: 250px; /* Altura fija para todas las imágenes */
-  object-fit: cover; /* Mantiene la proporción sin distorsionar */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+   .project-gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-/* Services Section */
-.services {
-  padding: 0px 30px;
-  text-align: center;
-}
+    /* Services Section */
+   .services {
+      padding: 0px 30px;
+      text-align: center;
+    }
 
+   .service-stats {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-bottom: 50px;
+    }
 
-  .service-stats {
-    display: flex;
-    flex-direction: column; /* En pantallas grandes los elementos estarán en una columna */
-    justify-content: space-around;
-    margin-bottom: 50px;
-  }
+   .stat {
+      padding: 30px;
+      width: auto;
+    }
 
-  .stat {
-    padding: 30px;
-    width: auto; /* Ajuste automático en pantallas grandes */
-  }
+   .stat h3 {
+      font-size: 48px;
+    }
 
-  .stat h3 {
-    font-size: 48px;
-  }
-
-  .stat p {
-    font-size: 18px;
-  }
-}
-/* Sección de servicios */
-section {
-    padding: 20px;
-    margin: 20px;
-}
-
-/* Título centrado */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Contenedor de servicios */
-.service {
-    display: inline-block;
-    width: 48%; /* Ajustamos el ancho para que haya espacio entre las imágenes */
-    text-align: center;
-    margin: 10px;
-    box-sizing: border-box;
-}
-
-/* Imágenes dentro de los servicios */
-.service img {
-    width: 100%;
-    height: 250px; /* Altura fija para todas las imágenes */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-    border-radius: 10px;
-}
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 768px) {
-    .service {
-        width: 38%; /* Dos imágenes por fila */
+   .stat p {
+      font-size: 18px;
     }
     
-    /* Centramos la sección */
+    /* Sección de servicios */
    section {
-        text-align: center;
+      padding: 20px;
+      margin: 20px;
     }
-}
 
+    /* Título centrado */
+   h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-/* Testimonials Section */
-.testimonials {
-  background-color: #d6f0f1;
-  text-align: center;
-}
+    /* Contenedor de servicios */
+   .service {
+      display: inline-block;
+      width: 48%;
+      text-align: center;
+      margin: 10px;
+      box-sizing: border-box;
+    }
 
-.testimonials h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.testimonial img {
+    /* Imágenes dentro de los servicios */
+  .service img {
       width: 100%;
-  border-radius: 20px 0px 30px 0px;
-}
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-.testimonial {
-  background-color: white;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  max-width: 600px;
-  margin: 0 auto;
-}
+    /* Estilos para dispositivos móviles */
+   @media (max-width: 768px) {
+      .service {
+        width: 38%;
+      }
+      
+  section {
+        text-align: center;
+      }
+    }
 
-.testimonial p {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 20px;
-}
+    /* Testimonials Section */
+   .testimonials {
+      background-color: #d6f0f1;
+      text-align: center;
+    }
 
-.testimonial strong {
-  font-size: 18px;
-  color: #00A9E0;
-}
+   .testimonials h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
 
-/* Products Section */
-.products {
-  padding: 20px 20px;
-  background-color: white;
-  text-align: center;
-}
+   .testimonial img {
+      width: 100%;
+      border-radius: 20px 0px 30px 0px;
+    }
 
-.products h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-}
+   .testimonial {
+      background-color: white;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-.product-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+   .testimonial p {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 20px;
+    }
 
-.product {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+   .testimonial strong {
+      font-size: 18px;
+      color: #00A9E0;
+    }
 
-.product img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
+    /* Products Section */
+   .products {
+      padding: 20px 20px;
+      background-color: white;
+      text-align: center;
+    }
 
-.product p {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 20px;
-}
+   .products h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
 
-.product button {
-  padding: 10px 20px;
-  background-color: #ffde00;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
+   .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
-.product button:hover {
-  background-color: #00A9E0;
-}
+   .product {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+   .product img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+   .product p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+   .product button {
+      padding: 10px 20px;
+      background-color: #ffde00;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+   .product button:hover {
+      background-color: #00A9E0;
+    }
 
     /* Floating Cart */
    #floating-cart {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
+      top: 100px;
+      right: 30px;
+      width: 350px;
       padding: 20px;
       background-color: #fff;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
       z-index: 9999;
-      max-height: 400px;
+      max-height: 500px;
       overflow-y: auto;
-      display: none; /* Inicialmente oculto */
+      display: none;
+      border: 2px solid #00A9E0;
     }
 
    #floating-cart h3 {
       margin-bottom: 20px;
       font-size: 22px;
-      color: #333;
+      color: #00A9E0;
+      text-align: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
     }
 
    #floating-cart ul {
@@ -388,9 +437,11 @@ h2 {
       align-items: center;
       margin-bottom: 15px;
       font-size: 16px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
     }
 
-  #floating-cart ul li img {
+   #floating-cart ul li img {
       width: 60px;
       height: 60px;
       margin-right: 10px;
@@ -398,206 +449,297 @@ h2 {
       border-radius: 5px;
     }
 
-  #floating-cart button {
+   .cart-item-details {
+      flex-grow: 1;
+    }
+
+  .cart-item-name {
+      font-weight: bold;
+    }
+
+   .cart-item-price {
+      color: #00A9E0;
+    }
+
+   .cart-quantity-controls {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+   .cart-quantity-controls button {
+      width: 30px;
+      height: 30px;
+      background: #00A9E0;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .cart-quantity-controls span {
+      margin: 0 10px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+   .remove-item {
+      background: none;
+      border: none;
+      color: #ff6b6b;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 20px;
+    }
+
+   .cart-total {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: right;
+      margin: 20px 0;
+      padding-top: 10px;
+      border-top: 2px solid #eee;
+    }
+
+   .cart-total span {
+      color: #00A9E0;
+    }
+
+   #checkout-btn {
       padding: 12px 20px;
+      background-color: #ffde00;
+      color: #333;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+   #checkout-btn:hover {
+      background-color: #00A9E0;
+      color: white;
+    }
+
+    /* Contact Section */
+   .contact {
+      padding: 50px 30px;
+      background-color: #d6f0f1;
+      text-align: center;
+    }
+
+   .contact h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+   .contact p {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+  .contact button {
+      padding: 15px 30px;
+      font-size: 18px;
       background-color: #00A9E0;
       color: white;
       border: none;
       cursor: pointer;
       border-radius: 5px;
-      font-size: 16px;
     }
 
-  #floating-cart button:hover {
+  .contact button:hover {
       background-color: #ffde00;
     }
 
-/* Contact Section */
-.contact {
-  padding: 50px 30px;
-  background-color: #d6f0f1;
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.contact p {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.contact button {
-  padding: 15px 30px;
-  font-size: 18px;
-  background-color: #00A9E0;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.contact button:hover {
-  background-color: #ffde00;
-}
-
-/* Footer Section */
-footer {
-  background-color: #00A9E0;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.social-media a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.social-media a:hover {
-  color: #ffde00;
-}
-
-        /* Estilos del pie de página */
+    /* Footer Section */
    footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+      background-color: #00A9E0;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+   .social-media a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+   .social-media a:hover {
+      color: #ffde00;
+    }
+
+    /* Estilos del pie de página */
+   footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
    footer a {
-            color: #fff;
-            text-decoration: none;
-        }
+      color: #fff;
+      text-decoration: none;
+    }
 
-        /* Estilos adicionales */
-  #ubicacion {
-            margin-top: 20px;
-        }
+    /* Estilos adicionales */
+   #ubicacion {
+      margin-top: 20px;
+    }
 
    #ubicacion h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
 
-        /* Estilos para el logo */
+    /* Estilos para el logo */
    .logo img {
-            width: 100px;
-        }
+      width: 100px;
+    }
 
-/* Responsividad para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column; /* Coloca la imagen y el texto en columna */
-    text-align: center;
-  }
+    /* Notification */
+   .notification {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #00A9E0;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 10000;
+      font-weight: bold;
+      display: none;
+    }
 
-  .hero img {
-    width: 80%; /* Ajusta el tamaño de la imagen */
-    margin-top: 20px;
-  }
+    /* Responsividad para pantallas más pequeñas */
+   @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  .projects .project-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Dos columnas */
-    gap: 10px;
-  }
+   .hero img {
+        width: 80%;
+        margin-top: 20px;
+      }
+
+   .projects .project-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
 
   .services .service-stats {
-    flex-direction: row; /* Coloca los elementos en columna */
-    align-items: center;
-  }
+        flex-direction: row;
+        align-items: center;
+      }
 
-  .product-gallery {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  }
+   .product-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-  .testimonial {
-    max-width: 90%; /* Ajusta el tamaño del testimonio */
-  }
+   .testimonial {
+        max-width: 90%;
+      }
 
   .contact button {
-    width: 100%; /* Hace que el botón ocupe todo el ancho */
-  }
+        width: 100%;
+      }
 
-  .product button {
-    width: 100%; /* Hace que el botón ocupe todo el ancho */
-  }
+   .product button {
+        width: 100%;
+      }
 
-  .stat {
-    width: 100%; /* Hace que los stats ocupen el 100% */
-    margin-bottom: 20px;
-  }
-}
+   .stat {
+        width: 100%;
+        margin-bottom: 20px;
+      }
 
-@media (max-width: 480px) {
-  .hero {
-    padding: 10px 15px;
-  }
+   #floating-cart {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+        top: 80px;
+      }
+    }
 
-  .hero img {
-    width: 100%; /* Hace que la imagen ocupe todo el ancho */
-  }
+   @media (max-width: 480px) {
+      .hero {
+        padding: 10px 15px;
+      }
+
+   .hero img {
+        width: 100%;
+      }
 
   .projects h2 {
-    font-size: 28px; /* Ajusta el tamaño del título */
-  }
+        font-size: 28px;
+      }
 
-  .services h2, .testimonials h2, .products h2, .contact h2 {
-    font-size: 28px; /* Ajusta el tamaño de los títulos */
-  }
+   .services h2, .testimonials h2, .products h2, .contact h2 {
+        font-size: 28px;
+      }
 
-  .services p, .testimonials p, .products p, .contact p {
-    font-size: 16px; /* Ajusta el tamaño del texto */
-  }
+   .services p, .testimonials p, .products p, .contact p {
+        font-size: 16px;
+      }
 
-  .services button, .testimonial button, .contact button {
-    font-size: 16px; /* Ajusta el tamaño del botón */
-    padding: 12px 24px;
-  }
+   .services button, .testimonial button, .contact button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
 
-  .stat h3 {
-    font-size: 36px; /* Ajusta el tamaño de los números */
-  }
+   .stat h3 {
+        font-size: 36px;
+      }
 
-  .testimonial {
-    padding: 20px;
-  }
+   .testimonial {
+        padding: 20px;
+      }
 
-  .product-gallery {
-    grid-template-columns: 1fr; /* Una columna */
-  }
+   .product-gallery {
+        grid-template-columns: 1fr;
+      }
 
-  .product {
-    padding: 15px; /* Reduce el padding */
-  }
-}
-  </style></head>
+   .product {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
 <body>
+  <!-- Icono flotante del carrito -->
+  <div id="floating-cart-icon">
+    🛒
+    <div id="cart-badge">0</div>
+  </div>
+  
   <!-- Header Section -->
   <header>
     <div class="logo">
-      <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo"> <!-- Reemplaza con la URL de tu logo -->
+      <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo">
     </div>
-    <!-- Agregar el ícono del carrito en el menú -->
-        <li><button class="cart-icon" onclick="toggleCart()">🛒</button></li>
-       <div class="menu-toggle">
-    <span></span>
-    <span></span>
-  </div>
-          <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
       <ul>
         <li><a href="#home">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#projects">Proyectos</a></li>
         <li><a href="#testimonials">Testimonios</a></li>
         <li><a href="#contact">Contacto</a></li>
-      </ul>
       </ul>
     </nav>
   </header>
@@ -610,7 +752,7 @@ footer {
       <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Ofrecemos servicios de limpieza y cuidado para propietarios de casas.</p>
       <button onclick="window.location.href='https://tulink.com';">Contáctenos Hoy</button>
     </div>
-    <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL"> <!-- Reemplaza con la URL de tu imagen -->
+    <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
     
      <!-- Services Section -->
   <section id="services" class="services">
@@ -643,7 +785,7 @@ footer {
             <h3>Mantenimiento semanal de piscina</h3>
         </div>
         <div class="service">
-            <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no">
+            <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
             <h3>Limpieza intensiva de piscina</h3>
         </div>
         <div class="service">
@@ -714,8 +856,12 @@ footer {
   <div id="floating-cart">
     <h3>Carrito de Compras</h3>
     <ul id="cart-list"></ul>
-    <button onclick="checkout()">Realizar pedido</button>
+    <div class="cart-total">Total: <span id="cart-total">S/0.00</span></div>
+    <button id="checkout-btn" onclick="checkout()">Realizar pedido</button>
   </div>
+  
+  <!-- Notification -->
+  <div class="notification" id="notification"></div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -724,17 +870,14 @@ footer {
      <button onclick="window.location.href='https://tulink.com';">Solicitar Presupuesto</button>
   </section>
   
-
-
-    <!-- Sección de ubicación -->
- <footer>
-        <div id="ubicacion">
-            <h3>Ubicación</h3>
-            <p>A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
-            <p>Contacto: <a href="mailto:davidregx@gmail.com">davidregx@gmail.com</a></p>
-        </div>
-    </footer>
-
+  <!-- Sección de ubicación -->
+  <footer>
+    <div id="ubicacion">
+      <h3>Ubicación</h3>
+      <p>A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
+      <p>Contacto: <a href="mailto:davidregx@gmail.com">davidregx@gmail.com</a></p>
+    </div>
+  </footer>
 
   <!-- Footer Section -->
   <footer>
@@ -742,79 +885,180 @@ footer {
       <p>&copy; Piscinas Impecables 2024, Todos los derechos reservados</p>
     </div>
   </footer>
- <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul');
 
-  menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open'); // Alterna la visibilidad del menú
-      menuToggle.classList.toggle('open'); // Opcional: Cambia el estilo del ícono de hamburguesa
-    });
-    
-    
- let cart = [];
+  <script>
+    // Variables globales
+    let cart = [];
+    let cartVisible = false;
 
- function addToCart(productName, productPrice, productImage) {
-      cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
-      displayCart();
+    // Funciones del carrito
+    function addToCart(productName, productPrice, productImage) {
+      // Verificar si el producto ya está en el carrito
+      const existingItem = cart.find(item => item.name === productName);
+      
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ 
+          name: productName, 
+          price: productPrice, 
+          image: productImage, 
+          quantity: 1 
+        });
+      }
+      
+      updateCart();
+      showNotification(`${productName} añadido al carrito`);
+      // Mantener el carrito abierto después de añadir
+      document.getElementById('floating-cart').style.display = 'block';
+      cartVisible = true;
     }
 
- function displayCart() {
+    function updateCart() {
       const cartList = document.getElementById('cart-list');
-      const floatingCart = document.getElementById('floating-cart');
+      const cartTotalElement = document.getElementById('cart-total');
+      const cartBadge = document.getElementById('cart-badge');
+      let total = 0;
+      let itemCount = 0;
+      
       cartList.innerHTML = '';
-
- cart.forEach((item, index) => {
-  const li = document.createElement('li');
-   li.innerHTML = `
-  <img src="${item.image}" alt="${item.name}"> 
-  ${item.name} - S/${item.price} x ${item.quantity} 
- <button onclick="increaseQuantity(${index})">+</button>
-  <button onclick="decreaseQuantity(${index})">-</button>
-  <button onclick="removeFromCart(${index})">Eliminar</button>
+      
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        itemCount += item.quantity;
+        
+        li.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-item-details">
+            <p class="cart-item-name">${item.name}</p>
+            <p class="cart-item-price">S/${item.price.toFixed(2)}</p>
+            <div class="cart-quantity-controls">
+              <button onclick="changeQuantity(${index}, -1, event)">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="changeQuantity(${index}, 1, event)">+</button>
+            </div>
+          </div>
+          <button class="remove-item" onclick="removeFromCart(${index}, event)">×</button>
         `;
+        
         cartList.appendChild(li);
       });
-
-   floatingCart.style.display = cart.length > 0 ? 'block' : 'none';
-    }
-
-  function increaseQuantity(index) {
-      cart[index].quantity++;
-      displayCart();
-    }
-
-   function decreaseQuantity(index) {
-      if (cart[index].quantity > 1) {
-        cart[index].quantity--;
+      
+      cartTotalElement.textContent = `S/${total.toFixed(2)}`;
+      cartBadge.textContent = itemCount;
+      
+      // Mostrar carrito si hay productos
+      if (cart.length > 0 && !cartVisible) {
+        document.getElementById('floating-cart').style.display = 'block';
+        cartVisible = true;
       }
-      displayCart();
     }
 
-  function removeFromCart(index) {
+    function changeQuantity(index, change, event) {
+      // Detener la propagación del evento para evitar que se cierre el carrito
+      event.stopPropagation();
+      
+      cart[index].quantity += change;
+      
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      
+      updateCart();
+    }
+
+    function removeFromCart(index, event) {
+      // Detener la propagación del evento para evitar que se cierre el carrito
+      event.stopPropagation();
+      
       cart.splice(index, 1);
-      displayCart();
+      updateCart();
+      
+      if (cart.length === 0) {
+        document.getElementById('floating-cart').style.display = 'none';
+        cartVisible = false;
+      }
     }
 
-  function checkout() {
-      let message = 'Pedido a través de ARENAZUL:\n';
+    function toggleCart() {
+      const cartElement = document.getElementById('floating-cart');
+      
+      if (cart.length === 0) {
+        showNotification("El carrito está vacío");
+        return;
+      }
+      
+      if (cartElement.style.display === 'block') {
+        cartElement.style.display = 'none';
+        cartVisible = false;
+      } else {
+        cartElement.style.display = 'block';
+        cartVisible = true;
+      }
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        showNotification("El carrito está vacío");
+        return;
+      }
+      
+      let message = "¡Hola ARENAZUL! Quiero hacer un pedido:\n\n";
+      let total = 0;
+      
       cart.forEach(item => {
-        message += `${item.name} - S/${item.price} x ${item.quantity}\n`;
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        message += `- ${item.name} (Cantidad: ${item.quantity}) - S/${itemTotal.toFixed(2)}\n`;
       });
-      const whatsappUrl = `https://wa.me/573005555555?text=${encodeURIComponent(message)}`;
+      
+      message += `\nTotal: S/${total.toFixed(2)}`;
+      
+      const whatsappUrl = `https://wa.me/51999999999?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
     }
 
-   function toggleCart() {
-      const floatingCart = document.getElementById('floating-cart');
-      floatingCart.style.display = floatingCart.style.display === 'none' ? 'block' : 'none';
+    // Funciones auxiliares
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.style.display = 'block';
+      
+      setTimeout(() => {
+        notification.style.transition = 'opacity 0.5s';
+        notification.style.opacity = '0';
+        setTimeout(() => {
+          notification.style.display = 'none';
+          notification.style.opacity = '1';
+        }, 500);
+      }, 3000);
     }
 
-  function toggleMenu() {
+    // Menú móvil
+    function toggleMenu() {
       const navMenu = document.querySelector('nav ul');
       navMenu.classList.toggle('open');
     }
-  </script>
 
+    // Cerrar carrito al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+      const cartElement = document.getElementById('floating-cart');
+      const cartIcon = document.getElementById('floating-cart-icon');
+      
+      // Verificar si el clic fue fuera del carrito y fuera del icono del carrito
+      if (cartVisible && 
+          !cartElement.contains(event.target) && 
+          event.target !== cartIcon &&
+          !cartIcon.contains(event.target)) {
+        cartElement.style.display = 'none';
+        cartVisible = false;
+      }
+    });
+
+    // Inicializar
+    document.getElementById('floating-cart-icon').addEventListener('click', toggleCart);
+  </script>
 </body>
 </html>
