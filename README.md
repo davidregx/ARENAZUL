@@ -831,7 +831,7 @@
     <div class="product-gallery">
       <div class="product">
         <img src="https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg" alt="Tabletas de Cloro">
-        <p>Tabletas de Cloro  S/38.50</p>
+        <p>1K Tabletas de Cloro  S/38.50</p>
         <button onclick="addToCart('Tabletas de Cloro', 38.50, 'https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg')">Agregar al carrito</button>
       </div>
       <div class="product">
