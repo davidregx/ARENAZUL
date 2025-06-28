@@ -658,6 +658,7 @@
       }
       
   .service {
+        flex-direction: row;
         display: block;
         width: 100%;
         margin: 15px 0;
@@ -890,24 +891,7 @@
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
   </section>
-  
-  <!-- Services Stats Section -->
-  <section id="services" class="services">
-    <div class="service-stats">
-      <div class="stat">
-        <h3>50+</h3>
-        <p>Clientes Felices</p>
-      </div>
-      <div class="stat">
-        <h3>7</h3>
-        <p>AÑOS De Experiencia</p>
-      </div>
-      <div class="stat">
-        <h3>3+</h3>
-        <p>Personal Dedicado</p>
-      </div>
-    </div>
-  </section>
+
   
   <!-- Sección de Servicios -->
   <section id="servicios">
