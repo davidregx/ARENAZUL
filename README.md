@@ -63,6 +63,44 @@
    nav ul li a:hover {
       color: #d6f0f1;
     }
+/* Estilo para el título en el encabezado */
+.header-title {
+  flex: 1;
+  text-align: center;
+  color: #ffffff; /* Color blanco para que se vea bien sobre el fondo */
+  font-size: 24px; /* Tamaño del texto */
+  font-weight: bold; /* Hacer que el título sea más prominente */
+}
+
+header {
+  background-color: #c7c7c2;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin: 20px;
+  position: relative;
+  flex-wrap: wrap; /* Asegura que el contenido se ajuste bien */
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  background-color: transparent;
+  width: 80px;
+  height: auto;
+}
+/* Ajuste del tamaño del título para dispositivos móviles */
+@media (max-width: 768px) {
+  .header-title h1 {
+    font-size: 18px;  /* Disminuir el tamaño del título en dispositivos móviles */
+  }
+}
 
     /* Icono flotante del carrito */
    #floating-cart-icon {
@@ -886,6 +924,10 @@
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
+     <!-- Título dentro del header -->
+  <div class="header-title">
+    <h1>ARENAZUL: Mantenimiento de Piscinas</h1>
+  </div>
   </header>
 
   <!-- Hero Section -->
