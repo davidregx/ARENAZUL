@@ -63,6 +63,40 @@
    nav ul li a:hover {
       color: #d6f0f1;
     }
+
+    /* Contenedor para logo y título */
+.header-container {
+  display: flex;
+  align-items: center;  /* Alinea el logo y título verticalmente */
+  justify-content: space-between; /* Espacio entre el logo y el título */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+/* Estilo para el logo */
+.logo img {
+  width: 80px;  /* Tamaño del logo */
+  height: auto;
+  background-color: transparent;
+}
+
+/* Estilo para el título */
+.header-title h1 {
+  font-size: 24px;  /* Tamaño del texto */
+  color: #ffffff;  /* Color blanco para el texto */
+  margin-left: 20px;  /* Espacio entre el logo y el título */
+  font-weight: bold;  /* Hacer que el título sea más prominente */
+  text-transform: uppercase;  /* Poner el título en mayúsculas */
+}
+
+/* Ajuste para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .header-title h1 {
+    font-size: 18px;  /* Reducir el tamaño en dispositivos móviles */
+    text-align: center;  /* Centrar el texto en móviles si es necesario */
+    margin-left: 10px;  /* Ajustar margen si es necesario */
+  }
+}
+
 /* Estilo para el título en el encabezado */
 .header-title {
   flex: 1;
@@ -906,36 +940,30 @@ header .logo img {
     <div id="cart-badge">0</div>
   </div>
   
-  <!-- Header Section -->
-  <header>
+<header>
+  <div class="header-container">
     <div class="logo">
       <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo">
     </div>
-
-                 <!-- Título dentro del header -->
-  <div class="header-title">
-    <h1>ARENAZUL</h1>
-  </div> 
-  
-  <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-    </div> 
-             <!-- Título dentro del header -->
-  <div class="header-title">
-    <h1>ARENAZUL</h1>
+    <div class="header-title">
+      <h1>ARENAZUL: Mantenimiento de Piscinas</h1>
+    </div>
   </div>
-    <nav>
-      <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#testimonials">Testimonios</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#testimonials">Testimonios</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
 
-  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
