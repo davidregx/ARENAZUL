@@ -911,14 +911,14 @@ header .logo img {
     <div class="logo">
       <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo">
     </div>
-         <!-- Título dentro del header -->
-  <div class="header-title">
-    <h1>ARENAZUL</h1>
-  </div>
     <div class="menu-toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>
-    </div>
+    </div> 
+             <!-- Título dentro del header -->
+  <div class="header-title">
+    <h1>ARENAZUL</h1>
+  </div>
     <nav>
       <ul>
         <li><a href="#home">Inicio</a></li>
