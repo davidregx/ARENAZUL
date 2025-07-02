@@ -952,6 +952,7 @@ header .logo img {
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
     <span></span>
+    <span></span>
   </div>
   <nav>
     <ul>
