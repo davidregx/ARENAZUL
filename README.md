@@ -300,7 +300,7 @@ header .logo img {
 
     /* Contenedor de servicios */
    .service {
-      display: inline-block;
+      display: row;
       width: 48%;
       text-align: center;
       margin: 10px;
