@@ -768,7 +768,7 @@
     /* Carrito para móvil - centrado verticalmente */
   @media (max-width: 768px) {
       #floating-cart {
-        width: 90%;
+        width: 200%;
         max-width: 350px;
         padding: 15px;
         top: 50%;
