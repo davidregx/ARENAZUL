@@ -769,7 +769,7 @@
   @media (max-width: 768px) {
       #floating-cart {
         width: 200%;
-        max-width: 350px;
+        max-width: 450px;
         padding: 15px;
         top: 50%;
         right: 15px;
