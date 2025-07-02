@@ -314,6 +314,58 @@ header .logo img {
       object-fit: cover;
       border-radius: 10px;
     }
+/* Contenedor de servicios */
+#servicios {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Diseño de Grid para servicios en escritorio */
+#servicios .service {
+  display: inline-block;
+  width: 100%; /* Por defecto, los servicios ocuparán toda la fila */
+  text-align: center;
+  margin: 10px 0;
+}
+
+#servicios .service img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Layout de 3 columnas en pantallas grandes (escritorio) */
+@media (min-width: 1024px) {
+  #servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px; /* Espacio entre los servicios */
+  }
+
+  #servicios .service {
+    width: auto; /* Dejar que el grid maneje el tamaño */
+  }
+}
+
+/* Ajuste para pantallas más pequeñas (tabletas o móviles) */
+@media (max-width: 1024px) {
+  #servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+    gap: 20px; /* Espacio entre los servicios */
+  }
+}
+
+/* Ajuste para pantallas muy pequeñas (móviles) */
+@media (max-width: 768px) {
+  #servicios {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    gap: 20px; /* Espacio entre los servicios */
+  }
+}
 
     /* Testimonials Section */
    .testimonials {
