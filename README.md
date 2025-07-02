@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <meta name="viewport" content="width=device-width, initial-scale=0.6">
   <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <style>
     /* Reset and Global Styles */
