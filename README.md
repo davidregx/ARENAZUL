@@ -777,6 +777,15 @@
         max-height: 80vh;
       }
     }
+    
+    /* Aumentar tamaño del icono flotante del carrito en móviles */
+@media (max-width: 768px) {
+  #floating-cart-icon {
+    width: 80px;  /* Aumentar tamaño del icono */
+    height: 80px;  /* Aumentar tamaño del icono */
+    font-size: 36px;  /* Aumentar tamaño del ícono dentro */
+  }
+}
 
     /* Footer para móvil */
  @media (max-width: 768px) {
