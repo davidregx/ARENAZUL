@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -560,7 +561,7 @@
     }
     
     /* Header para móvil */
- @media (max-width: 768px) {
+   @media (max-width: 768px) {
       header {
         padding: 10px 15px;
         flex-direction: row;
@@ -569,7 +570,7 @@
         margin: 10px;
       }
 
-  .logo img {
+   .logo img {
         width: 50px;
       }
 
@@ -593,7 +594,7 @@
         text-align: center;
       }
 
-   nav ul li a {
+  nav ul li a {
         font-size: 1rem;
         padding: 8px 0;
         display: block;
@@ -617,7 +618,7 @@
     }
 
     /* Hero section para móvil */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .hero {
         flex-direction: column;
         text-align: center;
@@ -625,12 +626,12 @@
         margin: 10px;
       }
 
-   .hero-content h1 {
+  .hero-content h1 {
         font-size: 2rem;
         line-height: 1.2;
       }
 
-   .hero-content p {
+  .hero-content p {
         font-size: 1.1rem;
         margin-bottom: 20px;
       }
@@ -643,7 +644,7 @@
         margin: 10px 0;
       }
 
-   .hero img {
+  .hero img {
         width: 100%;
         border-radius: 10px;
         margin-top: 20px;
@@ -658,13 +659,12 @@
       }
       
   .service {
-        flex-direction: row;
-        display: block;
+        display: row;
         width: 100%;
-        margin: 15px 0;
+        margin: 5px 0;
       }
       
-   .service img {
+  .service img {
         height: 200px;
       }
     }
@@ -676,7 +676,7 @@
         padding: 15px 0;
       }
       
-   .projects h2 {
+  .projects h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
       }
@@ -686,7 +686,7 @@
         gap: 10px;
       }
       
-   .project-gallery img {
+  .project-gallery img {
         height: 180px;
       }
     }
@@ -724,7 +724,7 @@
         margin-bottom: 20px;
       }
       
-   .product-gallery {
+  .product-gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
@@ -733,7 +733,7 @@
         padding: 15px;
       }
       
-  .product p {
+   .product p {
         font-size: 1.1rem;
       }
       
@@ -743,17 +743,17 @@
     }
 
     /* Contacto para móvil */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .contact {
         margin: 10px;
         padding: 30px 15px;
       }
       
-   .contact h2 {
+  .contact h2 {
         font-size: 1.8rem;
       }
       
-   .contact p {
+  .contact p {
         font-size: 1.1rem;
       }
       
@@ -766,7 +766,7 @@
     }
 
     /* Carrito para móvil - centrado verticalmente */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       #floating-cart {
         width: 90%;
         max-width: 350px;
@@ -777,8 +777,7 @@
         max-height: 80vh;
       }
     }
-    
-    /* Aumentar tamaño del icono flotante del carrito en móviles */
+/* Aumentar tamaño del icono flotante del carrito en móviles */
 @media (max-width: 768px) {
   #floating-cart-icon {
     width: 80px;  /* Aumentar tamaño del icono */
@@ -788,7 +787,7 @@
 }
 
     /* Footer para móvil */
- @media (max-width: 768px) {
+  @media (max-width: 768px) {
       footer {
         padding: 15px;
       }
@@ -803,13 +802,13 @@
     }
 
     /* Estadísticas para móvil */
- @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .services {
         margin: 10px;
         padding: 0 15px;
       }
       
-  .service-stats {
+   .service-stats {
         flex-direction: row;
         flex-wrap: wrap;
         margin-bottom: 30px;
@@ -821,7 +820,7 @@
         min-width: 120px;
       }
       
-  .stat h3 {
+   .stat h3 {
         font-size: 2rem;
       }
       
@@ -840,7 +839,7 @@
     }
 
     /* Ajustes para pantallas muy pequeñas */
-  @media (max-width: 480px) {
+   @media (max-width: 480px) {
       .hero-content h1 {
         font-size: 1.8rem;
       }
@@ -900,7 +899,24 @@
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
   </section>
-
+  
+  <!-- Services Stats Section -->
+  <section id="services" class="services">
+    <div class="service-stats">
+      <div class="stat">
+        <h3>50+</h3>
+        <p>Clientes Felices</p>
+      </div>
+      <div class="stat">
+        <h3>7</h3>
+        <p>AÑOS De Experiencia</p>
+      </div>
+      <div class="stat">
+        <h3>3+</h3>
+        <p>Personal Dedicado</p>
+      </div>
+    </div>
+  </section>
   
   <!-- Sección de Servicios -->
   <section id="servicios">
@@ -1058,6 +1074,7 @@
         itemCount += item.quantity;
         
         li.innerHTML = `
+
           <img src="${item.image}" alt="${item.name}">
           <div class="cart-item-details">
             <p class="cart-item-name">${item.name}</p>
@@ -1070,7 +1087,7 @@
           </div>
           <button class="remove-item" onclick="removeFromCart(${index}, event)">×</button>
         `;
-        
+
         cartList.appendChild(li);
       });
       
