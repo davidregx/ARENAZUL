@@ -969,7 +969,6 @@ header .logo img {
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>ARENAZUL</h1>
       <h1>Su Piscina Siempre Limpia</h1>
       <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Ofrecemos servicios de limpieza y cuidado para propietarios de casas.</p>
       <button onclick="window.location.href='https://tulink.com';">Contáctenos Hoy</button>
