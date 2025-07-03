@@ -1,8 +1,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.6">
-  <title>ARENAZUL: Mantenimiento de Piscinas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARENAZUL: Mantenimiento Profesional de Piscinas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* Reset and Global Styles */
     * {
@@ -30,7 +31,7 @@
       position: relative;
     }
 
-  header .logo {
+   header .logo {
       display: flex;
       align-items: center;
     }
@@ -65,76 +66,77 @@
     }
 
     /* Contenedor para logo y título */
-.header-container {
-  display: flex;
-  align-items: center;  /* Alinea el logo y título verticalmente */
-  justify-content: space-between; /* Espacio entre el logo y el título */
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
-}
+   .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
 
-/* Estilo para el logo */
-.logo img {
-  width: 80px;  /* Tamaño del logo */
-  height: auto;
-  background-color: transparent;
-}
+    /* Estilo para el logo */
+  .logo img {
+      width: 80px;
+      height: auto;
+      background-color: transparent;
+    }
 
-/* Estilo para el título */
-.header-title h1 {
-  font-size: 24px;  /* Tamaño del texto */
-  color: #ffffff;  /* Color blanco para el texto */
-  margin-left: 20px;  /* Espacio entre el logo y el título */
-  font-weight: bold;  /* Hacer que el título sea más prominente */
-  text-transform: uppercase;  /* Poner el título en mayúsculas */
-}
-
-/* Ajuste para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
+    /* Estilo para el título */
   .header-title h1 {
-    font-size: 18px;  /* Reducir el tamaño en dispositivos móviles */
-    text-align: center;  /* Centrar el texto en móviles si es necesario */
-    margin-left: 10px;  /* Ajustar margen si es necesario */
-  }
-}
+      font-size: 24px;
+      color: #ffffff;
+      margin-left: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
 
-/* Estilo para el título en el encabezado */
-.header-title {
-  flex: 1;
-  text-align: center;
-  color: #ffffff; /* Color blanco para que se vea bien sobre el fondo */
-  font-size: 24px; /* Tamaño del texto */
-  font-weight: bold; /* Hacer que el título sea más prominente */
-}
+    /* Ajuste para pantallas pequeñas (móviles) */
+   @media (max-width: 768px) {
+      .header-title h1 {
+        font-size: 18px;
+        text-align: center;
+        margin-left: 10px;
+      }
+    }
 
-header {
-  background-color: #c7c7c2;
-  padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 15px;
-  margin: 20px;
-  position: relative;
-  flex-wrap: wrap; /* Asegura que el contenido se ajuste bien */
-}
+    /* Estilo para el título en el encabezado */
+   .header-title {
+      flex: 1;
+      text-align: center;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-header .logo {
-  display: flex;
-  align-items: center;
-}
+  header {
+      background-color: #c7c7c2;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 15px;
+      margin: 20px;
+      position: relative;
+      flex-wrap: wrap;
+    }
 
-header .logo img {
-  background-color: transparent;
-  width: 80px;
-  height: auto;
-}
-/* Ajuste del tamaño del título para dispositivos móviles */
-@media (max-width: 768px) {
-  .header-title h1 {
-    font-size: 18px;  /* Disminuir el tamaño del título en dispositivos móviles */
-  }
-}
+   header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+   header .logo img {
+      background-color: transparent;
+      width: 80px;
+      height: auto;
+    }
+    
+    /* Ajuste del tamaño del título para dispositivos móviles */
+   @media (max-width: 768px) {
+      .header-title h1 {
+        font-size: 18px;
+      }
+    }
 
     /* Icono flotante del carrito */
    #floating-cart-icon {
@@ -175,6 +177,31 @@ header .logo img {
       justify-content: center;
       align-items: center;
     }
+    
+    /* Icono de WhatsApp flotante */
+   #whatsapp-icon {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+   #whatsapp-icon:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
 
     /* Hamburguesa */
    .menu-toggle {
@@ -210,7 +237,7 @@ header .logo img {
       margin-bottom: 0px;
     }
 
-   .hero-content p {
+  .hero-content p {
       font-size: 20px;
       margin-bottom: 30px;
     }
@@ -241,18 +268,18 @@ header .logo img {
       text-align: center;
     }
 
-   .projects h2 {
+  .projects h2 {
       font-size: 36px;
       margin-bottom: 40px;
     }
 
-  .project-gallery {
+   .project-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-   .project-gallery img {
+  .project-gallery img {
       width: 100%;
       height: 250px;
       object-fit: cover;
@@ -273,7 +300,7 @@ header .logo img {
       margin-bottom: 50px;
     }
 
-   .stat {
+  .stat {
       padding: 30px;
       width: auto;
     }
@@ -286,104 +313,95 @@ header .logo img {
       font-size: 18px;
     }
     
-    /* Sección de servicios */
-   section {
-      padding: 20px;
-      margin: 20px;
-    }
-
-    /* Título centrado */
-   h2 {
+    /* Sección de servicios - ESTILOS MEJORADOS */
+   .section-title {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 60px 0 40px;
+      color: #0077B6;
+      position: relative;
+      font-size: 36px;
     }
 
-    /* Contenedor de servicios */
-   .service {
-      display: row;
-      width: 48%;
-      text-align: center;
-      margin: 10px;
-      box-sizing: border-box;
+  .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #FFDE00;
+      border-radius: 2px;
     }
 
-    /* Imágenes dentro de los servicios */
-  .service img {
+   .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 40px 40px;
+    }
+
+   .service-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+  .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+   .service-image {
+      height: 220px;
+      overflow: hidden;
+    }
+
+  .service-image img {
       width: 100%;
-      height: 250px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 10px;
+      transition: transform 0.5s ease;
     }
-/* Contenedor de servicios */
-#servicios {
-  padding: 20px;
-  text-align: center;
-}
 
-/* Diseño de Grid para servicios en escritorio */
-#servicios .service {
-  display: inline-block;
-  width: 100%; /* Por defecto, los servicios ocuparán toda la fila */
-  text-align: center;
-  margin: 10px 0;
-}
+   .service-card:hover .service-image img {
+      transform: scale(1.05);
+    }
 
-#servicios .service img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
+  .service-content {
+      padding: 25px;
+    }
 
-/* Layout de 3 columnas en pantallas grandes (escritorio) */
-@media (min-width: 1024px) {
-  #servicios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    gap: 20px; /* Espacio entre los servicios */
-  }
+   .service-content h3 {
+      color: #0077B6;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
 
-  #servicios .service {
-    width: auto; /* Dejar que el grid maneje el tamaño */
-  }
-}
-
-/* Ajuste para pantallas más pequeñas (tabletas o móviles) */
-@media (max-width: 1024px) {
-  #servicios {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
-    gap: 20px; /* Espacio entre los servicios */
-  }
-}
-
-/* Ajuste para pantallas muy pequeñas (móviles) */
-@media (max-width: 768px) {
-  #servicios {
-    display: grid;
-    grid-template-columns: 1fr; /* 1 columna en móviles */
-    gap: 20px; /* Espacio entre los servicios */
-  }
-}
-
+  .service-content p {
+      color: #555;
+      line-height: 1.8;
+    }
+    
     /* Testimonials Section */
    .testimonials {
       background-color: #d6f0f1;
       text-align: center;
     }
 
-   .testimonials h2 {
+  .testimonials h2 {
       font-size: 36px;
       margin-bottom: 30px;
     }
 
-   .testimonial img {
+  .testimonial img {
       width: 100%;
       border-radius: 20px 0px 30px 0px;
     }
 
-   .testimonial {
+  .testimonial {
       background-color: white;
       padding: 10px;
       border-radius: 20px;
@@ -392,7 +410,7 @@ header .logo img {
       margin: 0 auto;
     }
 
-   .testimonial p {
+  .testimonial p {
       font-size: 20px;
       color: #555;
       margin-bottom: 20px;
@@ -415,7 +433,7 @@ header .logo img {
       margin-bottom: 40px;
     }
 
-   .product-gallery {
+  .product-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -454,7 +472,7 @@ header .logo img {
     }
 
     /* Floating Cart */
-   #floating-cart {
+  #floating-cart {
       position: fixed;
       top: 100px;
       right: 30px;
@@ -501,7 +519,7 @@ header .logo img {
       border-radius: 5px;
     }
 
-   .cart-item-details {
+  .cart-item-details {
       flex-grow: 1;
     }
 
@@ -533,13 +551,13 @@ header .logo img {
       align-items: center;
     }
 
-  .cart-quantity-controls span {
+   .cart-quantity-controls span {
       margin: 0 10px;
       min-width: 20px;
       text-align: center;
     }
 
-   .remove-item {
+  .remove-item {
       background: none;
       border: none;
       color: #ff6b6b;
@@ -579,82 +597,117 @@ header .logo img {
       color: white;
     }
 
-    /* Contact Section */
+    /* Contact Section - ESTILOS MEJORADOS */
    .contact {
-      padding: 50px 30px;
-      background-color: #d6f0f1;
+      padding: 80px 40px;
+      background: linear-gradient(135deg, #0077B6, #00A9E0);
+      color: white;
       text-align: center;
     }
 
    .contact h2 {
       font-size: 36px;
       margin-bottom: 30px;
-    }
-
-   .contact p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-  .contact button {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #00A9E0;
       color: white;
+    }
+
+  .contact p {
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+  .contact-button {
+      padding: 18px 50px;
+      font-size: 18px;
+      background-color: #FFDE00;
+      color: #333;
       border: none;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
-  .contact button:hover {
-      background-color: #ffde00;
+  .contact-button:hover {
+      background-color: #ffc800;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    /* Footer Section */
+    /* Footer Section - ESTILOS MEJORADOS */
    footer {
-      background-color: #00A9E0;
+      background: #0f172a;
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      padding: 50px 40px 30px;
     }
 
-   .social-media a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
+   .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
-   .social-media a:hover {
-      color: #ffde00;
+   .footer-section h3 {
+      color: #FFDE00;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
     }
 
-    /* Estilos del pie de página */
-   footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
+   .footer-section p {
+      margin-bottom: 15px;
+      line-height: 1.8;
     }
 
-   footer a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    /* Estilos adicionales */
-   #ubicacion {
+   .contact-info {
       margin-top: 20px;
     }
 
-   #ubicacion h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
+   .contact-info p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
     }
 
-    /* Estilos para el logo */
-   .logo img {
-      width: 100px;
+   .contact-info i {
+      margin-right: 12px;
+      color: #00A9E0;
+      width: 20px;
+    }
+
+   .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+   .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #1e293b;
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+   .social-links a:hover {
+      background: #00A9E0;
+      transform: translateY(-3px);
+    }
+
+   .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #334155;
+      font-size: 0.9rem;
+      color: #94a3b8;
     }
 
     /* Notification */
@@ -693,7 +746,7 @@ header .logo img {
         margin: 10px;
       }
 
-   .logo img {
+  .logo img {
         width: 50px;
       }
 
@@ -717,13 +770,13 @@ header .logo img {
         text-align: center;
       }
 
-  nav ul li a {
+   nav ul li a {
         font-size: 1rem;
         padding: 8px 0;
         display: block;
       }
 
-  .menu-toggle {
+   .menu-toggle {
         display: flex;
       }
 
@@ -731,17 +784,23 @@ header .logo img {
         display: flex;
       }
       
-  #floating-cart-icon {
+   #floating-cart-icon {
         top: 20px;
         right: 20px;
         width: 40px;
         height: 40px;
         font-size: 18px;
       }
+      
+  #whatsapp-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
     }
 
     /* Hero section para móvil */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .hero {
         flex-direction: column;
         text-align: center;
@@ -759,7 +818,7 @@ header .logo img {
         margin-bottom: 20px;
       }
 
-   .hero button {
+  .hero button {
         padding: 12px 25px;
         font-size: 1rem;
         width: 100%;
@@ -767,7 +826,7 @@ header .logo img {
         margin: 10px 0;
       }
 
-  .hero img {
+   .hero img {
         width: 100%;
         border-radius: 10px;
         margin-top: 20px;
@@ -781,14 +840,12 @@ header .logo img {
         padding: 15px;
       }
       
-  .service {
-        display: row;
-        width: 100%;
-        margin: 5px 0;
+  .services-container {
+        padding: 0 15px;
       }
       
-  .service img {
-        height: 200px;
+   .service-card {
+        margin-bottom: 20px;
       }
     }
 
@@ -804,39 +861,39 @@ header .logo img {
         margin-bottom: 20px;
       }
       
-   .project-gallery {
+  .project-gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
       
-  .project-gallery img {
+   .project-gallery img {
         height: 180px;
       }
     }
 
     /* Testimonios para móvil */
-   @media (max-width: 768px) {
+ @media (max-width: 768px) {
       .testimonials {
         margin: 10px;
         padding: 15px;
       }
       
-   .testimonials h2 {
+  .testimonials h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
       }
       
-   .testimonial {
+  .testimonial {
         padding: 15px;
       }
       
-   .testimonial p {
+  .testimonial p {
         font-size: 1.1rem;
       }
     }
 
     /* Productos para móvil - 2 en 2 */
-   @media (max-width: 768px) {
+ @media (max-width: 768px) {
       .products {
         margin: 10px;
         padding: 15px;
@@ -852,11 +909,11 @@ header .logo img {
         gap: 10px;
       }
       
-   .product {
+  .product {
         padding: 15px;
       }
       
-   .product p {
+  .product p {
         font-size: 1.1rem;
       }
       
@@ -866,21 +923,21 @@ header .logo img {
     }
 
     /* Contacto para móvil */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .contact {
         margin: 10px;
         padding: 30px 15px;
       }
       
-  .contact h2 {
+   .contact h2 {
         font-size: 1.8rem;
       }
       
-  .contact p {
+   .contact p {
         font-size: 1.1rem;
       }
       
-   .contact button {
+   .contact-button {
         padding: 12px 25px;
         font-size: 1rem;
         width: 100%;
@@ -891,36 +948,34 @@ header .logo img {
     /* Carrito para móvil - centrado verticalmente */
   @media (max-width: 768px) {
       #floating-cart {
-        width: 200%;
+        width: 90%;
         max-width: 450px;
         padding: 15px;
         top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
+        left: 50%;
+        transform: translate(-50%, -50%);
         max-height: 80vh;
       }
     }
-/* Aumentar tamaño del icono flotante del carrito en móviles */
-@media (max-width: 768px) {
-  #floating-cart-icon {
-    width: 80px;  /* Aumentar tamaño del icono */
-    height: 80px;  /* Aumentar tamaño del icono */
-    font-size: 36px;  /* Aumentar tamaño del ícono dentro */
-  }
-}
+    
+    /* Aumentar tamaño del icono flotante del carrito en móviles */
+   @media (max-width: 768px) {
+      #floating-cart-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+      }
+    }
 
     /* Footer para móvil */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
       footer {
-        padding: 15px;
+        padding: 30px 15px;
       }
       
-  #ubicacion h3 {
-        font-size: 1.1rem;
-      }
-      
-  #ubicacion p {
-        font-size: 0.95rem;
+   .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
       }
     }
 
@@ -937,7 +992,7 @@ header .logo img {
         margin-bottom: 30px;
       }
       
-  .stat {
+   .stat {
         flex: 1 0 30%;
         padding: 15px;
         min-width: 120px;
@@ -947,7 +1002,7 @@ header .logo img {
         font-size: 2rem;
       }
       
-   .stat p {
+  .stat p {
         font-size: 0.9rem;
       }
     }
@@ -962,7 +1017,7 @@ header .logo img {
     }
 
     /* Ajustes para pantallas muy pequeñas */
-   @media (max-width: 480px) {
+  @media (max-width: 480px) {
       .hero-content h1 {
         font-size: 1.8rem;
       }
@@ -992,31 +1047,35 @@ header .logo img {
     <div id="cart-badge">0</div>
   </div>
   
-<header>
-  <div class="header-container">
-    <div class="logo">
-      <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo">
-    </div>
-    <div class="header-title">
-      <h1>ARENAZUL</h1>
-    </div>
+  <!-- Botón flotante de WhatsApp -->
+  <div id="whatsapp-icon" onclick="window.open('https://wa.link/f1hhk0', '_blank')">
+    <i class="fab fa-whatsapp"></i>
   </div>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#home">Inicio</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#testimonials">Testimonios</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
+  
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo">
+      </div>
+      <div class="header-title">
+        <h1>ARENAZUL</h1>
+      </div>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#testimonials">Testimonios</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -1046,28 +1105,59 @@ header .logo img {
     </div>
   </section>
   
-  <!-- Sección de Servicios -->
+  <!-- Sección de Servicios - MEJORADA -->
   <section id="servicios">
-    <h2>Nuestros servicios de limpieza de piscinas</h2>
-    <div class="service">
-        <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2022/06/15/62a9ad6dd74fb.jpeg" alt="Limpieza básica de piscina">
-        <h3>Limpieza básica de piscina</h3>
-    </div>
-    <div class="service">
-        <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
-        <h3>Mantenimiento semanal de piscina</h3>
-    </div>
-    <div class="service">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
-        <h3>Limpieza intensiva de piscina</h3>
-    </div>
-    <div class="service">
-        <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
-        <h3>Tratamiento de agua de piscina</h3>
-    </div>
-    <div class="service">
-        <img src="https://www.hidrotec.com/wp-content/uploads/2024/01/preparar-piscina-verano.webp" alt="Puesta a punto de piscina">
-        <h3>Puesta a punto de piscina</h3>
+    <h2 class="section-title">Nuestros Servicios de Limpieza de Piscinas</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <div class="service-image">
+          <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2022/06/15/62a9ad6dd74fb.jpeg" alt="Limpieza básica de piscina">
+        </div>
+        <div class="service-content">
+          <h3>Limpieza Básica</h3>
+          <p>Servicio completo de limpieza de piscinas que incluye eliminación de residuos, cepillado de paredes y tratamiento químico básico.</p>
+        </div>
+      </div>
+      
+   <div class="service-card">
+        <div class="service-image">
+          <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
+        </div>
+        <div class="service-content">
+          <h3>Mantenimiento Semanal</h3>
+          <p>Programa de mantenimiento continuo con visitas semanales para mantener su piscina en perfecto estado todo el año.</p>
+        </div>
+      </div>
+      
+   <div class="service-card">
+        <div class="service-image">
+          <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
+        </div>
+        <div class="service-content">
+          <h3>Limpieza Intensiva</h3>
+          <p>Limpieza profunda que incluye vaciado, cepillado de paredes y suelo, y tratamiento especializado para eliminar algas y residuos persistentes.</p>
+        </div>
+      </div>
+      
+   <div class="service-card">
+        <div class="service-image">
+          <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
+        </div>
+        <div class="service-content">
+          <h3>Tratamiento de Agua</h3>
+          <p>Análisis profesional del agua y aplicación de los productos necesarios para mantener el equilibrio químico perfecto.</p>
+        </div>
+      </div>
+      
+   <div class="service-card">
+        <div class="service-image">
+          <img src="https://www.hidrotec.com/wp-content/uploads/2024/01/preparar-piscina-verano.webp" alt="Puesta a punto de piscina">
+        </div>
+        <div class="service-content">
+          <h3>Puesta a Punto</h3>
+          <p>Preparación completa para la temporada, incluyendo limpieza profunda, revisión de sistemas y tratamiento inicial.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1132,26 +1222,46 @@ header .logo img {
   <!-- Notification -->
   <div class="notification" id="notification"></div>
 
-  <!-- Contact Section -->
+  <!-- Contact Section - MEJORADA -->
   <section id="contact" class="contact">
     <h2>¿Listo para una Piscina Impecable?</h2>
     <p>Obtenga un presupuesto gratuito y descubra cómo podemos ayudarle a mantener su piscina en perfectas condiciones durante todo el año.</p>
-     <button onclick="window.location.href='https://wa.link/f1hhk0';">Solicitar Presupuesto</button>
+    <button class="contact-button" onclick="window.location.href='https://wa.link/f1hhk0';">Solicitar Presupuesto</button>
   </section>
   
-  <!-- Sección de ubicación -->
+  <!-- Pie de página - MEJORADO -->
   <footer>
-    <div id="ubicacion">
-      <h3>Ubicación</h3>
-      <p>A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
-      <p>Contacto: <a href="mailto:davidregx@gmail.com">davidregx@gmail.com</a></p>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ARENAZUL</h3>
+        <p>Especialistas en mantenimiento profesional de piscinas para hogares en todo Perú.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+  <div class="footer-section">
+        <h3>Contacto</h3>
+        <div class="contact-info">
+          <p><i class="fas fa-map-marker-alt"></i> A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
+          <p><i class="fas fa-phone"></i> (01) 555-1234</p>
+          <p><i class="fab fa-whatsapp"></i> +51 999 999 999</p>
+          <p><i class="fas fa-envelope"></i> davidregx@gmail.com</p>
+        </div>
+      </div>
+      
+   <div class="footer-section">
+        <h3>Horario de Atención</h3>
+        <p><i class="far fa-clock"></i> Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+        <p><i class="far fa-clock"></i> Sábados: 9:00 AM - 1:00 PM</p>
+        <p><i class="far fa-clock"></i> Domingos: Cerrado</p>
+      </div>
     </div>
-  </footer>
-
-  <!-- Footer Section -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; Piscinas Impecables 2024, Todos los derechos reservados</p>
+    
+  <div class="copyright">
+      <p>&copy; 2024 ARENAZUL - Mantenimiento de Piscinas. Todos los derechos reservados.</p>
     </div>
   </footer>
 
@@ -1202,7 +1312,6 @@ header .logo img {
         itemCount += item.quantity;
         
         li.innerHTML = `
-
           <img src="${item.image}" alt="${item.name}">
           <div class="cart-item-details">
             <p class="cart-item-name">${item.name}</p>
@@ -1321,12 +1430,15 @@ header .logo img {
     document.addEventListener('click', function(event) {
       const cartElement = document.getElementById('floating-cart');
       const cartIcon = document.getElementById('floating-cart-icon');
+      const whatsappIcon = document.getElementById('whatsapp-icon');
       
       // Verificar si el clic fue fuera del carrito y fuera del icono del carrito
       if (cartVisible && 
           !cartElement.contains(event.target) && 
           event.target !== cartIcon &&
-          !cartIcon.contains(event.target)) {
+          !cartIcon.contains(event.target) &&
+          event.target !== whatsappIcon &&
+          !whatsappIcon.contains(event.target)) {
         cartElement.style.display = 'none';
         cartVisible = false;
       }
