@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +13,7 @@
       box-sizing: border-box;
     }
 
-   body {
+  body {
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
       background-color: #d6f0f1;
@@ -20,7 +21,7 @@
     }
 
     /* Header Section */
-   header {
+  header {
       background-color: #c7c7c2;
       padding: 10px 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -32,30 +33,30 @@
       position: relative;
     }
 
-   header .logo {
+  header .logo {
       display: flex;
       align-items: center;
     }
 
-  header .logo img {
+   header .logo img {
       background-color: transparent;
       width: 80px;
       height: auto;
     }
 
-   nav ul {
+  nav ul {
       display: flex;
       justify-content: flex-end;
       list-style-type: none;
       padding: 0;
     }
 
-   nav ul li {
+  nav ul li {
       margin-left: 20px;
       font-size: 15px;
     }
 
-   nav ul li a {
+  nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -75,14 +76,14 @@
     }
 
     /* Estilo para el logo */
-   .logo img {
+  .logo img {
       width: 80px;
       height: auto;
       background-color: transparent;
     }
 
     /* Estilo para el título */
-  .header-title h1 {
+   .header-title h1 {
       font-size: 24px;
       color: #ffffff;
       margin-left: 20px;
@@ -91,7 +92,7 @@
     }
 
     /* Ajuste para pantallas pequeñas (móviles) */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .header-title h1 {
         font-size: 22px;  /* Tamaño aumentado para móvil */
         text-align: center;
@@ -100,7 +101,7 @@
     }
 
     /* Estilo para el título en el encabezado */
-  .header-title {
+   .header-title {
       flex: 1;
       text-align: center;
       color: #ffffff;
@@ -121,12 +122,12 @@
       flex-wrap: wrap;
     }
 
-  header .logo {
+   header .logo {
       display: flex;
       align-items: center;
     }
 
-  header .logo img {
+   header .logo img {
       background-color: transparent;
       width: 80px;
       height: auto;
@@ -140,7 +141,7 @@
     }
 
     /* Contenedor de iconos flotantes en la parte inferior */
-  .floating-icons-container {
+   .floating-icons-container {
       position: fixed;
       bottom: 30px;
       right: 30px;
@@ -152,7 +153,7 @@
     }
 
     /* Icono flotante del carrito */
-   #floating-cart-icon {
+  #floating-cart-icon {
       background-color: #00A9E0;
       color: white;
       width: 60px;
@@ -190,7 +191,7 @@
     }
     
     /* Icono de WhatsApp flotante */
-  #whatsapp-icon {
+   #whatsapp-icon {
       background-color: #25D366;
       color: white;
       width: 60px;
@@ -206,13 +207,13 @@
       order: 2; /* WhatsApp abajo */
     }
 
-  #whatsapp-icon:hover {
+   #whatsapp-icon:hover {
       background-color: #128C7E;
       transform: scale(1.1);
     }
 
     /* Hamburguesa */
-  .menu-toggle {
+   .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
@@ -221,7 +222,7 @@
       padding: 5px;
     }
 
-  .menu-toggle span {
+   .menu-toggle span {
       background-color: white;
       height: 4px;
       width: 25px;
@@ -243,7 +244,7 @@
       background-position: center;
     }
 
-   .hero-content h1 {
+  .hero-content h1 {
       font-size: 50px;
       margin-bottom: 0px;
     }
@@ -263,7 +264,7 @@
       border-radius: 5px;
     }
 
-   .hero button:hover {
+  .hero button:hover {
       background-color: #00A9E0;
     }
 
@@ -272,30 +273,79 @@
       border-radius: 20px 0px 30px 0px;
     }
 
-    /* Projects Section */
+    /* Projects Section - MEJORADA */
    .projects {
       padding: 20px 0;
       background-color: white;
       text-align: center;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
    .projects h2 {
       font-size: 36px;
       margin-bottom: 40px;
+      color: #0077B6;
     }
 
-  .project-gallery {
+   .project-gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
+      padding: 0 20px;
     }
 
-   .project-gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+  .project-item {
+      position: relative;
+      overflow: hidden;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+   .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+   .project-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+   .project-item:hover img {
+      transform: scale(1.05);
+    }
+
+   .project-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: white;
+      padding: 20px 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+   .project-item:hover .project-overlay {
+      transform: translateY(0);
+    }
+
+   .project-overlay h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #ffde00;
+    }
+
+   .project-overlay p {
+      font-size: 14px;
+      opacity: 0.9;
     }
 
     /* Services Section */
@@ -304,7 +354,7 @@
       text-align: center;
     }
 
-  .service-stats {
+   .service-stats {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -316,16 +366,16 @@
       width: auto;
     }
 
-   .stat h3 {
+  .stat h3 {
       font-size: 48px;
     }
 
-  .stat p {
+   .stat p {
       font-size: 18px;
     }
     
     /* Sección de servicios - ESTILOS MEJORADOS */
-  .section-title {
+   .section-title {
       text-align: center;
       margin: 60px 0 40px;
       color: #0077B6;
@@ -345,7 +395,7 @@
       border-radius: 2px;
     }
 
-   .services-container {
+  .services-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
@@ -360,7 +410,7 @@
       transition: all 0.3s ease;
     }
 
-  .service-card:hover {
+   .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
@@ -370,14 +420,14 @@
       overflow: hidden;
     }
 
-   .service-image img {
+  .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-  .service-card:hover .service-image img {
+   .service-card:hover .service-image img {
       transform: scale(1.05);
     }
 
@@ -385,7 +435,7 @@
       padding: 25px;
     }
 
-   .service-content h3 {
+  .service-content h3 {
       color: #0077B6;
       margin-bottom: 15px;
       font-size: 1.4rem;
@@ -397,14 +447,18 @@
     }
     
     /* Testimonials Section */
-   .testimonials {
+  .testimonials {
       background-color: #d6f0f1;
       text-align: center;
+      margin: 20px;
+      padding: 30px 20px;
+      border-radius: 15px;
     }
 
   .testimonials h2 {
       font-size: 36px;
       margin-bottom: 30px;
+      color: #0077B6;
     }
 
    .testimonial img {
@@ -437,16 +491,20 @@
       padding: 20px 20px;
       background-color: white;
       text-align: center;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
    .products h2 {
       font-size: 36px;
       margin-bottom: 40px;
+      color: #0077B6;
     }
 
-  .product-gallery {
+   .product-gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
@@ -455,35 +513,50 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+   .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
     }
 
    .product img {
       width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
+      height: 180px;
+      object-fit: cover;
     }
 
    .product p {
       font-size: 18px;
       color: #333;
       margin-bottom: 20px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-  .product button {
+   .product button {
       padding: 10px 20px;
       background-color: #ffde00;
-      color: white;
+      color: #333;
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
 
    .product button:hover {
       background-color: #00A9E0;
+      color: white;
     }
 
     /* Floating Cart */
-   #floating-cart {
+  #floating-cart {
       position: fixed;
       top: 100px;
       right: 30px;
@@ -499,7 +572,7 @@
       border: 2px solid #00A9E0;
     }
 
-   #floating-cart h3 {
+  #floating-cart h3 {
       margin-bottom: 20px;
       font-size: 22px;
       color: #00A9E0;
@@ -508,12 +581,12 @@
       padding-bottom: 10px;
     }
 
-   #floating-cart ul {
+  #floating-cart ul {
       list-style-type: none;
       padding: 0;
     }
 
-   #floating-cart ul li {
+  #floating-cart ul li {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
@@ -522,7 +595,7 @@
       border-bottom: 1px solid #eee;
     }
 
-   #floating-cart ul li img {
+  #floating-cart ul li img {
       width: 60px;
       height: 60px;
       margin-right: 10px;
@@ -548,7 +621,7 @@
       margin-top: 5px;
     }
 
-   .cart-quantity-controls button {
+  .cart-quantity-controls button {
       width: 30px;
       height: 30px;
       background: #00A9E0;
@@ -586,7 +659,7 @@
       border-top: 2px solid #eee;
     }
 
-   .cart-total span {
+  .cart-total span {
       color: #00A9E0;
     }
 
@@ -603,7 +676,7 @@
       transition: background-color 0.3s;
     }
 
-  #checkout-btn:hover {
+   #checkout-btn:hover {
       background-color: #00A9E0;
       color: white;
     }
@@ -614,9 +687,11 @@
       background: linear-gradient(135deg, #0077B6, #00A9E0);
       color: white;
       text-align: center;
+      margin: 20px;
+      border-radius: 15px;
     }
 
-  .contact h2 {
+   .contact h2 {
       font-size: 36px;
       margin-bottom: 30px;
       color: white;
@@ -654,9 +729,10 @@
       background: #0f172a;
       color: white;
       padding: 50px 40px 30px;
+      margin-top: 30px;
     }
 
-  .footer-container {
+   .footer-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 40px;
@@ -674,29 +750,29 @@
       line-height: 1.8;
     }
 
-   .contact-info {
+  .contact-info {
       margin-top: 20px;
     }
 
-   .contact-info p {
+  .contact-info p {
       display: flex;
       align-items: center;
       margin-bottom: 12px;
     }
 
-   .contact-info i {
+  .contact-info i {
       margin-right: 12px;
       color: #00A9E0;
       width: 20px;
     }
 
-   .social-links {
+  .social-links {
       display: flex;
       gap: 15px;
       margin-top: 20px;
     }
 
-   .social-links a {
+  .social-links a {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -722,7 +798,7 @@
     }
 
     /* Notification */
-   .notification {
+  .notification {
       position: fixed;
       bottom: 20px;
       left: 50%;
@@ -748,7 +824,7 @@
     }
     
     /* Header para móvil */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
       header {
         padding: 10px 15px;
         flex-direction: row;
@@ -761,7 +837,7 @@
         width: 50px;
       }
 
-   nav ul {
+  nav ul {
         display: none;
         flex-direction: column;
         margin-top: 10px;
@@ -775,13 +851,13 @@
         z-index: 100;
       }
 
-   nav ul li {
+  nav ul li {
         margin: 10px 0;
         font-size: 14px;
         text-align: center;
       }
 
-   nav ul li a {
+  nav ul li a {
         font-size: 1rem;
         padding: 8px 0;
         display: block;
@@ -791,7 +867,7 @@
         display: flex;
       }
 
-   nav ul.open {
+  nav ul.open {
         display: flex;
       }
       
@@ -808,7 +884,7 @@
       }
       
       /* Ajuste de posición para menú hamburguesa */
-  .header-container {
+   .header-container {
         align-items: center;
       }
       
@@ -821,7 +897,7 @@
     }
 
     /* Hero section para móvil */
- @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .hero {
         flex-direction: column;
         text-align: center;
@@ -834,7 +910,7 @@
         line-height: 1.2;
       }
 
-   .hero-content p {
+  .hero-content p {
         font-size: 1.1rem;
         margin-bottom: 20px;
       }
@@ -847,7 +923,7 @@
         margin: 10px 0;
       }
 
-  .hero img {
+   .hero img {
         width: 100%;
         border-radius: 10px;
         margin-top: 20px;
@@ -876,7 +952,7 @@
     }
 
     /* Proyectos para móvil - 2 en 2 */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .projects {
         margin: 10px;
         padding: 15px 0;
@@ -887,18 +963,18 @@
         margin-bottom: 20px;
       }
       
-   .project-gallery {
+  .project-gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
       
-   .project-gallery img {
+  .project-item {
         height: 180px;
       }
     }
 
     /* Testimonios para móvil */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .testimonials {
         margin: 10px;
         padding: 15px;
@@ -909,17 +985,17 @@
         margin-bottom: 20px;
       }
       
-  .testimonial {
+   .testimonial {
         padding: 15px;
       }
       
-   .testimonial p {
+  .testimonial p {
         font-size: 1.1rem;
       }
     }
 
     /* Productos para móvil - 2 en 2 */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .products {
         margin: 10px;
         padding: 15px;
@@ -935,11 +1011,11 @@
         gap: 10px;
       }
       
-  .product {
+   .product {
         padding: 15px;
       }
       
-  .product p {
+   .product p {
         font-size: 1.1rem;
       }
       
@@ -949,7 +1025,7 @@
     }
 
     /* Contacto para móvil */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .contact {
         margin: 10px;
         padding: 30px 15px;
@@ -963,7 +1039,7 @@
         font-size: 1.1rem;
       }
       
-   .contact-button {
+  .contact-button {
         padding: 12px 25px;
         font-size: 1rem;
         width: 100%;
@@ -972,7 +1048,7 @@
     }
 
     /* Carrito para móvil - centrado verticalmente */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       #floating-cart {
         width: 90%;
         max-width: 450px;
@@ -985,7 +1061,7 @@
     }
     
     /* Footer para móvil */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       footer {
         padding: 30px 15px;
       }
@@ -1039,7 +1115,7 @@
     }
 
     /* Ajustes para pantallas muy pequeñas */
-  @media (max-width: 480px) {
+ @media (max-width: 480px) {
       .hero-content h1 {
         font-size: 2rem;  /* Ajustado para móvil pequeño */
       }
@@ -1049,19 +1125,19 @@
         font-size: 24px;  /* Más grande en móvil pequeño */
       }
       
-   .stat h3 {
+  .stat h3 {
         font-size: 1.8rem;
       }
       
       /* Ajustar a 1 columna en pantallas muy pequeñas */
-   @media (max-width: 480px) {
+  @media (max-width: 480px) {
         .project-gallery, .product-gallery {
           grid-template-columns: 1fr;
         }
       }
       
       /* Iconos aún más grandes en móvil pequeño */
-  #floating-cart-icon, #whatsapp-icon {
+   #floating-cart-icon, #whatsapp-icon {
         width: 75px;
         height: 75px;
         font-size: 30px;
@@ -1097,11 +1173,11 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#testimonials">Testimonios</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#home" onclick="closeMenu()">Inicio</a></li>
+        <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
+        <li><a href="#projects" onclick="closeMenu()">Proyectos</a></li>
+        <li><a href="#testimonials" onclick="closeMenu()">Testimonios</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -1109,8 +1185,8 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Su Piscina Siempre Limpia</h1>
-      <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Ofrecemos servicios de limpieza y cuidado para propietarios de casas.</p>
+      <h1>Su Piscina Siempre Impecable</h1>
+      <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Servicio para propietarios de casas en Los Organos Perú.</p>
       <button onclick="window.location.href='https://wa.link/f1hhk0';">Contáctenos Hoy</button>
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
@@ -1148,7 +1224,7 @@
         </div>
       </div>
       
-   <div class="service-card">
+  <div class="service-card">
         <div class="service-image">
           <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
         </div>
@@ -1158,7 +1234,7 @@
         </div>
       </div>
       
-   <div class="service-card">
+  <div class="service-card">
         <div class="service-image">
           <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
         </div>
@@ -1190,16 +1266,52 @@
     </div>
   </section>
 
-  <!-- Our Projects Section -->
+  <!-- Our Projects Section - MEJORADA -->
   <section id="projects" class="projects">
     <h2>Nuestros Proyectos Recientes</h2>
     <div class="project-gallery">
-      <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWTgWhMgCINg0P7MCRvFQ6S_2pjcHDxa0cGAqcu8sdChfAU5i5gX1RFxVovDp3MIxJ5UBeuacjPrHWbEvUI4nUSXVWShUJXGqH9a5nXzexSZDha55Xy2oUl0eWnkWxSS056mG7SSF8Vfm0=w3840-h2160-p-k-no" alt="Proyecto 1">
-      <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWTgWhMgCINg0P7MCRvFQ6S_2pjcHDxa0cGAqcu8sdChfAU5i5gX1RFxVovDp3MIxJ5UBeuacjPrHWbEvUI4nUSXVWShUJXGqH9a5nXzexSZDha55Xy2oUl0eWnkWxSS056mG7SSF8Vfm0=w3840-h2160-p-k-no" alt="Proyecto 2">
-      <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXRadNFxZwk-GjtcE5qCL4sILUiGbaS-xzHM8V30PhbIX_mOahPqyQmxIajXIyKjA5rcQtTIOFrY-dIXafAwD8qolFwVA3eDEWKtJKxZadhbGTLsPOl0bC9RPJwKSyMtH178_2wFImqK_kn=w4160-h3120-p-k-no" alt="Proyecto 3">
-      <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXbcEZDRS2R4BlH1aIecDNpKgdSKlomaJJ-IZ_RGvv1F-zE8VJ-zCW4RyKbSSvxt7VFPkME-171ong9ulOOb2ouIpsb5NOwLUEoMj7E3OAbfGsNi65WLE_AY_Oyod0ZIPXu2RSLroCZCAu8=w4160-h3120-p-k-no" alt="Proyecto 4">
-      <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWhbbPVB7G5IqJrstFiNOsmhQuRlXVeWgKxSAdMKsWrmKsVniqxDxtnrQSPxOZa3dZlq2gyJ3A7B2MC_tKjCfMmh9p7PkM0TGhKvxvgYd6uokFSZEwe_LUdJvqeulRd4AQWp9DzfkiDIOkI=w4608-h3456-p-k-no" alt="Proyecto 5">
-      <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWglv-HM0EpZ0Rrfm3_LA_Pd3oAU9WVk12GZL1qUNG9PHxOXJ2DdCeqyIQ6gb46_R-9YzLhw6O_Vmy8YX9DFeGrtRW7Qo6BLtIQB7g3T5l-pC7A6m6DfbUY9gCC7i2T7ruvIF6invi2Uwhg=w4608-h3456-p-k-no" alt="Proyecto 6">
+      <div class="project-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWTgWhMgCINg0P7MCRvFQ6S_2pjcHDxa0cGAqcu8sdChfAU5i5gX1RFxVovDp3MIxJ5UBeuacjPrHWbEvUI4nUSXVWShUJXGqH9a5nXzexSZDha55Xy2oUl0eWnkWxSS056mG7SSF8Vfm0=w3840-h2160-p-k-no" alt="Proyecto 1">
+        <div class="project-overlay">
+          <h3>Piscina Moderna</h3>
+          <p>Limpieza completa y tratamiento de agua</p>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWTgWhMgCINg0P7MCRvFQ6S_2pjcHDxa0cGAqcu8sdChfAU5i5gX1RFxVovDp3MIxJ5UBeuacjPrHWbEvUI4nUSXVWShUJXGqH9a5nXzexSZDha55Xy2oUl0eWnkWxSS056mG7SSF8Vfm0=w3840-h2160-p-k-no" alt="Proyecto 2">
+        <div class="project-overlay">
+          <h3>Piscina Familiar</h3>
+          <p>Mantenimiento semanal personalizado</p>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXRadNFxZwk-GjtcE5qCL4sILUiGbaS-xzHM8V30PhbIX_mOahPqyQmxIajXIyKjA5rcQtTIOFrY-dIXafAwD8qolFwVA3eDEWKtJKxZadhbGTLsPOl0bC9RPJwKSyMtH178_2wFImqK_kn=w4160-h3120-p-k-no" alt="Proyecto 3">
+        <div class="project-overlay">
+          <h3>Piscina Residencial</h3>
+          <p>Limpieza intensiva con vaciado completo</p>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXbcEZDRS2R4BlH1aIecDNpKgdSKlomaJJ-IZ_RGvv1F-zE8VJ-zCW4RyKbSSvxt7VFPkME-171ong9ulOOb2ouIpsb5NOwLUEoMj7E3OAbfGsNi65WLE_AY_Oyod0ZIPXu2RSLroCZCAu8=w4160-h3120-p-k-no" alt="Proyecto 4">
+        <div class="project-overlay">
+          <h3>Piscina de Lujo</h3>
+          <p>Tratamiento especial para agua cristalina</p>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWhbbPVB7G5IqJrstFiNOsmhQuRlXVeWgKxSAdMKsWrmKsVniqxDxtnrQSPxOZa3dZlq2gyJ3A7B2MC_tKjCfMmh9p7PkM0TGhKvxvgYd6uokFSZEwe_LUdJvqeulRd4AQWp9DzfkiDIOkI=w4608-h3456-p-k-no" alt="Proyecto 5">
+        <div class="project-overlay">
+          <h3>Piscina con Jacuzzi</h3>
+          <p>Mantenimiento integral de ambos sistemas</p>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWglv-HM0EpZ0Rrfm3_LA_Pd3oAU9WVk12GZL1qUNG9PHxOXJ2DdCeqyIQ6gb46_R-9YzLhw6O_Vmy8YX9DFeGrtRW7Qo6BLtIQB7g3T5l-pC7A6m6DfbUY9gCC7i2T7ruvIF6invi2Uwhg=w4608-h3456-p-k-no" alt="Proyecto 6">
+        <div class="project-overlay">
+          <h3>Piscina Minimalista</h3>
+          <p>Puesta a punto para temporada de verano</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1271,12 +1383,11 @@
         </div>
       </div>
       
-   <div class="footer-section">
+  <div class="footer-section">
         <h3>Contacto</h3>
         <div class="contact-info">
           <p><i class="fas fa-map-marker-alt"></i> A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
-          <p><i class="fas fa-phone"></i> (01) 555-1234</p>
-          <p><i class="fab fa-whatsapp"></i> +51 999 999 999</p>
+          <p><i class="fab fa-whatsapp"></i> +51 975 842 622</p>
           <p><i class="fas fa-envelope"></i> davidregx@gmail.com</p>
         </div>
       </div>
@@ -1289,7 +1400,7 @@
       </div>
     </div>
     
-  <div class="copyright">
+   <div class="copyright">
       <p>&copy; 2024 ARENAZUL - Mantenimiento de Piscinas. Todos los derechos reservados.</p>
     </div>
   </footer>
@@ -1429,7 +1540,7 @@
       
       message += `\nTotal: S/${total.toFixed(2)}`;
       
-      const whatsappUrl = `https://wa.me/51999999999?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/51975842622?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
     }
 
@@ -1453,6 +1564,12 @@
     function toggleMenu() {
       const navMenu = document.querySelector('nav ul');
       navMenu.classList.toggle('open');
+    }
+    
+    // Nueva función para cerrar el menú
+    function closeMenu() {
+      const navMenu = document.querySelector('nav ul');
+      navMenu.classList.remove('open');
     }
 
     // Cerrar carrito al hacer clic fuera de él
@@ -1495,6 +1612,11 @@
         cartElement.style.top = '50%';
         cartElement.style.transform = 'translateY(-50%)';
       }
+    });
+    
+    // Cerrar el menú al hacer clic en un enlace
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
   </script>
 </body>
