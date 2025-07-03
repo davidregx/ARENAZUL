@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.6">
-  <title>ARENAZUL: Mantenimiento Profesional de Piscinas</title>
+  <title>ARENAZUL: Mantenimiento de Piscinas</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* Reset and Global Styles */
@@ -16,6 +16,7 @@
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
       background-color: #d6f0f1;
+      padding-bottom: 30px;
     }
 
     /* Header Section */
@@ -49,7 +50,7 @@
       padding: 0;
     }
 
-   nav ul li {
+  nav ul li {
       margin-left: 20px;
       font-size: 15px;
     }
@@ -74,14 +75,14 @@
     }
 
     /* Estilo para el logo */
-  .logo img {
+   .logo img {
       width: 80px;
       height: auto;
       background-color: transparent;
     }
 
     /* Estilo para el título */
-  .header-title h1 {
+   .header-title h1 {
       font-size: 24px;
       color: #ffffff;
       margin-left: 20px;
@@ -107,7 +108,7 @@
       font-weight: bold;
     }
 
-  header {
+   header {
       background-color: #c7c7c2;
       padding: 10px 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -138,16 +139,24 @@
       }
     }
 
-    /* Icono flotante del carrito */
-   #floating-cart-icon {
+    /* Contenedor de iconos flotantes en la parte inferior */
+   .floating-icons-container {
       position: fixed;
-      top: 30px;
+      bottom: 30px;
       right: 30px;
       z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    /* Icono flotante del carrito */
+   #floating-cart-icon {
       background-color: #00A9E0;
       color: white;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -156,6 +165,8 @@
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
+      position: relative;
+      order: 1; /* Carrito arriba */
     }
 
    #floating-cart-icon:hover {
@@ -170,8 +181,8 @@
       background-color: #ff6b6b;
       color: white;
       border-radius: 50%;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       font-size: 12px;
       display: flex;
       justify-content: center;
@@ -180,10 +191,6 @@
     
     /* Icono de WhatsApp flotante */
    #whatsapp-icon {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1000;
       background-color: #25D366;
       color: white;
       width: 60px;
@@ -192,10 +199,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 32px;
+      font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
+      order: 2; /* WhatsApp abajo */
     }
 
    #whatsapp-icon:hover {
@@ -204,7 +212,7 @@
     }
 
     /* Hamburguesa */
-   .menu-toggle {
+  .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
@@ -242,7 +250,7 @@
       margin-bottom: 30px;
     }
 
-   .hero button {
+  .hero button {
       background-color: #0f172a;
       padding: 15px 30px;
       font-size: 18px;
@@ -273,7 +281,7 @@
       margin-bottom: 40px;
     }
 
-   .project-gallery {
+  .project-gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -288,7 +296,7 @@
     }
 
     /* Services Section */
-   .services {
+  .services {
       padding: 0px 30px;
       text-align: center;
     }
@@ -300,7 +308,7 @@
       margin-bottom: 50px;
     }
 
-  .stat {
+   .stat {
       padding: 30px;
       width: auto;
     }
@@ -334,14 +342,14 @@
       border-radius: 2px;
     }
 
-   .services-container {
+  .services-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       padding: 0 40px 40px;
     }
 
-   .service-card {
+  .service-card {
       background: white;
       border-radius: 15px;
       overflow: hidden;
@@ -349,7 +357,7 @@
       transition: all 0.3s ease;
     }
 
-  .service-card:hover {
+   .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
@@ -359,18 +367,18 @@
       overflow: hidden;
     }
 
-  .service-image img {
+   .service-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-   .service-card:hover .service-image img {
+  .service-card:hover .service-image img {
       transform: scale(1.05);
     }
 
-  .service-content {
+   .service-content {
       padding: 25px;
     }
 
@@ -380,7 +388,7 @@
       font-size: 1.4rem;
     }
 
-  .service-content p {
+   .service-content p {
       color: #555;
       line-height: 1.8;
     }
@@ -391,7 +399,7 @@
       text-align: center;
     }
 
-  .testimonials h2 {
+   .testimonials h2 {
       font-size: 36px;
       margin-bottom: 30px;
     }
@@ -401,7 +409,7 @@
       border-radius: 20px 0px 30px 0px;
     }
 
-  .testimonial {
+   .testimonial {
       background-color: white;
       padding: 10px;
       border-radius: 20px;
@@ -410,7 +418,7 @@
       margin: 0 auto;
     }
 
-  .testimonial p {
+   .testimonial p {
       font-size: 20px;
       color: #555;
       margin-bottom: 20px;
@@ -428,7 +436,7 @@
       text-align: center;
     }
 
-   .products h2 {
+  .products h2 {
       font-size: 36px;
       margin-bottom: 40px;
     }
@@ -472,7 +480,7 @@
     }
 
     /* Floating Cart */
-  #floating-cart {
+   #floating-cart {
       position: fixed;
       top: 100px;
       right: 30px;
@@ -523,7 +531,7 @@
       flex-grow: 1;
     }
 
-  .cart-item-name {
+   .cart-item-name {
       font-weight: bold;
     }
 
@@ -537,7 +545,7 @@
       margin-top: 5px;
     }
 
-   .cart-quantity-controls button {
+  .cart-quantity-controls button {
       width: 30px;
       height: 30px;
       background: #00A9E0;
@@ -566,7 +574,7 @@
       font-size: 20px;
     }
 
-   .cart-total {
+  .cart-total {
       font-size: 20px;
       font-weight: bold;
       text-align: right;
@@ -575,7 +583,7 @@
       border-top: 2px solid #eee;
     }
 
-   .cart-total span {
+  .cart-total span {
       color: #00A9E0;
     }
 
@@ -611,7 +619,7 @@
       color: white;
     }
 
-  .contact p {
+   .contact p {
       font-size: 20px;
       color: #fff;
       margin-bottom: 30px;
@@ -619,7 +627,7 @@
       margin: 0 auto 40px;
     }
 
-  .contact-button {
+   .contact-button {
       padding: 18px 50px;
       font-size: 18px;
       background-color: #FFDE00;
@@ -652,7 +660,7 @@
       margin-bottom: 40px;
     }
 
-   .footer-section h3 {
+  .footer-section h3 {
       color: #FFDE00;
       margin-bottom: 20px;
       font-size: 1.4rem;
@@ -702,7 +710,7 @@
       transform: translateY(-3px);
     }
 
-   .copyright {
+  .copyright {
       text-align: center;
       padding-top: 30px;
       border-top: 1px solid #334155;
@@ -731,13 +739,13 @@
     /* ========================================== */
     
     /* Prevenir desbordamiento horizontal */
-   html, body {
+ html, body {
       max-width: 100%;
       overflow-x: hidden;
     }
     
     /* Header para móvil */
-   @media (max-width: 768px) {
+ @media (max-width: 768px) {
       header {
         padding: 10px 15px;
         flex-direction: row;
@@ -784,18 +792,15 @@
         display: flex;
       }
       
-   #floating-cart-icon {
-        top: 20px;
+   .floating-icons-container {
+        bottom: 20px;
         right: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
       }
       
-  #whatsapp-icon {
+   #floating-cart-icon, #whatsapp-icon {
         width: 50px;
         height: 50px;
-        font-size: 24px;
+        font-size: 20px;
       }
     }
 
@@ -808,12 +813,12 @@
         margin: 10px;
       }
 
-  .hero-content h1 {
+   .hero-content h1 {
         font-size: 2rem;
         line-height: 1.2;
       }
 
-  .hero-content p {
+   .hero-content p {
         font-size: 1.1rem;
         margin-bottom: 20px;
       }
@@ -826,7 +831,7 @@
         margin: 10px 0;
       }
 
-   .hero img {
+  .hero img {
         width: 100%;
         border-radius: 10px;
         margin-top: 20px;
@@ -856,7 +861,7 @@
         padding: 15px 0;
       }
       
-  .projects h2 {
+   .projects h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
       }
@@ -872,28 +877,28 @@
     }
 
     /* Testimonios para móvil */
- @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .testimonials {
         margin: 10px;
         padding: 15px;
       }
       
-  .testimonials h2 {
+   .testimonials h2 {
         font-size: 1.8rem;
         margin-bottom: 20px;
       }
       
-  .testimonial {
+   .testimonial {
         padding: 15px;
       }
       
-  .testimonial p {
+   .testimonial p {
         font-size: 1.1rem;
       }
     }
 
     /* Productos para móvil - 2 en 2 */
- @media (max-width: 768px) {
+   @media (max-width: 768px) {
       .products {
         margin: 10px;
         padding: 15px;
@@ -917,19 +922,19 @@
         font-size: 1.1rem;
       }
       
-   .product button {
+  .product button {
         width: 100%;
       }
     }
 
     /* Contacto para móvil */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
       .contact {
         margin: 10px;
         padding: 30px 15px;
       }
       
-   .contact h2 {
+  .contact h2 {
         font-size: 1.8rem;
       }
       
@@ -946,7 +951,7 @@
     }
 
     /* Carrito para móvil - centrado verticalmente */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
       #floating-cart {
         width: 90%;
         max-width: 450px;
@@ -958,22 +963,13 @@
       }
     }
     
-    /* Aumentar tamaño del icono flotante del carrito en móviles */
-   @media (max-width: 768px) {
-      #floating-cart-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 36px;
-      }
-    }
-
     /* Footer para móvil */
    @media (max-width: 768px) {
       footer {
         padding: 30px 15px;
       }
       
-   .footer-container {
+  .footer-container {
         grid-template-columns: 1fr;
         gap: 20px;
       }
@@ -1017,17 +1013,17 @@
     }
 
     /* Ajustes para pantallas muy pequeñas */
-  @media (max-width: 480px) {
+   @media (max-width: 480px) {
       .hero-content h1 {
         font-size: 1.8rem;
       }
       
-   .projects h2, .services h2, .testimonials h2, 
+  .projects h2, .services h2, .testimonials h2, 
       .products h2, .contact h2 {
         font-size: 1.6rem;
       }
       
-  .stat h3 {
+   .stat h3 {
         font-size: 1.8rem;
       }
       
@@ -1041,15 +1037,15 @@
   </style>
 </head>
 <body>
-  <!-- Icono flotante del carrito - Siempre en la parte superior derecha -->
-  <div id="floating-cart-icon">
-    🛒
-    <div id="cart-badge">0</div>
-  </div>
-  
-  <!-- Botón flotante de WhatsApp -->
-  <div id="whatsapp-icon" onclick="window.open('https://wa.link/f1hhk0', '_blank')">
-    <i class="fab fa-whatsapp"></i>
+  <!-- Contenedor de iconos flotantes en la parte inferior derecha -->
+  <div class="floating-icons-container">
+    <div id="floating-cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <div id="cart-badge">0</div>
+    </div>
+    <div id="whatsapp-icon" onclick="window.open('https://wa.link/f1hhk0', '_blank')">
+      <i class="fab fa-whatsapp"></i>
+    </div>
   </div>
   
   <header>
@@ -1080,8 +1076,8 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Su Piscina Siempre Impecable</h1>
-      <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Servicio para propietarios de casas en Los Organos Perú.</p>
+      <h1>Su Piscina Siempre Limpia</h1>
+      <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Ofrecemos servicios de limpieza y cuidado para propietarios de casas.</p>
       <button onclick="window.location.href='https://wa.link/f1hhk0';">Contáctenos Hoy</button>
     </div>
     <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
@@ -1260,7 +1256,7 @@
       </div>
     </div>
     
-  <div class="copyright">
+   <div class="copyright">
       <p>&copy; 2024 ARENAZUL - Mantenimiento de Piscinas. Todos los derechos reservados.</p>
     </div>
   </footer>
@@ -1431,6 +1427,7 @@
       const cartElement = document.getElementById('floating-cart');
       const cartIcon = document.getElementById('floating-cart-icon');
       const whatsappIcon = document.getElementById('whatsapp-icon');
+      const iconsContainer = document.querySelector('.floating-icons-container');
       
       // Verificar si el clic fue fuera del carrito y fuera del icono del carrito
       if (cartVisible && 
@@ -1438,7 +1435,9 @@
           event.target !== cartIcon &&
           !cartIcon.contains(event.target) &&
           event.target !== whatsappIcon &&
-          !whatsappIcon.contains(event.target)) {
+          !whatsappIcon.contains(event.target) &&
+          event.target !== iconsContainer &&
+          !iconsContainer.contains(event.target)) {
         cartElement.style.display = 'none';
         cartVisible = false;
       }
