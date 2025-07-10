@@ -1,7 +1,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurantes Los Órganos - Delivery & Reservas</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Leaflet CSS -->
@@ -30,20 +30,20 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
         }
 
-  .container {
+ .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
 
-  .header-content {
+ .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
 
-   .logo {
+ .logo {
             font-size: 1.8rem;
             font-weight: bold;
             color: #333;
@@ -52,18 +52,18 @@
             gap: 0.5rem;
         }
 
-  .logo i {
+ .logo i {
             color: #ff6b6b;
         }
 
-  .search-bar {
+ .search-bar {
             flex: 1;
             max-width: 400px;
             margin: 0 2rem;
             position: relative;
         }
 
-  .search-input {
+ .search-input {
             width: 100%;
             padding: 0.8rem 1rem 0.8rem 2.5rem;
             border: none;
@@ -73,13 +73,13 @@
             transition: all 0.3s ease;
         }
 
-  .search-input:focus {
+ .search-input:focus {
             outline: none;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             transform: translateY(-2px);
         }
 
-  .search-icon {
+ .search-icon {
             position: absolute;
             left: 1rem;
             top: 50%;
@@ -87,14 +87,14 @@
             color: #666;
         }
 
-   .filters {
+ .filters {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             margin: 2rem 0;
         }
 
-   .filter-btn {
+  .filter-btn {
             padding: 0.5rem 1rem;
             border: none;
             border-radius: 20px;
@@ -105,27 +105,27 @@
             font-weight: 500;
         }
 
-  .filter-btn:hover, .filter-btn.active {
+ .filter-btn:hover, .filter-btn.active {
             background: #ff6b6b;
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
         }
 
-  .main-content {
+ .main-content {
             display: grid;
             grid-template-columns: 1fr 400px;
             gap: 2rem;
             margin-top: 2rem;
         }
 
-  .restaurants-grid {
+ .restaurants-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
-  .restaurant-card {
+ .restaurant-card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             overflow: hidden;
@@ -137,68 +137,68 @@
             height: 100%;
         }
 
-  .restaurant-card:hover {
+ .restaurant-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-  .restaurant-image-container {
+ .restaurant-image-container {
             width: 100%;
             height: 200px;
             position: relative;
             overflow: hidden;
         }
         
-  .restaurant-image {
+ .restaurant-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
         
-  .restaurant-card:hover .restaurant-image {
+ .restaurant-card:hover .restaurant-image {
             transform: scale(1.05);
         }
 
-   .restaurant-info {
+ .restaurant-info {
             padding: 1.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
-   .restaurant-name {
+ .restaurant-name {
             font-size: 1.3rem;
             font-weight: bold;
             color: #333;
             margin-bottom: 0.5rem;
         }
 
-  .restaurant-type {
+ .restaurant-type {
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-  .restaurant-rating {
+ .restaurant-rating {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
         }
 
-  .stars {
+ .stars {
             color: #ffc107;
         }
 
-  .contact-info {
+ .contact-info {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin: 1rem 0;
         }
 
-  .contact-item {
+ .contact-item {
             display: flex;
             align-items: center;
             gap: 0.3rem;
@@ -207,13 +207,13 @@
             flex: 1 0 100%;
         }
 
-   .social-links {
+ .social-links {
             display: flex;
             gap: 0.5rem;
             margin: 1rem 0;
         }
 
-  .social-link {
+ .social-link {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -225,16 +225,16 @@
             transition: all 0.3s ease;
         }
 
-  .social-link.facebook { background: #3b5998; }
+ .social-link.facebook { background: #3b5998; }
         .social-link.instagram { background: #e4405f; }
         .social-link.whatsapp { background: #25d366; }
 
-   .social-link:hover {
+ .social-link:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-   .action-buttons {
+ .action-buttons {
             display: flex;
             gap: 0.5rem;
             margin-top: auto;
@@ -267,12 +267,12 @@
             color: white;
         }
 
-  .btn:hover {
+ .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-   .map-container {
+  .map-container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 1.5rem;
@@ -283,7 +283,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
-   .map-title {
+ .map-title {
             font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 1rem;
@@ -293,7 +293,7 @@
             gap: 0.5rem;
         }
 
-  .map-title i {
+ .map-title i {
             color: #ff6b6b;
         }
 
@@ -305,7 +305,7 @@
             border: 1px solid #eee;
         }
 
-  .location-list {
+ .location-list {
             max-height: 200px;
             overflow-y: auto;
             border: 1px solid #eee;
@@ -313,7 +313,7 @@
             padding: 0.5rem;
         }
 
-   .location-item {
+ .location-item {
             padding: 0.8rem;
             border-bottom: 1px solid #eee;
             cursor: pointer;
@@ -328,24 +328,23 @@
             margin-bottom: 0;
         }
 
-   .location-item:hover {
+  .location-item:hover {
             background: #f8f9fa;
             transform: translateX(5px);
         }
-
-   .location-name {
+.location-name {
             font-weight: 600;
             color: #333;
         }
 
-   .location-address {
+  .location-address {
             font-size: 0.9rem;
             color: #666;
             margin-top: 0.2rem;
         }
         
         /* Nuevo estilo para el botón Visitar */
-   .btn-visitar {
+ .btn-visitar {
             background: #4ecdc4;
             color: white;
             border: none;
@@ -366,45 +365,45 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-  @media (max-width: 768px) {
+ @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
             }
 
-   .search-bar {
+ .search-bar {
                 max-width: 100%;
                 margin: 0;
             }
 
-   .main-content {
+  .main-content {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
 
-   .restaurants-grid {
+  .restaurants-grid {
                 grid-template-columns: 1fr;
             }
 
-   .filters {
+ .filters {
                 justify-content: center;
             }
 
-   .action-buttons {
+ .action-buttons {
                 flex-direction: column;
             }
 
-  .btn {
+ .btn {
                 flex: none;
             }
             
-   .map-container {
+  .map-container {
                 position: relative;
                 top: 0;
             }
         }
 
-   .floating-actions {
+  .floating-actions {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
@@ -414,7 +413,7 @@
             z-index: 100;
         }
 
-   .floating-btn {
+  .floating-btn {
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -430,12 +429,12 @@
             justify-content: center;
         }
 
-   .floating-btn:hover {
+ .floating-btn:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
         }
         
-   .image-placeholder {
+ .image-placeholder {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -445,7 +444,7 @@
             font-size: 2rem;
         }
         
-   .notification {
+ .notification {
             position: fixed;
             bottom: 20px;
             left: 50%;
@@ -462,7 +461,7 @@
             animation: fadeInUp 0.5s, fadeOut 0.5s 4.5s;
         }
         
-   @keyframes fadeInUp {
+  @keyframes fadeInUp {
             from { opacity: 0; transform: translate(-50%, 20px); }
             to { opacity: 1; transform: translate(-50%, 0); }
         }
@@ -473,25 +472,25 @@
         }
         
         /* Leaflet custom styles */
-   .leaflet-popup-content-wrapper {
+ .leaflet-popup-content-wrapper {
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
-   .leaflet-popup-content {
+  .leaflet-popup-content {
             margin: 12px 16px;
         }
         
-   .leaflet-popup-tip-container {
+ .leaflet-popup-tip-container {
             margin-top: -1px;
         }
         
-   .leaflet-popup-close-button {
+ .leaflet-popup-close-button {
             font-size: 20px !important;
             margin: 6px 6px 0 0;
         }
         
-   .leaflet-marker-icon {
+.leaflet-marker-icon {
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
     </style>
@@ -512,7 +511,7 @@
         </div>
     </header>
 
-  <div class="container">
+ <div class="container">
         <div class="filters">
             <button class="filter-btn active" data-filter="all">Todos</button>
             <button class="filter-btn" data-filter="mariscos">Mariscos</button>
@@ -523,12 +522,12 @@
             <button class="filter-btn" data-filter="familiar">Familiar</button>
         </div>
 
-   <div class="main-content">
+ <div class="main-content">
             <div class="restaurants-grid" id="restaurantsGrid">
                 <!-- Los restaurantes se cargarán aquí -->
             </div>
 
-   <div class="map-container">
+<div class="map-container">
                 <h3 class="map-title">
                     <i class="fas fa-map-marker-alt"></i>
                     Ubicaciones
@@ -549,16 +548,16 @@
         </div>
     </div>
 
-   <div class="floating-actions">
+ <div class="floating-actions">
         <button class="floating-btn" title="Ir arriba" onclick="scrollToTop()">
             <i class="fas fa-arrow-up"></i>
         </button>
     </div>
 
     <!-- Leaflet JS -->
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-   <script>
+ <script>
 // Restaurantes completos de Los Órganos, Perú con imágenes
 const restaurantes = [
     {
@@ -599,7 +598,7 @@ const restaurantes = [
         especialidad: "Comida casera peruana e internacional",
         descripcion: "Muy recomendado por ambiente agradable y comida casera. Lugar tranquilo con buena relación calidad-precio.",
         imagen: "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.rinconcitoencantado.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 3,
@@ -619,7 +618,7 @@ const restaurantes = [
         especialidad: "Pizzas artesanales y ambiente familiar",
         descripcion: "Famosa por sus pizzas y ambiente familiar. Excelente alternativa en entorno acogedor con buena atención.",
         imagen: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.cabanawilo.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 4,
@@ -639,7 +638,7 @@ const restaurantes = [
         especialidad: "Ceviches y pescados frescos",
         descripcion: "Especializado en ceviches y pescados frescos. Cuenta con reseñas en YouTube y TripAdvisor.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.manglarrosa.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 5,
@@ -659,7 +658,7 @@ const restaurantes = [
         especialidad: "Comida internacional, local, cervezas y cócteles",
         descripcion: "Ambiente moderno y trendy frente al mar. Excelente selección de cervezas y cócteles. Ideal para cenar o tomar algo.",
         imagen: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.oceanbluevenezia.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 6,
@@ -679,7 +678,7 @@ const restaurantes = [
         especialidad: "Comida peruana, café y delicatessen",
         descripcion: "Lugar acogedor en el malecón, ideal para desayunos, almuerzos y café. Ambiente tranquilo.",
         imagen: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.dondemaru.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
         {
         id: 7,
@@ -699,7 +698,7 @@ const restaurantes = [
         especialidad: "Platos bien preparados a precios accesibles",
         descripcion: "Ambiente acogedor y tranquilo. Recomendado para cenas relajadas y grupos. Atención personalizada.",
         imagen: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.elpointorganos.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 8,
@@ -719,7 +718,7 @@ const restaurantes = [
         especialidad: "Sushi y comida fusión",
         descripcion: "Cercano a Los Órganos, especializado en sushi y fusión. Cuenta con sitio web: elmiradordevichayito.com",
         imagen: "https://images.unsplash.com/photo-1611143669185-af224c5e3252?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.elmiradordevichayito.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 9,
@@ -739,7 +738,7 @@ const restaurantes = [
         especialidad: "Platos típicos peruanos y mariscos frescos",
         descripcion: "Ideal para almuerzos. Opción familiar y cómoda para experiencia local auténtica. Servicio de delivery disponible.",
         imagen: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.imperiodelsabor.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 10,
@@ -759,7 +758,7 @@ const restaurantes = [
         especialidad: "Mariscos frescos y platos peruanos",
         descripcion: "Reconocido localmente por sus mariscos frescos. Tiene presencia en videos y recomendaciones locales.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.las10lukas.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 11,
@@ -779,7 +778,7 @@ const restaurantes = [
         especialidad: "Ceviches y pescados frescos",
         descripcion: "Especializado en ceviches y pescados frescos. Excelente opción para sabores marinos en ambiente agradable.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.manglarcevicheria.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 12,
@@ -799,7 +798,7 @@ const restaurantes = [
         especialidad: "Mariscos frescos y cocina peruana",
         descripcion: "Restaurante tradicional especializado en mariscos frescos con vista al Pacífico.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.brisasdelpacifico.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 13,
@@ -819,7 +818,7 @@ const restaurantes = [
         especialidad: "Pollo a la brasa y parrillas",
         descripcion: "Especializado en pollo a la brasa y parrillas. Opción familiar con buen sabor y precios accesibles.",
         imagen: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.beachchicken.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 14,
@@ -839,7 +838,7 @@ const restaurantes = [
         especialidad: "Mariscos frescos y cocina marina",
         descripcion: "Punto de encuentro para los amantes de los mariscos frescos y la cocina marina tradicional.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.puntomarino.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 15,
@@ -859,7 +858,7 @@ const restaurantes = [
         especialidad: "Parrillas y carnes a la brasa",
         descripcion: "Especializado en parrillas y carnes a la brasa. Ambiente familiar con buen sabor y atención.",
         imagen: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.parrillaelencanto.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 16,
@@ -879,7 +878,7 @@ const restaurantes = [
         especialidad: "Mariscos frescos y comida rápida",
         descripcion: "Ubicado en el malecón, ofrece mariscos frescos y comida rápida en ambiente casual.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.elfogonorganos.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 17,
@@ -899,7 +898,7 @@ const restaurantes = [
         especialidad: "Ceviches y mariscos frescos",
         descripcion: "Cevichería tradicional conocida por sus ceviches frescos y mariscos de calidad.",
         imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.bendiciondedios.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 18,
@@ -919,7 +918,7 @@ const restaurantes = [
         especialidad: "Comida peruana tradicional",
         descripcion: "Restaurante de barrio que ofrece comida peruana tradicional en ambiente acogedor y familiar.",
         imagen: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "www.laesquinaorganos.com"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     }
 ];
 
@@ -1126,7 +1125,7 @@ const restaurantes = [
                 <div class="location-item" onclick="mostrarEnMapa(${restaurante.id})">
                     <div class="location-name">${restaurante.nombre}</div>
                     <div class="location-address">${restaurante.direccion}</div>
-                    <a href="http://${restaurante.web}" class="btn-visitar" target="_blank">Visitar</a>
+                    <a href="${restaurante.web}" class="btn-visitar" target="_blank">Visitar</a>
                 </div>
             `;
         }
@@ -1248,4 +1247,4 @@ const restaurantes = [
         });
     </script>
 </body>
-</html> 
+</html>
