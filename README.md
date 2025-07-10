@@ -1,1622 +1,1251 @@
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.6">
-  <title>ARENAZUL: Mantenimiento Profesional de Piscinas</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Reset and Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>Restaurantes Los Órganos - Delivery & Reservas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
   body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      background-color: #d6f0f1;
-      padding-bottom: 30px;
-    }
-
-    /* Header Section */
-  header {
-      background-color: #c7c7c2;
-      padding: 10px 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 15px;
-      margin: 20px;
-      position: relative;
-    }
-
-  header .logo {
-      display: flex;
-      align-items: center;
-    }
-
-   header .logo img {
-      background-color: transparent;
-      width: 80px;
-      height: auto;
-    }
-
-  nav ul {
-      display: flex;
-      justify-content: flex-end;
-      list-style-type: none;
-      padding: 0;
-    }
-
-  nav ul li {
-      margin-left: 20px;
-      font-size: 15px;
-    }
-
-  nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-   nav ul li a:hover {
-      color: #d6f0f1;
-    }
-
-    /* Contenedor para logo y título */
-   .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    /* Estilo para el logo */
-  .logo img {
-      width: 80px;
-      height: auto;
-      background-color: transparent;
-    }
-
-    /* Estilo para el título */
-   .header-title h1 {
-      font-size: 24px;
-      color: #ffffff;
-      margin-left: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    /* Ajuste para pantallas pequeñas (móviles) */
-   @media (max-width: 768px) {
-      .header-title h1 {
-        font-size: 22px;  /* Tamaño aumentado para móvil */
-        text-align: center;
-        margin-left: 10px;
-      }
-    }
-
-    /* Estilo para el título en el encabezado */
-   .header-title {
-      flex: 1;
-      text-align: center;
-      color: #ffffff;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-  header {
-      background-color: #c7c7c2;
-      padding: 10px 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 15px;
-      margin: 20px;
-      position: relative;
-      flex-wrap: wrap;
-    }
-
-   header .logo {
-      display: flex;
-      align-items: center;
-    }
-
-   header .logo img {
-      background-color: transparent;
-      width: 80px;
-      height: auto;
-    }
-    
-    /* Ajuste del tamaño del título para dispositivos móviles */
-  @media (max-width: 768px) {
-      .header-title h1 {
-        font-size: 22px;  /* Tamaño aumentado para móvil */
-      }
-    }
-
-    /* Contenedor de iconos flotantes en la parte inferior */
-   .floating-icons-container {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      align-items: center;
-    }
-
-    /* Icono flotante del carrito */
-  #floating-cart-icon {
-      background-color: #00A9E0;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      position: relative;
-      order: 1; /* Carrito arriba */
-    }
-
-   #floating-cart-icon:hover {
-      background-color: #ffde00;
-      transform: scale(1.1);
-    }
-
-  #cart-badge {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background-color: #ff6b6b;
-      color: white;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      font-size: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    /* Icono de WhatsApp flotante */
-   #whatsapp-icon {
-      background-color: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-      order: 2; /* WhatsApp abajo */
-    }
-
-   #whatsapp-icon:hover {
-      background-color: #128C7E;
-      transform: scale(1.1);
-    }
-
-    /* Hamburguesa */
-   .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      justify-content: center;
-      align-items: center;
-      padding: 5px;
-    }
-
-   .menu-toggle span {
-      background-color: white;
-      height: 4px;
-      width: 25px;
-      margin: 2px 0;
-      border-radius: 5px;
-      display: block;
-    }
-
-    /* Hero Section */
-   .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to right, #e8fbff, #d6f0f1);
-      padding: 10px 20px;
-      color: #0f172a;
-      text-align: left;
-      background-size: cover;
-      background-position: center;
-    }
-
-  .hero-content h1 {
-      font-size: 50px;
-      margin-bottom: 0px;
-    }
-
-   .hero-content p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-
-   .hero button {
-      background-color: #0f172a;
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-  .hero button:hover {
-      background-color: #00A9E0;
-    }
-
-   .hero img {
-      width: 50%;
-      border-radius: 20px 0px 30px 0px;
-    }
-
-    /* Projects Section - MEJORADA */
-   .projects {
-      padding: 20px 0;
-      background-color: white;
-      text-align: center;
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-   .projects h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #0077B6;
-    }
-
-   .project-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
-    }
-
-  .project-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      height: 250px;
-      transition: transform 0.3s ease;
-    }
-
-   .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-    }
-
-   .project-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-   .project-item:hover img {
-      transform: scale(1.05);
-    }
-
-   .project-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-      color: white;
-      padding: 20px 15px;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-
-   .project-item:hover .project-overlay {
-      transform: translateY(0);
-    }
-
-   .project-overlay h3 {
-      font-size: 18px;
-      margin-bottom: 5px;
-      color: #ffde00;
-    }
-
-   .project-overlay p {
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    /* Services Section */
-   .services {
-      padding: 0px 30px;
-      text-align: center;
-    }
-
-   .service-stats {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin-bottom: 50px;
-    }
-
-   .stat {
-      padding: 30px;
-      width: auto;
-    }
-
-  .stat h3 {
-      font-size: 48px;
-    }
-
-   .stat p {
-      font-size: 18px;
-    }
-    
-    /* Sección de servicios - ESTILOS MEJORADOS */
-   .section-title {
-      text-align: center;
-      margin: 60px 0 40px;
-      color: #0077B6;
-      position: relative;
-      font-size: 36px;
-    }
-
-   .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: #FFDE00;
-      border-radius: 2px;
-    }
-
-  .services-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      padding: 0 40px 40px;
-    }
-
-   .service-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-   .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-    }
-
-   .service-image {
-      height: 220px;
-      overflow: hidden;
-    }
-
-  .service-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-   .service-card:hover .service-image img {
-      transform: scale(1.05);
-    }
-
-   .service-content {
-      padding: 25px;
-    }
-
-  .service-content h3 {
-      color: #0077B6;
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-    }
-
-  .service-content p {
-      color: #555;
-      line-height: 1.8;
-    }
-    
-    /* Testimonials Section */
-  .testimonials {
-      background-color: #d6f0f1;
-      text-align: center;
-      margin: 20px;
-      padding: 30px 20px;
-      border-radius: 15px;
-    }
-
-  .testimonials h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-      color: #0077B6;
-    }
-
-   .testimonial img {
-      width: 100%;
-      border-radius: 20px 0px 30px 0px;
-    }
-
-   .testimonial {
-      background-color: white;
-      padding: 10px;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-   .testimonial p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-   .testimonial strong {
-      font-size: 18px;
-      color: #00A9E0;
-    }
-
-    /* Products Section */
-   .products {
-      padding: 20px 20px;
-      background-color: white;
-      text-align: center;
-      margin: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-   .products h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #0077B6;
-    }
-
-   .product-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-   .product {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-   .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-    }
-
-   .product img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      height: 180px;
-      object-fit: cover;
-    }
-
-   .product p {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 20px;
-      min-height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-   .product button {
-      padding: 10px 20px;
-      background-color: #ffde00;
-      color: #333;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-   .product button:hover {
-      background-color: #00A9E0;
-      color: white;
-    }
-
-    /* Floating Cart */
-  #floating-cart {
-      position: fixed;
-      top: 100px;
-      right: 30px;
-      width: 350px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-      z-index: 9999;
-      max-height: 500px;
-      overflow-y: auto;
-      display: none;
-      border: 2px solid #00A9E0;
-    }
-
-  #floating-cart h3 {
-      margin-bottom: 20px;
-      font-size: 22px;
-      color: #00A9E0;
-      text-align: center;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-    }
-
-  #floating-cart ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-  #floating-cart ul li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-      font-size: 16px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
-    }
-
-  #floating-cart ul li img {
-      width: 60px;
-      height: 60px;
-      margin-right: 10px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-   .cart-item-details {
-      flex-grow: 1;
-    }
-
-   .cart-item-name {
-      font-weight: bold;
-    }
-
-   .cart-item-price {
-      color: #00A9E0;
-    }
-
-   .cart-quantity-controls {
-      display: flex;
-      align-items: center;
-      margin-top: 5px;
-    }
-
-  .cart-quantity-controls button {
-      width: 30px;
-      height: 30px;
-      background: #00A9E0;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      font-weight: bold;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-   .cart-quantity-controls span {
-      margin: 0 10px;
-      min-width: 20px;
-      text-align: center;
-    }
-
-   .remove-item {
-      background: none;
-      border: none;
-      color: #ff6b6b;
-      cursor: pointer;
-      margin-left: 10px;
-      font-size: 20px;
-    }
-
-   .cart-total {
-      font-size: 20px;
-      font-weight: bold;
-      text-align: right;
-      margin: 20px 0;
-      padding-top: 10px;
-      border-top: 2px solid #eee;
-    }
-
-  .cart-total span {
-      color: #00A9E0;
-    }
-
-  #checkout-btn {
-      padding: 12px 20px;
-      background-color: #ffde00;
-      color: #333;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 16px;
-      font-weight: bold;
-      width: 100%;
-      transition: background-color 0.3s;
-    }
-
-   #checkout-btn:hover {
-      background-color: #00A9E0;
-      color: white;
-    }
-
-    /* Contact Section - ESTILOS MEJORADOS */
-   .contact {
-      padding: 80px 40px;
-      background: linear-gradient(135deg, #0077B6, #00A9E0);
-      color: white;
-      text-align: center;
-      margin: 20px;
-      border-radius: 15px;
-    }
-
-   .contact h2 {
-      font-size: 36px;
-      margin-bottom: 30px;
-      color: white;
-    }
-
-   .contact p {
-      font-size: 20px;
-      color: #fff;
-      margin-bottom: 30px;
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-
-   .contact-button {
-      padding: 18px 50px;
-      font-size: 18px;
-      background-color: #FFDE00;
-      color: #333;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    }
-
-   .contact-button:hover {
-      background-color: #ffc800;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Footer Section - ESTILOS MEJORADOS */
-  footer {
-      background: #0f172a;
-      color: white;
-      padding: 50px 40px 30px;
-      margin-top: 30px;
-    }
-
-   .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-   .footer-section h3 {
-      color: #FFDE00;
-      margin-bottom: 20px;
-      font-size: 1.4rem;
-    }
-
-   .footer-section p {
-      margin-bottom: 15px;
-      line-height: 1.8;
-    }
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+  .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+  .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+  .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+   .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+  .logo i {
+            color: #ff6b6b;
+        }
+
+  .search-bar {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 2rem;
+            position: relative;
+        }
+
+  .search-input {
+            width: 100%;
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+  .search-input:focus {
+            outline: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+  .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+   .filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+   .filter-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+  .filter-btn:hover, .filter-btn.active {
+            background: #ff6b6b;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+  .main-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+  .restaurants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+  .restaurant-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+  .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+  .restaurant-image-container {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+  .restaurant-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+  .restaurant-card:hover .restaurant-image {
+            transform: scale(1.05);
+        }
+
+   .restaurant-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+   .restaurant-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+  .restaurant-type {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+  .restaurant-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+  .stars {
+            color: #ffc107;
+        }
 
   .contact-info {
-      margin-top: 20px;
-    }
-
-  .contact-info p {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-  .contact-info i {
-      margin-right: 12px;
-      color: #00A9E0;
-      width: 20px;
-    }
-
-  .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-  .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #1e293b;
-      color: white;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-    }
-
-   .social-links a:hover {
-      background: #00A9E0;
-      transform: translateY(-3px);
-    }
-
-   .copyright {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid #334155;
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    /* Notification */
-  .notification {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #00A9E0;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      z-index: 10000;
-      font-weight: bold;
-      display: none;
-    }
-    
-    /* ========================================== */
-    /* MEJORAS ESPECÍFICAS PARA DISPOSITIVOS MÓVILES */
-    /* ========================================== */
-    
-    /* Prevenir desbordamiento horizontal */
-  html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-    
-    /* Header para móvil */
-   @media (max-width: 768px) {
-      header {
-        padding: 10px 15px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 10px;
-      }
-
-   .logo img {
-        width: 50px;
-      }
-
-  nav ul {
-        display: none;
-        flex-direction: column;
-        margin-top: 10px;
-        width: 100%;
-        padding: 10px 0;
-        background-color: #363a3b;
-        border-radius: 10px;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 100;
-      }
-
-  nav ul li {
-        margin: 10px 0;
-        font-size: 14px;
-        text-align: center;
-      }
-
-  nav ul li a {
-        font-size: 1rem;
-        padding: 8px 0;
-        display: block;
-      }
-
-   .menu-toggle {
-        display: flex;
-      }
-
-  nav ul.open {
-        display: flex;
-      }
-      
-   .floating-icons-container {
-        bottom: 20px;
-        right: 20px;
-      }
-      
-      /* Iconos más grandes en móvil */
-  #floating-cart-icon, #whatsapp-icon {
-        width: 70px;  /* Más grandes en móvil */
-        height: 70px;  /* Más grandes en móvil */
-        font-size: 28px;  /* Más grandes en móvil */
-      }
-      
-      /* Ajuste de posición para menú hamburguesa */
-   .header-container {
-        align-items: center;
-      }
-      
-   .menu-toggle {
-        display: flex;
-        align-items: center;
-        height: 40px;
-        margin-left: 10px;
-      }
-    }
-
-    /* Hero section para móvil */
-   @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 15px;
-        margin: 10px;
-      }
-
-   .hero-content h1 {
-        font-size: 2.5rem;  /* Más grande en móvil */
-        line-height: 1.2;
-      }
-
-  .hero-content p {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-      }
-
-   .hero button {
-        padding: 12px 25px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 300px;
-        margin: 10px 0;
-      }
-
-   .hero img {
-        width: 100%;
-        border-radius: 10px;
-        margin-top: 20px;
-      }
-    }
-
-    /* Servicios para móvil */
-   @media (max-width: 768px) {
-      section {
-        margin: 10px;
-        padding: 15px;
-      }
-      
-   .services-container {
-        padding: 0 15px;
-      }
-      
-   .service-card {
-        margin-bottom: 20px;
-      }
-      
-      /* Títulos más grandes en móvil */
-   .section-title {
-        font-size: 28px;  /* Más grande en móvil */
-      }
-    }
-
-    /* Proyectos para móvil - 2 en 2 */
-  @media (max-width: 768px) {
-      .projects {
-        margin: 10px;
-        padding: 15px 0;
-      }
-      
-   .projects h2 {
-        font-size: 28px;  /* Más grande en móvil */
-        margin-bottom: 20px;
-      }
-      
-  .project-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-      
-  .project-item {
-        height: 180px;
-      }
-    }
-
-    /* Testimonios para móvil */
-  @media (max-width: 768px) {
-      .testimonials {
-        margin: 10px;
-        padding: 15px;
-      }
-      
-   .testimonials h2 {
-        font-size: 28px;  /* Más grande en móvil */
-        margin-bottom: 20px;
-      }
-      
-   .testimonial {
-        padding: 15px;
-      }
-      
-  .testimonial p {
-        font-size: 1.1rem;
-      }
-    }
-
-    /* Productos para móvil - 2 en 2 */
-  @media (max-width: 768px) {
-      .products {
-        margin: 10px;
-        padding: 15px;
-      }
-      
-   .products h2 {
-        font-size: 28px;  /* Más grande en móvil */
-        margin-bottom: 20px;
-      }
-      
-   .product-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-      
-   .product {
-        padding: 15px;
-      }
-      
-   .product p {
-        font-size: 1.1rem;
-      }
-      
-   .product button {
-        width: 100%;
-      }
-    }
-
-    /* Contacto para móvil */
-  @media (max-width: 768px) {
-      .contact {
-        margin: 10px;
-        padding: 30px 15px;
-      }
-      
-   .contact h2 {
-        font-size: 28px;  /* Más grande en móvil */
-      }
-      
-   .contact p {
-        font-size: 1.1rem;
-      }
-      
-  .contact-button {
-        padding: 12px 25px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 300px;
-      }
-    }
-
-    /* Carrito para móvil - centrado verticalmente */
-  @media (max-width: 768px) {
-      #floating-cart {
-        width: 90%;
-        max-width: 450px;
-        padding: 15px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-height: 80vh;
-      }
-    }
-    
-    /* Footer para móvil */
-  @media (max-width: 768px) {
-      footer {
-        padding: 30px 15px;
-      }
-      
-   .footer-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      
-      /* Títulos más grandes en footer móvil */
-   .footer-section h3 {
-        font-size: 20px;  /* Más grande en móvil */
-      }
-    }
-
-    /* Estadísticas para móvil */
-   @media (max-width: 768px) {
-      .services {
-        margin: 10px;
-        padding: 0 15px;
-      }
-      
-   .service-stats {
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-bottom: 30px;
-      }
-      
-   .stat {
-        flex: 1 0 30%;
-        padding: 15px;
-        min-width: 120px;
-      }
-      
-   .stat h3 {
-        font-size: 2rem;
-      }
-      
-   .stat p {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Notificación para móvil */
-  @media (max-width: 768px) {
-      .notification {
-        padding: 12px 25px;
-        font-size: 0.95rem;
-        max-width: 90%;
-      }
-    }
-
-    /* Ajustes para pantallas muy pequeñas */
- @media (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 2rem;  /* Ajustado para móvil pequeño */
-      }
-      
-   .projects h2, .services h2, .testimonials h2, 
-      .products h2, .contact h2 {
-        font-size: 24px;  /* Más grande en móvil pequeño */
-      }
-      
-  .stat h3 {
-        font-size: 1.8rem;
-      }
-      
-      /* Ajustar a 1 columna en pantallas muy pequeñas */
-  @media (max-width: 480px) {
-        .project-gallery, .product-gallery {
-          grid-template-columns: 1fr;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
         }
-      }
-      
-      /* Iconos aún más grandes en móvil pequeño */
-   #floating-cart-icon, #whatsapp-icon {
-        width: 75px;
-        height: 75px;
-        font-size: 30px;
-      }
-    }
-  </style>
+
+  .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color: #666;
+            flex: 1 0 100%;
+        }
+
+   .social-links {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+  .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+  .social-link.facebook { background: #3b5998; }
+        .social-link.instagram { background: #e4405f; }
+        .social-link.whatsapp { background: #25d366; }
+
+   .social-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+   .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+  .btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+  .btn-primary {
+            background: #ff6b6b;
+            color: white;
+        }
+
+  .btn-secondary {
+            background: #4ecdc4;
+            color: white;
+        }
+
+  .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+   .map-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+   .map-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+  .map-title i {
+            color: #ff6b6b;
+        }
+
+  #map {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #eee;
+        }
+
+  .location-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 0.5rem;
+        }
+
+   .location-item {
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+  .location-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+   .location-item:hover {
+            background: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+   .location-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+   .location-address {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+        
+        /* Nuevo estilo para el botón Visitar */
+   .btn-visitar {
+            background: #4ecdc4;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+ .btn-visitar:hover {
+            background: #3a9c94;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+  @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+   .search-bar {
+                max-width: 100%;
+                margin: 0;
+            }
+
+   .main-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+   .restaurants-grid {
+                grid-template-columns: 1fr;
+            }
+
+   .filters {
+                justify-content: center;
+            }
+
+   .action-buttons {
+                flex-direction: column;
+            }
+
+  .btn {
+                flex: none;
+            }
+            
+   .map-container {
+                position: relative;
+                top: 0;
+            }
+        }
+
+   .floating-actions {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+   .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background: #ff6b6b;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+   .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+   .image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            font-size: 2rem;
+        }
+        
+   .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: fadeInUp 0.5s, fadeOut 0.5s 4.5s;
+        }
+        
+   @keyframes fadeInUp {
+            from { opacity: 0; transform: translate(-50%, 20px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+        
+  @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        /* Leaflet custom styles */
+   .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+   .leaflet-popup-content {
+            margin: 12px 16px;
+        }
+        
+   .leaflet-popup-tip-container {
+            margin-top: -1px;
+        }
+        
+   .leaflet-popup-close-button {
+            font-size: 20px !important;
+            margin: 6px 6px 0 0;
+        }
+        
+   .leaflet-marker-icon {
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+    </style>
 </head>
 <body>
-  <!-- Contenedor de iconos flotantes en la parte inferior derecha -->
-  <div class="floating-icons-container">
-    <div id="floating-cart-icon">
-      <i class="fas fa-shopping-cart"></i>
-      <div id="cart-badge">0</div>
-    </div>
-    <div id="whatsapp-icon" onclick="window.open('https://wa.link/f1hhk0', '_blank')">
-      <i class="fab fa-whatsapp"></i>
-    </div>
-  </div>
-  
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="https://cdn.wegic.ai/assets/onepage/thread/icon/1750689479539.png" alt="ARENAZUL Logo">
-      </div>
-      <div class="header-title">
-        <h1>ARENAZUL</h1>
-      </div>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#home" onclick="closeMenu()">Inicio</a></li>
-        <li><a href="#servicios" onclick="closeMenu()">Servicios</a></li>
-        <li><a href="#projects" onclick="closeMenu()">Proyectos</a></li>
-        <li><a href="#testimonials" onclick="closeMenu()">Testimonios</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Su Piscina Siempre Impecable</h1>
-      <p>Disfrute de una piscina cristalina sin el estrés del mantenimiento. Servicio para propietarios de casas en Los Organos Perú.</p>
-      <button onclick="window.location.href='https://wa.link/f1hhk0';">Contáctenos Hoy</button>
-    </div>
-    <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/6656a072-e611-491d-a643-628c73e7e2d6.jpeg?oldPrompt=A crystal-clear swimming pool reflecting the bright sunlight, surrounded by a well-maintained garden, showcasing pristine water and sparkling clean tiles. The pool is inviting and refreshing, with a sense of cleanliness and tranquility. In the background, a modern house can be seen, subtly suggesting the target audience of homeowners. (Emphasis on cleanliness, clarity, and inviting atmosphere:1.2), (no people in the scene), (professional photography)." alt="Piscina ARENAZUL">
-  </section>
-  
-  <!-- Services Stats Section -->
-  <section id="services" class="services">
-    <div class="service-stats">
-      <div class="stat">
-        <h3>50+</h3>
-        <p>Clientes Felices</p>
-      </div>
-      <div class="stat">
-        <h3>7</h3>
-        <p>AÑOS De Experiencia</p>
-      </div>
-      <div class="stat">
-        <h3>3+</h3>
-        <p>Personal Dedicado</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Sección de Servicios - MEJORADA -->
-  <section id="servicios">
-    <h2 class="section-title">Nuestros Servicios de Limpieza de Piscinas</h2>
-    <div class="services-container">
-      <div class="service-card">
-        <div class="service-image">
-          <img src="https://www.lavanguardia.com/files/image_449_220/uploads/2022/06/15/62a9ad6dd74fb.jpeg" alt="Limpieza básica de piscina">
-        </div>
-        <div class="service-content">
-          <h3>Limpieza Básica</h3>
-          <p>Servicio completo de limpieza de piscinas que incluye eliminación de residuos, cepillado de paredes y tratamiento químico básico.</p>
-        </div>
-      </div>
-      
-  <div class="service-card">
-        <div class="service-image">
-          <img src="https://www.tuandco.com/aprendeymejora/wp-content/uploads/2020/04/principal.jpg" alt="Mantenimiento semanal de piscina">
-        </div>
-        <div class="service-content">
-          <h3>Mantenimiento Semanal</h3>
-          <p>Programa de mantenimiento continuo con visitas semanales para mantener su piscina en perfecto estado todo el año.</p>
-        </div>
-      </div>
-      
-  <div class="service-card">
-        <div class="service-image">
-          <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YVIBZKeG3P0bh4GMiaCE6Vs_GuVz3pLWvFTmNnEdEgmIH6wGXXIFcNf4vRCoVbg8rkLztjS04R9fL_zsf956Nyin8dnQabBxbt-eVZy9n7g5x2Zegs7o4p1hANSBbcvKY-CpqRfRUiwHOJ1=w4000-h3000-p-k-no" alt="Limpieza intensiva de piscina">
-        </div>
-        <div class="service-content">
-          <h3>Limpieza Intensiva</h3>
-          <p>Limpieza profunda que incluye vaciado, cepillado de paredes y suelo, y tratamiento especializado para eliminar algas y residuos persistentes.</p>
-        </div>
-      </div>
-      
-   <div class="service-card">
-        <div class="service-image">
-          <img src="https://nautilusbr.com/dev/wp-content/uploads/close-up-de-mao-segurando-fita-de-medicao-de-ph-na-agua-da-piscina.jpeg" alt="Tratamiento de agua de piscina">
-        </div>
-        <div class="service-content">
-          <h3>Tratamiento de Agua</h3>
-          <p>Análisis profesional del agua y aplicación de los productos necesarios para mantener el equilibrio químico perfecto.</p>
-        </div>
-      </div>
-      
-  <div class="service-card">
-        <div class="service-image">
-          <img src="https://www.hidrotec.com/wp-content/uploads/2024/01/preparar-piscina-verano.webp" alt="Puesta a punto de piscina">
-        </div>
-        <div class="service-content">
-          <h3>Puesta a Punto</h3>
-          <p>Preparación completa para la temporada, incluyendo limpieza profunda, revisión de sistemas y tratamiento inicial.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Projects Section - MEJORADA -->
-  <section id="projects" class="projects">
-    <h2>Nuestros Proyectos Recientes</h2>
-    <div class="project-gallery">
-      <div class="project-item">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWTgWhMgCINg0P7MCRvFQ6S_2pjcHDxa0cGAqcu8sdChfAU5i5gX1RFxVovDp3MIxJ5UBeuacjPrHWbEvUI4nUSXVWShUJXGqH9a5nXzexSZDha55Xy2oUl0eWnkWxSS056mG7SSF8Vfm0=w3840-h2160-p-k-no" alt="Proyecto 1">
-        <div class="project-overlay">
-          <h3>Piscina Moderna</h3>
-          <p>Limpieza completa y tratamiento de agua</p>
-        </div>
-      </div>
-      <div class="project-item">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWTgWhMgCINg0P7MCRvFQ6S_2pjcHDxa0cGAqcu8sdChfAU5i5gX1RFxVovDp3MIxJ5UBeuacjPrHWbEvUI4nUSXVWShUJXGqH9a5nXzexSZDha55Xy2oUl0eWnkWxSS056mG7SSF8Vfm0=w3840-h2160-p-k-no" alt="Proyecto 2">
-        <div class="project-overlay">
-          <h3>Piscina Familiar</h3>
-          <p>Mantenimiento semanal personalizado</p>
-        </div>
-      </div>
-      <div class="project-item">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXRadNFxZwk-GjtcE5qCL4sILUiGbaS-xzHM8V30PhbIX_mOahPqyQmxIajXIyKjA5rcQtTIOFrY-dIXafAwD8qolFwVA3eDEWKtJKxZadhbGTLsPOl0bC9RPJwKSyMtH178_2wFImqK_kn=w4160-h3120-p-k-no" alt="Proyecto 3">
-        <div class="project-overlay">
-          <h3>Piscina Residencial</h3>
-          <p>Limpieza intensiva con vaciado completo</p>
-        </div>
-      </div>
-      <div class="project-item">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YXbcEZDRS2R4BlH1aIecDNpKgdSKlomaJJ-IZ_RGvv1F-zE8VJ-zCW4RyKbSSvxt7VFPkME-171ong9ulOOb2ouIpsb5NOwLUEoMj7E3OAbfGsNi65WLE_AY_Oyod0ZIPXu2RSLroCZCAu8=w4160-h3120-p-k-no" alt="Proyecto 4">
-        <div class="project-overlay">
-          <h3>Piscina de Lujo</h3>
-          <p>Tratamiento especial para agua cristalina</p>
-        </div>
-      </div>
-      <div class="project-item">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWhbbPVB7G5IqJrstFiNOsmhQuRlXVeWgKxSAdMKsWrmKsVniqxDxtnrQSPxOZa3dZlq2gyJ3A7B2MC_tKjCfMmh9p7PkM0TGhKvxvgYd6uokFSZEwe_LUdJvqeulRd4AQWp9DzfkiDIOkI=w4608-h3456-p-k-no" alt="Proyecto 5">
-        <div class="project-overlay">
-          <h3>Piscina con Jacuzzi</h3>
-          <p>Mantenimiento integral de ambos sistemas</p>
-        </div>
-      </div>
-      <div class="project-item">
-        <img src="https://lh3.googleusercontent.com/gps-cs/AIky0YWglv-HM0EpZ0Rrfm3_LA_Pd3oAU9WVk12GZL1qUNG9PHxOXJ2DdCeqyIQ6gb46_R-9YzLhw6O_Vmy8YX9DFeGrtRW7Qo6BLtIQB7g3T5l-pC7A6m6DfbUY9gCC7i2T7ruvIF6invi2Uwhg=w4608-h3456-p-k-no" alt="Proyecto 6">
-        <div class="project-overlay">
-          <h3>Piscina Minimalista</h3>
-          <p>Puesta a punto para temporada de verano</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials">
-    <h2>Testimonios</h2>
-    <div class="testimonial">
-      <p>"¡Desde que contraté a ARENAZUL, mi piscina siempre está lista para disfrutar! El servicio es excelente y el personal muy profesional."</p>
-      <img src="https://txcdn-prod-a1art.xiaopiu.com/assets/images/app_1925013562074480641/1925013562078674945/84d609b0-2f3d-4459-b9b7-6b3f0df73055.jpeg?oldPrompt=A serene and crystal-clear swimming pool reflecting the bright sky, surrounded by a well-maintained patio with comfortable lounge chairs, showcasing the joy and satisfaction of happy homeowners (trustworthy:1.2), suggesting relaxation and a carefree lifestyle (professional:1.1), pristine water (clean:1.3), natural sunlight, enhancing the inviting ambiance, no visible cleaning equipment" alt="Cliente satisfecho">
-      <p><strong>Ana Rodríguez</strong> - Propietaria de Casa</p>
-    </div>
-  </section>
-
-  <!-- Products Section -->
-  <section id="products" class="products">
-    <h2>Productos Esenciales para el Cuidado de su Piscina</h2>
-    <div class="product-gallery">
-      <div class="product">
-        <img src="https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg" alt="Tabletas de Cloro">
-        <p>Tabletas de Cloro (1kg) S/38.50</p>
-        <button onclick="addToCart('Tabletas de Cloro', 38.50, 'https://ceramicorpcenter.pe/wp-content/uploads/2024/05/CLORO-PASTILLAS.jpg')">Agregar 1kg</button>
-      </div>
-      <div class="product">
-        <img src="https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg" alt="Cloro Granulado">
-        <p>Cloro Granulado (1kg) S/20.00</p>
-        <button onclick="addToCart('Cloro Granulado', 20.00, 'https://insumosquimicos.pe/wp-content/uploads/2021/08/Cloro-granulado-.jpg')">Agregar 1kg</button>
-      </div>
-      <div class="product">
-        <img src="https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg" alt="Sulfato de Aluminio">
-        <p>Sulfato de Aluminio (1kg) S/7.50</p>
-        <button onclick="addToCart('Sulfato de Aluminio', 7.50, 'https://aquagardens.com.ec/wp-content/uploads/2021/07/AQUA-7-800x800-1.jpg')">Agregar 1kg</button>
-      </div>
-      <div class="product">
-        <img src="https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp" alt="Sulfato de Cobre">
-        <p>Sulfato de Cobre (1kg) S/26.00</p>
-        <button onclick="addToCart('Sulfato de Cobre', 26.00, 'https://sulcosa.b-cdn.net/wp-content/uploads/2024/04/Sulfato-de-cobre-pentahidratado.webp')">Agregar 1kg</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Floating Cart Section -->
-  <div id="floating-cart">
-    <h3>Carrito de Compras</h3>
-    <ul id="cart-list"></ul>
-    <div class="cart-total">Total: <span id="cart-total">S/0.00</span></div>
-    <button id="checkout-btn" onclick="checkout()">Realizar pedido</button>
-  </div>
-  
-  <!-- Notification -->
-  <div class="notification" id="notification"></div>
-
-  <!-- Contact Section - MEJORADA -->
-  <section id="contact" class="contact">
-    <h2>¿Listo para una Piscina Impecable?</h2>
-    <p>Obtenga un presupuesto gratuito y descubra cómo podemos ayudarle a mantener su piscina en perfectas condiciones durante todo el año.</p>
-    <button class="contact-button" onclick="window.location.href='https://wa.link/f1hhk0';">Solicitar Presupuesto</button>
-  </section>
-  
-  <!-- Pie de página - MEJORADO -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>ARENAZUL</h3>
-        <p>Especialistas en mantenimiento profesional de piscinas para hogares en todo Perú.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-      
-  <div class="footer-section">
-        <h3>Contacto</h3>
-        <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> A.V PERU AA, HH PUEBLO NUEVO SIN NÚMERO</p>
-          <p><i class="fab fa-whatsapp"></i> +51 975 842 622</p>
-          <p><i class="fas fa-envelope"></i> davidregx@gmail.com</p>
-        </div>
-      </div>
-      
-   <div class="footer-section">
-        <h3>Horario de Atención</h3>
-        <p><i class="far fa-clock"></i> Lunes a Viernes: 8:00 AM - 6:00 PM</p>
-        <p><i class="far fa-clock"></i> Sábados: 9:00 AM - 1:00 PM</p>
-        <p><i class="far fa-clock"></i> Domingos: Cerrado</p>
-      </div>
-    </div>
-    
-   <div class="copyright">
-      <p>&copy; 2024 ARENAZUL - Mantenimiento de Piscinas. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <script>
-    // Variables globales
-    let cart = [];
-    let cartVisible = false;
-
-    // Funciones del carrito
-    function addToCart(productName, productPrice, productImage) {
-      // Verificar si el producto ya está en el carrito
-      const existingItem = cart.find(item => item.name === productName);
-      
-      if (existingItem) {
-        // Incrementar en 1kg (1 unidad)
-        existingItem.quantity++;
-      } else {
-        // Agregar nuevo producto (1kg)
-        cart.push({ 
-          name: productName, 
-          price: productPrice, 
-          image: productImage, 
-          quantity: 1 
-        });
-      }
-      
-      updateCart();
-      showNotification(`1kg de ${productName} añadido al carrito`);
-      
-      // Mantener el carrito abierto después de añadir
-      document.getElementById('floating-cart').style.display = 'block';
-      cartVisible = true;
-    }
-
-    function updateCart() {
-      const cartList = document.getElementById('cart-list');
-      const cartTotalElement = document.getElementById('cart-total');
-      const cartBadge = document.getElementById('cart-badge');
-      let total = 0;
-      let itemCount = 0;
-      
-      cartList.innerHTML = '';
-      
-      cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        itemCount += item.quantity;
-        
-        li.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <div class="cart-item-details">
-            <p class="cart-item-name">${item.name}</p>
-            <p class="cart-item-price">S/${item.price.toFixed(2)}/kg</p>
-            <div class="cart-quantity-controls">
-              <button onclick="changeQuantity(${index}, -1, event)">-</button>
-              <span>${item.quantity} kg</span>
-              <button onclick="changeQuantity(${index}, 1, event)">+</button>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    Restaurantes Los Órganos
+                </div>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Buscar restaurantes..." id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
             </div>
-          </div>
-          <button class="remove-item" onclick="removeFromCart(${index}, event)">×</button>
-        `;
+        </div>
+    </header>
 
-        cartList.appendChild(li);
-      });
-      
-      cartTotalElement.textContent = `S/${total.toFixed(2)}`;
-      cartBadge.textContent = itemCount;
-      
-      // Mostrar carrito si hay productos
-      if (cart.length > 0 && !cartVisible) {
-        document.getElementById('floating-cart').style.display = 'block';
-        cartVisible = true;
-      }
+  <div class="container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="mariscos">Mariscos</button>
+            <button class="filter-btn" data-filter="criolla">Criolla</button>
+            <button class="filter-btn" data-filter="pizzas">Pizzas</button>
+            <button class="filter-btn" data-filter="internacional">Internacional</button>
+            <button class="filter-btn" data-filter="delivery">Delivery</button>
+            <button class="filter-btn" data-filter="familiar">Familiar</button>
+        </div>
+
+   <div class="main-content">
+            <div class="restaurants-grid" id="restaurantsGrid">
+                <!-- Los restaurantes se cargarán aquí -->
+            </div>
+
+   <div class="map-container">
+                <h3 class="map-title">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Ubicaciones
+                </h3>
+                <div id="map">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 400px; background: linear-gradient(45deg, #667eea, #764ba2); color: white; border-radius: 10px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">🗺️</div>
+                            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Cargando mapa...</p>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Por favor espera mientras se carga el mapa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-list" id="locationList">
+                    <!-- Las ubicaciones se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="floating-actions">
+        <button class="floating-btn" title="Ir arriba" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <!-- Leaflet JS -->
+   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+   <script>
+// Restaurantes completos de Los Órganos, Perú con imágenes
+const restaurantes = [
+    {
+        id: 1,
+        nombre: "Restaurant Turístico Bambú",
+        tipo: "Peruana / Latina / Mariscos",
+        rating: 4.7,
+        telefono: "+51 972 833 374",
+        direccion: "Malecón Los Órganos 20840",
+        lat:  -4.1776737,
+        lng: -81.1318589,
+        whatsapp: "51972833374",
+        facebook: "",
+        instagram: "restauranteturisticobambu",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Cocina peruana, latina y mariscos con vista al mar",
+        descripcion: "Favorito de locales y turistas por su variada carta y ambiente con vista al mar. Experiencia auténtica y completa.",
+        imagen: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "https://maps.app.goo.gl/8QkywT5waMiiD7mS8"
+    },
+    {
+        id: 2,
+        nombre: "Rinconcito Encantado",
+        tipo: "Internacional / Peruana",
+        rating: 4.6,
+        telefono: "+51 945 123 456",
+        direccion: "Pasaje Olaya s/n, Los Órganos",
+        lat: -4.1712,
+        lng: -81.1248,
+        whatsapp: "51945123456",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "criolla",
+        especialidad: "Comida casera peruana e internacional",
+        descripcion: "Muy recomendado por ambiente agradable y comida casera. Lugar tranquilo con buena relación calidad-precio.",
+        imagen: "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.rinconcitoencantado.com"
+    },
+    {
+        id: 3,
+        nombre: "La Cabaña De Wilo",
+        tipo: "Pizzería / Peruana",
+        rating: 4.0,
+        telefono: "+51 987 654 321",
+        direccion: "Panamericana, Los Órganos",
+        lat: -4.1703,
+        lng: -81.1258,
+        whatsapp: "51987654321",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "pizzas",
+        especialidad: "Pizzas artesanales y ambiente familiar",
+        descripcion: "Famosa por sus pizzas y ambiente familiar. Excelente alternativa en entorno acogedor con buena atención.",
+        imagen: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.cabanawilo.com"
+    },
+    {
+        id: 4,
+        nombre: "El Manglar de Rosa",
+        tipo: "Peruana / Mariscos",
+        rating: 4.2,
+        telefono: "+51 912 345 678",
+        direccion: "Barrio Miraflores Sur 2 No 306, Los Órganos",
+        lat: -4.1715,
+        lng: -81.1245,
+        whatsapp: "51912345678",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Ceviches y pescados frescos",
+        descripcion: "Especializado en ceviches y pescados frescos. Cuenta con reseñas en YouTube y TripAdvisor.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.manglarrosa.com"
+    },
+    {
+        id: 5,
+        nombre: "Ocean Blue & Venezia Restobar",
+        tipo: "Internacional / Peruana / Cócteles",
+        rating: 4.6,
+        telefono: "+51 934 567 890",
+        direccion: "Frente al mar, Los Órganos",
+        lat: -4.1779690, 
+        lng: -81.1323430,
+        whatsapp: "51934567890",
+        facebook: "",
+        instagram: "oceanbluevenezia_restuobar",
+        delivery: true,
+        reservas: true,
+        categoria: "internacional",
+        especialidad: "Comida internacional, local, cervezas y cócteles",
+        descripcion: "Ambiente moderno y trendy frente al mar. Excelente selección de cervezas y cócteles. Ideal para cenar o tomar algo.",
+        imagen: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.oceanbluevenezia.com"
+    },
+    {
+        id: 6,
+        nombre: "Donde Maru",
+        tipo: "Peruana / Café / Delicatessen",
+        rating: 4.3,
+        telefono: "+51 923 456 789",
+        direccion: "Malecón Los Órganos 162, 20840",
+        lat: -4.1708,
+        lng: -81.1255,
+        whatsapp: "51923456789",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "criolla",
+        especialidad: "Comida peruana, café y delicatessen",
+        descripcion: "Lugar acogedor en el malecón, ideal para desayunos, almuerzos y café. Ambiente tranquilo.",
+        imagen: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.dondemaru.com"
+    },
+        {
+        id: 7,
+        nombre: "El Point de Órganos",
+        tipo: "Peruana / Mariscos",
+        rating: 4.5,
+        telefono: "",
+        direccion: "Los Órganos 20000",
+        lat: -4.1715,
+        lng: -81.1245,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "criolla",
+        especialidad: "Platos bien preparados a precios accesibles",
+        descripcion: "Ambiente acogedor y tranquilo. Recomendado para cenas relajadas y grupos. Atención personalizada.",
+        imagen: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.elpointorganos.com"
+    },
+    {
+        id: 8,
+        nombre: "Sushi El Mirador de Vichayito",
+        tipo: "Sushi / Fusión",
+        rating: 4.1,
+        telefono: "+51 986 727 227",
+        direccion: "Vichayito, Antigua Panamericana Norte 1212",
+        lat: -4.1650,
+        lng: -81.1300,
+        whatsapp: "51986727227",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "internacional",
+        especialidad: "Sushi y comida fusión",
+        descripcion: "Cercano a Los Órganos, especializado en sushi y fusión. Cuenta con sitio web: elmiradordevichayito.com",
+        imagen: "https://images.unsplash.com/photo-1611143669185-af224c5e3252?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.elmiradordevichayito.com"
+    },
+    {
+        id: 9,
+        nombre: "El Imperio del Sabor",
+        tipo: "Peruana / Latina",
+        rating: 4.2,
+        telefono: "+51 972 934 453",
+        direccion: "Av. Perú A-16, frente al parque de Pueblo Nuevo, Los Órganos",
+        lat: -4.1708,
+        lng: -81.1255,
+        whatsapp: "51972934453",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "criolla",
+        especialidad: "Platos típicos peruanos y mariscos frescos",
+        descripcion: "Ideal para almuerzos. Opción familiar y cómoda para experiencia local auténtica. Servicio de delivery disponible.",
+        imagen: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.imperiodelsabor.com"
+    },
+    {
+        id: 10,
+        nombre: "Las 10 Lukas de Pino",
+        tipo: "Peruana / Mariscos",
+        rating: 4.2,
+        telefono: "",
+        direccion: "Los Órganos",
+        lat: -4.1710,
+        lng: -81.1250,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Mariscos frescos y platos peruanos",
+        descripcion: "Reconocido localmente por sus mariscos frescos. Tiene presencia en videos y recomendaciones locales.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.las10lukas.com"
+    },
+    {
+        id: 11,
+        nombre: "El Manglar Cevichería",
+        tipo: "Peruana / Mariscos",
+        rating: 4.3,
+        telefono: "",
+        direccion: "Pasaje Olaya s/n, Los Órganos",
+        lat: -4.1710,
+        lng: -81.1250,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Ceviches y pescados frescos",
+        descripcion: "Especializado en ceviches y pescados frescos. Excelente opción para sabores marinos en ambiente agradable.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.manglarcevicheria.com"
+    },
+    {
+        id: 12,
+        nombre: "Restaurante Brisas del Pacífico",
+        tipo: "Peruana / Mariscos",
+        rating: 4.0,
+        telefono: "",
+        direccion: "Los Órganos 20840",
+        lat: -4.1705,
+        lng: -81.1252,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Mariscos frescos y cocina peruana",
+        descripcion: "Restaurante tradicional especializado en mariscos frescos con vista al Pacífico.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.brisasdelpacifico.com"
+    },
+    {
+        id: 13,
+        nombre: "Pollería Beach Chicken",
+        tipo: "Pollo a la brasa / Parrilla",
+        rating: 4.0,
+        telefono: "",
+        direccion: "Av. Túpac Amaru 437, Los Órganos 20841",
+        lat: -4.1714,
+        lng: -81.1247,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "parrilla",
+        especialidad: "Pollo a la brasa y parrillas",
+        descripcion: "Especializado en pollo a la brasa y parrillas. Opción familiar con buen sabor y precios accesibles.",
+        imagen: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.beachchicken.com"
+    },
+    {
+        id: 14,
+        nombre: "Restaurante Punto Marino",
+        tipo: "Mariscos / Peruana",
+        rating: 4.1,
+        telefono: "",
+        direccion: "Los Órganos 20841",
+        lat: -4.1709,
+        lng: -81.1254,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Mariscos frescos y cocina marina",
+        descripcion: "Punto de encuentro para los amantes de los mariscos frescos y la cocina marina tradicional.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.puntomarino.com"
+    },
+    {
+        id: 15,
+        nombre: "Parrillas El Encanto",
+        tipo: "Parrilla / Peruana",
+        rating: 4.2,
+        telefono: "",
+        direccion: "Los Órganos 20840",
+        lat: -4.1707,
+        lng: -81.1256,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "parrilla",
+        especialidad: "Parrillas y carnes a la brasa",
+        descripcion: "Especializado en parrillas y carnes a la brasa. Ambiente familiar con buen sabor y atención.",
+        imagen: "https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.parrillaelencanto.com"
+    },
+    {
+        id: 16,
+        nombre: "El Fogón",
+        tipo: "Mariscos / Comida rápida",
+        rating: 4.0,
+        telefono: "",
+        direccion: "Malecón Los Órganos 158, 20840",
+        lat: -4.1706,
+        lng: -81.1253,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Mariscos frescos y comida rápida",
+        descripcion: "Ubicado en el malecón, ofrece mariscos frescos y comida rápida en ambiente casual.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.elfogonorganos.com"
+    },
+    {
+        id: 17,
+        nombre: "Cevichería Bendición de Dios",
+        tipo: "Mariscos / Peruana",
+        rating: 4.1,
+        telefono: "",
+        direccion: "Los Órganos 20840",
+        lat: -4.1711,
+        lng: -81.1249,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "mariscos",
+        especialidad: "Ceviches y mariscos frescos",
+        descripcion: "Cevichería tradicional conocida por sus ceviches frescos y mariscos de calidad.",
+        imagen: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.bendiciondedios.com"
+    },
+    {
+        id: 18,
+        nombre: "La Esquina",
+        tipo: "Peruana",
+        rating: 4.0,
+        telefono: "",
+        direccion: "Los Órganos 20840",
+        lat: -4.1713,
+        lng: -81.1251,
+        whatsapp: "",
+        facebook: "",
+        instagram: "",
+        delivery: true,
+        reservas: true,
+        categoria: "criolla",
+        especialidad: "Comida peruana tradicional",
+        descripcion: "Restaurante de barrio que ofrece comida peruana tradicional en ambiente acogedor y familiar.",
+        imagen: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+        web: "www.laesquinaorganos.com"
     }
+];
 
-    function changeQuantity(index, change, event) {
-      // Detener la propagación del evento para evitar que se cierre el carrito
-      event.stopPropagation();
-      
-      // Cambiar la cantidad en kg
-      cart[index].quantity += change;
-      
-      // Si la cantidad es 0 o menos, eliminar el producto
-      if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-      }
-      
-      updateCart();
-    }
+        let restaurantesFiltrados = [...restaurantes];
+        let map;
+        let markers = [];
+        let mapLoaded = false;
 
-    function removeFromCart(index, event) {
-      // Detener la propagación del evento para evitar que se cierre el carrito
-      event.stopPropagation();
-      
-      cart.splice(index, 1);
-      updateCart();
-      
-      if (cart.length === 0) {
-        document.getElementById('floating-cart').style.display = 'none';
-        cartVisible = false;
-      }
-    }
+        // Inicializar mapa con Leaflet
+        function initMap() {
+            try {
+                // Eliminar placeholder
+                const mapDiv = document.getElementById('map');
+                mapDiv.innerHTML = '';
+                
+                // Crear el mapa
+                map = L.map('map').setView([-4.1706, -81.1253], 15);
+                
+                // Añadir capa de OpenStreetMap
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                mapLoaded = true;
+                
+                // Mostrar notificación
+                showNotification('Mapa cargado correctamente', 'success');
 
-    function toggleCart() {
-      const cartElement = document.getElementById('floating-cart');
-      
-      if (cart.length === 0) {
-        showNotification("El carrito está vacío");
-        return;
-      }
-      
-      if (cartElement.style.display === 'block') {
-        cartElement.style.display = 'none';
-        cartVisible = false;
-      } else {
-        cartElement.style.display = 'block';
-        cartVisible = true;
-      }
-    }
+                // Agregar marcadores
+                agregarMarcadores();
+            } catch (error) {
+                console.error("Error al cargar el mapa:", error);
+                showNotification('Error al cargar el mapa', 'error');
+                initMapFallback();
+            }
+        }
 
-    function checkout() {
-      if (cart.length === 0) {
-        showNotification("El carrito está vacío");
-        return;
-      }
-      
-      let message = "¡Hola ARENAZUL! Quiero hacer un pedido de productos para piscina:\n\n";
-      let total = 0;
-      
-      cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-        message += `- ${item.name}: ${item.quantity} kg - S/${itemTotal.toFixed(2)}\n`;
-      });
-      
-      message += `\nTotal: S/${total.toFixed(2)}`;
-      
-      const whatsappUrl = `https://wa.me/51975842622?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-    }
+        function agregarMarcadores() {
+            if (!mapLoaded) return;
+            
+            // Limpiar marcadores existentes
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
 
-    // Funciones auxiliares
-    function showNotification(message) {
-      const notification = document.getElementById('notification');
-      notification.textContent = message;
-      notification.style.display = 'block';
-      
-      setTimeout(() => {
-        notification.style.transition = 'opacity 0.5s';
-        notification.style.opacity = '0';
-        setTimeout(() => {
-          notification.style.display = 'none';
-          notification.style.opacity = '1';
-        }, 500);
-      }, 3000);
-    }
+            restaurantesFiltrados.forEach(restaurante => {
+                // Crear marcador personalizado
+                const customIcon = L.divIcon({
+                    className: 'custom-marker',
+                    html: `
+                        <div style="
+                            width: 40px; 
+                            height: 40px; 
+                            background: #ff6b6b; 
+                            border-radius: 50%; 
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: white;
+                            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                        ">
+                            🍽️
+                        </div>
+                    `,
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 40]
+                });
+                
+                const marker = L.marker([restaurante.lat, restaurante.lng], {
+                    icon: customIcon
+                }).addTo(map);
+                
+                markers.push(marker);
 
-    // Menú móvil
-    function toggleMenu() {
-      const navMenu = document.querySelector('nav ul');
-      navMenu.classList.toggle('open');
-    }
-    
-    // Nueva función para cerrar el menú
-    function closeMenu() {
-      const navMenu = document.querySelector('nav ul');
-      navMenu.classList.remove('open');
-    }
+                // Crear contenido para el popup
+                const popupContent = `
+                    <div style="max-width: 250px;">
+                        <h3 style="margin: 0 0 8px 0; color: #333;">${restaurante.nombre}</h3>
+                        <p style="margin: 0 0 8px 0; color: #666; font-size: 14px;">${restaurante.tipo}</p>
+                        <p style="margin: 0 0 8px 0; color: #666; font-size: 12px;">${restaurante.descripcion}</p>
+                        <div style="margin-top: 10px; display: flex; gap: 5px;">
+                            <a href="https://wa.me/${restaurante.whatsapp}" target="_blank" style="
+                                background: #25d366; 
+                                color: white; 
+                                padding: 8px 12px; 
+                                text-decoration: none; 
+                                border-radius: 4px; 
+                                font-size: 12px;
+                                flex: 1;
+                                text-align: center;
+                            ">
+                                WhatsApp
+                            </a>
+                            <a href="tel:${restaurante.telefono}" style="
+                                background: #007bff; 
+                                color: white; 
+                                padding: 8px 12px; 
+                                text-decoration: none; 
+                                border-radius: 4px; 
+                                font-size: 12px;
+                                flex: 1;
+                                text-align: center;
+                            ">
+                                Llamar
+                            </a>
+                        </div>
+                    </div>
+                `;
 
-    // Cerrar carrito al hacer clic fuera de él
-    document.addEventListener('click', function(event) {
-      const cartElement = document.getElementById('floating-cart');
-      const cartIcon = document.getElementById('floating-cart-icon');
-      const whatsappIcon = document.getElementById('whatsapp-icon');
-      const iconsContainer = document.querySelector('.floating-icons-container');
-      
-      // Verificar si el clic fue fuera del carrito y fuera del icono del carrito
-      if (cartVisible && 
-          !cartElement.contains(event.target) && 
-          event.target !== cartIcon &&
-          !cartIcon.contains(event.target) &&
-          event.target !== whatsappIcon &&
-          !whatsappIcon.contains(event.target) &&
-          event.target !== iconsContainer &&
-          !iconsContainer.contains(event.target)) {
-        cartElement.style.display = 'none';
-        cartVisible = false;
-      }
-    });
+                marker.bindPopup(popupContent);
+            });
+        }
 
-    // Inicializar
-    document.getElementById('floating-cart-icon').addEventListener('click', toggleCart);
-    
-    // Prevenir el desplazamiento horizontal en móvil
-    window.addEventListener('resize', function() {
-      if (window.innerWidth < 768) {
-        document.body.style.overflowX = 'hidden';
-      } else {
-        document.body.style.overflowX = 'auto';
-      }
-    });
-    
-    // Ajustar posición del carrito al desplazar
-    window.addEventListener('scroll', function() {
-      if (window.innerWidth < 768 && cartVisible) {
-        const cartElement = document.getElementById('floating-cart');
-        cartElement.style.top = '50%';
-        cartElement.style.transform = 'translateY(-50%)';
-      }
-    });
-    
-    // Cerrar el menú al hacer clic en un enlace
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-  </script>
+        function crearTarjetaRestaurante(restaurante) {
+            // Generar contenido de imagen
+            let imagenContent = '';
+            if (restaurante.imagen) {
+                imagenContent = `<img src="${restaurante.imagen}" alt="${restaurante.nombre}" class="restaurant-image">`;
+            } else {
+                // Si no hay imagen, mostrar un placeholder con icono
+                const iconos = {
+                    mariscos: 'fas fa-fish',
+                    criolla: 'fas fa-drumstick-bite',
+                    pizzas: 'fas fa-pizza-slice',
+                    internacional: 'fas fa-globe',
+                    parrilla: 'fas fa-fire'
+                };
+                const icono = iconos[restaurante.categoria] || 'fas fa-utensils';
+                imagenContent = `
+                    <div class="image-placeholder">
+                        <i class="${icono}"></i>
+                    </div>
+                `;
+            }
+
+            return `
+                <div class="restaurant-card" data-categoria="${restaurante.categoria}">
+                    <div class="restaurant-image-container">
+                        ${imagenContent}
+                    </div>
+                    <div class="restaurant-info">
+                        <h3 class="restaurant-name">${restaurante.nombre}</h3>
+                        <p class="restaurant-type">${restaurante.tipo}</p>
+                        <div class="restaurant-rating">
+                            <div class="stars">
+                                ${'★'.repeat(Math.floor(restaurante.rating))}${'☆'.repeat(5 - Math.floor(restaurante.rating))}
+                            </div>
+                            <span>${restaurante.rating}</span>
+                        </div>
+                        <div class="restaurant-description">
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.4;">
+                                ${restaurante.descripcion}
+                            </p>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>${restaurante.telefono}</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>${restaurante.direccion}</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-star"></i>
+                                <span>${restaurante.especialidad}</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://wa.me/${restaurante.whatsapp}" class="social-link whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://facebook.com/${restaurante.facebook}" class="social-link facebook" target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://instagram.com/${restaurante.instagram}" class="social-link instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="action-buttons">
+                            ${restaurante.delivery ? `
+                                <a href="https://wa.me/${restaurante.whatsapp}?text=Hola! Me gustaría hacer un pedido delivery" class="btn btn-primary">
+                                    <i class="fas fa-motorcycle"></i>
+                                    Delivery
+                                </a>
+                            ` : ''}
+                            ${restaurante.reservas ? `
+                                <a href="https://wa.me/${restaurante.whatsapp}?text=Hola! Me gustaría hacer una reserva" class="btn btn-secondary">
+                                    <i class="fas fa-calendar-check"></i>
+                                    Reservar
+                                </a>
+                            ` : ''}
+                            <a href="tel:${restaurante.telefono}" class="btn btn-secondary">
+                                <i class="fas fa-phone"></i>
+                                Llamar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function crearItemUbicacion(restaurante) {
+            return `
+                <div class="location-item" onclick="mostrarEnMapa(${restaurante.id})">
+                    <div class="location-name">${restaurante.nombre}</div>
+                    <div class="location-address">${restaurante.direccion}</div>
+                    <a href="http://${restaurante.web}" class="btn-visitar" target="_blank">Visitar</a>
+                </div>
+            `;
+        }
+
+        function cargarRestaurantes() {
+            const grid = document.getElementById('restaurantsGrid');
+            const locationList = document.getElementById('locationList');
+            
+            grid.innerHTML = restaurantesFiltrados.map(crearTarjetaRestaurante).join('');
+            locationList.innerHTML = restaurantesFiltrados.map(crearItemUbicacion).join('');
+            
+            // Actualizar marcadores del mapa
+            if (mapLoaded) {
+                agregarMarcadores();
+            }
+        }
+
+        function filtrarRestaurantes(categoria) {
+            if (categoria === 'all') {
+                restaurantesFiltrados = [...restaurantes];
+            } else if (categoria === 'delivery') {
+                restaurantesFiltrados = restaurantes.filter(r => r.delivery);
+            } else if (categoria === 'familiar') {
+                restaurantesFiltrados = restaurantes.filter(r => 
+                    r.tipo.toLowerCase().includes('familiar') || 
+                    r.descripcion.toLowerCase().includes('familiar') ||
+                    r.nombre.toLowerCase().includes('cabaña')
+                );
+            } else {
+                restaurantesFiltrados = restaurantes.filter(r => r.categoria === categoria);
+            }
+            cargarRestaurantes();
+        }
+
+        function buscarRestaurantes(termino) {
+            const terminoLower = termino.toLowerCase();
+            restaurantesFiltrados = restaurantes.filter(r => 
+                r.nombre.toLowerCase().includes(terminoLower) ||
+                r.tipo.toLowerCase().includes(terminoLower) ||
+                r.especialidad.toLowerCase().includes(terminoLower) ||
+                r.descripcion.toLowerCase().includes(terminoLower)
+            );
+            cargarRestaurantes();
+        }
+
+        function mostrarEnMapa(restauranteId) {
+            const restaurante = restaurantes.find(r => r.id === restauranteId);
+            if (restaurante && mapLoaded) {
+                map.setView([restaurante.lat, restaurante.lng], 17);
+                
+                // Encontrar el marcador correspondiente y abrir su popup
+                const marker = markers.find(m => {
+                    const latLng = m.getLatLng();
+                    return latLng.lat === restaurante.lat && latLng.lng === restaurante.lng;
+                });
+                if (marker) {
+                    marker.openPopup();
+                }
+            } else {
+                showNotification('Mapa no disponible. Intente recargar la página.', 'error');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}"></i>
+                ${message}
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Función de respaldo para el mapa si Leaflet no carga
+        function initMapFallback() {
+            const mapDiv = document.getElementById('map');
+            if (mapDiv) {
+                mapDiv.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; height: 400px; background: linear-gradient(45deg, #667eea, #764ba2); color: white; border-radius: 10px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
+                            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Mapa no disponible</p>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Haz click en los restaurantes de la lista para ver sus detalles</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar mapa
+            initMap();
+            
+            // Cargar restaurantes
+            cargarRestaurantes();
+
+            // Filtros
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filtrarRestaurantes(this.dataset.filter);
+                });
+            });
+
+            // Búsqueda
+            document.getElementById('searchInput').addEventListener('input', function() {
+                buscarRestaurantes(this.value);
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
