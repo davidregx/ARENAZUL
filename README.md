@@ -579,7 +579,7 @@ const restaurantes = [
         especialidad: "Cocina peruana, latina y mariscos con vista al mar",
         descripcion: "Favorito de locales y turistas por su variada carta y ambiente con vista al mar. Experiencia auténtica y completa.",
         imagen: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-        web: "https://maps.app.goo.gl/8QkywT5waMiiD7mS8"
+        web: "https://maps.app.goo.gl/y66bWNq2a5UZwQ176"
     },
     {
         id: 2,
